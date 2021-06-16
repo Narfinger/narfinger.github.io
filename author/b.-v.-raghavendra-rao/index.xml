@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>B. V. Raghavendra Rao | Christian Engels&#39; Homepage</title>
+    <link>/author/b.-v.-raghavendra-rao/</link>
+      <atom:link href="/author/b.-v.-raghavendra-rao/index.xml" rel="self" type="application/rss+xml" />
+    <description>B. V. Raghavendra Rao</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 16 Aug 2017 10:10:10 +0530</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>B. V. Raghavendra Rao</title>
+      <link>/author/b.-v.-raghavendra-rao/</link>
+    </image>
+    
+    <item>
+      <title>On Sigma Power Sigma Power Sigma Circuits</title>
+      <link>/publication/on-sigma-power-sigma-power-sigma-circuits/</link>
+      <pubDate>Wed, 16 Aug 2017 10:10:10 +0530</pubDate>
+      <guid>/publication/on-sigma-power-sigma-power-sigma-circuits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On Hard Instances of Non-Commutative Permanent</title>
+      <link>/publication/on-hard-instances-of-noncommutative-perm/</link>
+      <pubDate>Mon, 20 Jun 2016 15:36:16 +0530</pubDate>
+      <guid>/publication/on-hard-instances-of-noncommutative-perm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Shortest Paths: Non-Euclidean Instances for Metric Optimization Problems</title>
+      <link>/publication/random-shortest-path-metric/</link>
+      <pubDate>Fri, 19 Jun 2015 10:00:00 +0530</pubDate>
+      <guid>/publication/random-shortest-path-metric/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

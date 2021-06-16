@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 | Christian Engels&#39; Homepage</title>
+    <link>/publication-type/1/</link>
+      <atom:link href="/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
+    <description>1</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 16 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>1</title>
+      <link>/publication-type/1/</link>
+    </image>
+    
+    <item>
+      <title>Parameterized Valiant Classes</title>
+      <link>/publication/2019-ipec/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/2019-ipec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Near-Optimal Depth-Hierarchy Theorem for Small-Depth Multilinear Circuits</title>
+      <link>/publication/a-near-optimal-depth-hierarchy-theorem-for-small-depth-multilinear-circuits/</link>
+      <pubDate>Sun, 23 Dec 2018 10:32:10 +0100</pubDate>
+      <guid>/publication/a-near-optimal-depth-hierarchy-theorem-for-small-depth-multilinear-circuits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On Sigma Power Sigma Power Sigma Circuits</title>
+      <link>/publication/on-sigma-power-sigma-power-sigma-circuits/</link>
+      <pubDate>Wed, 16 Aug 2017 10:10:10 +0530</pubDate>
+      <guid>/publication/on-sigma-power-sigma-power-sigma-circuits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On Hard Instances of Non-Commutative Permanent</title>
+      <link>/publication/on-hard-instances-of-noncommutative-perm/</link>
+      <pubDate>Mon, 20 Jun 2016 15:36:16 +0530</pubDate>
+      <guid>/publication/on-hard-instances-of-noncommutative-perm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dichotomy Theorems for Homomorphism Polynomials of Graph Classes</title>
+      <link>/publication/dichotomy-theorems-for-homomorphism-polynomials/</link>
+      <pubDate>Fri, 01 Jan 2016 10:00:00 +0200</pubDate>
+      <guid>/publication/dichotomy-theorems-for-homomorphism-polynomials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Shortest Paths: Non-Euclidean Instances for Metric Optimization Problems</title>
+      <link>/publication/random-shortest-path-metric/</link>
+      <pubDate>Fri, 19 Jun 2015 10:00:00 +0530</pubDate>
+      <guid>/publication/random-shortest-path-metric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Randomness Efficient Testing of Sparse Black Box Identities of Unbounded Degree over the Reals</title>
+      <link>/publication/randomness-efficient-testing-of-blackbox-pit/</link>
+      <pubDate>Sat, 01 Jan 2011 10:00:00 +0530</pubDate>
+      <guid>/publication/randomness-efficient-testing-of-blackbox-pit/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

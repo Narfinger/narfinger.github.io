@@ -1,0 +1,1490 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Christian Engels">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Border Complexity Sources:  Bringman, Ikenmeyer, Zuiddam - On algebraic branching programs of small width Saxena - Diagonal Circuit Identity Testing and Lower Bounds Kumar - On top fan-in vs formal degree for depth-3 arithmetic circuits Shpilka - Affine Projections of Symmetric Polynomials Grochow - Unifying and generalizing known lower bounds via geometric complexity theory  Prerequisites  Circuits ABP Formulas  General  Rank Based lower bounds generally transfer see Grochow.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2019-02-27-border-complexity/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.min.0eb5cfac0abb466150c2ce0d9c788214.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/2019-02-27-border-complexity/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Christian Engels&#39; Homepage">
+  <meta property="og:url" content="/post/2019-02-27-border-complexity/">
+  <meta property="og:title" content="Border Complexity | Christian Engels&#39; Homepage">
+  <meta property="og:description" content="Border Complexity Sources:  Bringman, Ikenmeyer, Zuiddam - On algebraic branching programs of small width Saxena - Diagonal Circuit Identity Testing and Lower Bounds Kumar - On top fan-in vs formal degree for depth-3 arithmetic circuits Shpilka - Affine Projections of Symmetric Polynomials Grochow - Unifying and generalizing known lower bounds via geometric complexity theory  Prerequisites  Circuits ABP Formulas  General  Rank Based lower bounds generally transfer see Grochow."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-02-27T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-05-28T13:48:51&#43;09:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/2019-02-27-border-complexity/"
+  },
+  "headline": "Border Complexity",
+  
+  "datePublished": "2019-02-27T00:00:00Z",
+  "dateModified": "2020-05-28T13:48:51+09:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Christian Engels"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Christian Engels' Homepage",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Border Complexity Sources:  Bringman, Ikenmeyer, Zuiddam - On algebraic branching programs of small width Saxena - Diagonal Circuit Identity Testing and Lower Bounds Kumar - On top fan-in vs formal degree for depth-3 arithmetic circuits Shpilka - Affine Projections of Symmetric Polynomials Grochow - Unifying and generalizing known lower bounds via geometric complexity theory  Prerequisites  Circuits ABP Formulas  General  Rank Based lower bounds generally transfer see Grochow."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Border Complexity | Christian Engels&#39; Homepage</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Christian Engels&#39; Homepage</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Christian Engels&#39; Homepage</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/software-cv.pdf"><span>SoftwareCV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Border Complexity</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    May 28, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/tcs/">TCS</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="border-complexity">Border Complexity</h1>
+<h2 id="sources">Sources:</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/1702.05328" target="_blank" rel="noopener">Bringman, Ikenmeyer, Zuiddam - On algebraic branching programs of small width</a></li>
+<li><a href="https://doi.org/10.1007/978-3-540-70575-8_6" target="_blank" rel="noopener">Saxena - Diagonal Circuit Identity Testing and Lower Bounds</a></li>
+<li><a href="https://arxiv.org/abs/1804.03303v1" target="_blank" rel="noopener">Kumar - On top fan-in vs formal degree for depth-3 arithmetic circuits</a></li>
+<li><a href="http://www.cs.technion.ac.il/~shpilka/publications/Shpilka_AffineProj.ps.gz" target="_blank" rel="noopener">Shpilka - Affine Projections of Symmetric Polynomials</a></li>
+<li><a href="https://arxiv.org/abs/1304.6333v1" target="_blank" rel="noopener">Grochow - Unifying and generalizing known lower bounds via geometric complexity theory</a></li>
+</ul>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>Circuits</li>
+<li>ABP</li>
+<li>Formulas</li>
+</ul>
+<h1 id="general">General</h1>
+<ul>
+<li>Rank Based lower bounds generally transfer see Grochow.
+<ul>
+<li>Proof Sketch: Take a matrix $A$ with $\epsilon$. The rank of $A$ can never be smaller than the rank of a matrix $A$ without $\epsilon$.</li>
+</ul>
+</li>
+</ul>
+<h1 id="bringman-ikenmeyer-zuiddam---on-algebraic-branching-programs-of-small-width">Bringman, Ikenmeyer, Zuiddam - On algebraic branching programs of small width</h1>
+<h2 id="definitions">Definitions</h2>
+<ul>
+<li>Take any complexity measure $L$.</li>
+<li>A polynomial has border complexity $s$ if there exists polynomials $g_1,g_2,\dots$ that converge to $f$ and $L(g_i)$ has complexity bounded by $s$.</li>
+<li>Equivalent: $f$ has complexity $s$ if there exists polynomials $f_1,\dots, f_k$ and integer $k$: $h=f+\varepsilon f_1 + \dots + \varepsilon^k f_k$ and  $L(h)&lt;s$ (where we treat $\varepsilon$ as a formal variable in the complexity measure $L$).
+<ul>
+<li>Notice that the degree of $\varepsilon$ can be large (i.e., exponential).</li>
+</ul>
+</li>
+<li>As usual, we can define classes of border complexity, using these new measures of complexity.</li>
+</ul>
+<h2 id="previous-knowledge">Previous Knowledge</h2>
+<ul>
+<li>Width 3 ABP is equal to formula (Ben-Or, Cleve).</li>
+<li>ABP width 2 is not universal.</li>
+</ul>
+<h2 id="main-theorem">Main Theorem</h2>
+<ul>
+<li>Theorem: Border of Width 2 ABP can compute Formulas.</li>
+<li>Border of formulas and formulas are the same, i.e., $(\bar VP_e = \bar ABP_2)$ with polynomial size error degree polynomial.</li>
+</ul>
+<h2 id="proof">Proof</h2>
+<ul>
+<li>Let $Q(f) = \begin{pmatrix} f&amp; 1\ 1&amp; 0\end{pmatrix}$</li>
+<li>We will only show the case where epsilon power is zero where it is not necessary. While technically, all have epsilon power, it is a similar proof.</li>
+<li>Addition ($F+G$): Simulated by $F\cdot Q(0) \cdot G$.
+<ul>
+<li>$deg(\epsilon)=e_f + e_g$, size=$O(s_f + s_g)$.</li>
+<li>$\begin{pmatrix} f&amp; 1\ 1&amp;0\end{pmatrix} \cdot \begin{pmatrix} 0&amp; 1\ 1&amp;0\end{pmatrix} \cdot \begin{pmatrix} g&amp; 1\ 1&amp;0\end{pmatrix} = \begin{pmatrix} 1&amp; f\ 1&amp;0\end{pmatrix}\begin{pmatrix} g&amp; 1\ 1&amp;0\end{pmatrix}$.</li>
+</ul>
+</li>
+<li>Squaring: $\begin{pmatrix} -\epsilon^{-1}&amp; 0\ -1&amp;\epsilon\end{pmatrix} \cdot Q(f) \cdot \begin{pmatrix} \epsilon^2&amp; 1\ -1&amp; 0\end{pmatrix} \cdot Q(f) \cdot \begin{pmatrix} \epsilon^{-1}&amp; 0\ 0&amp; \epsilon\end{pmatrix}$.
+<ul>
+<li>$deg(\epsilon)=2 e_f + 4$, size= $2O(s_f)$.</li>
+<li>$= \begin{pmatrix} -f/\epsilon&amp; -1/\epsilon\ -f+\epsilon&amp; -1\end{pmatrix} \cdot \begin{pmatrix} \epsilon^2&amp; 1\ -1&amp; 0\end{pmatrix}\cdot Q(f)\cdot \begin{pmatrix} 1/\epsilon&amp; 0\ 0&amp; \epsilon\end{pmatrix}$</li>
+<li>$= \begin{pmatrix} -f\epsilon + 1/\epsilon&amp; -f/\epsilon\ -f\epsilon^2 + \epsilon^3+1&amp; -f+\epsilon\end{pmatrix} Q(f)\cdot \begin{pmatrix} 1/\epsilon&amp; 0\ 0&amp; \epsilon\end{pmatrix}$</li>
+<li>$=\begin{pmatrix} f/\epsilon -f^2\epsilon - f/\epsilon&amp; 1/\epsilon - f\epsilon\ f\epsilon^3 -f^2\epsilon^2 +f - f+k&amp; \epsilon^3 -f\epsilon^2 + 1\end{pmatrix} \cdot \begin{pmatrix} 1/\epsilon&amp; 0\ 0&amp; \epsilon\end{pmatrix}$</li>
+<li>$=\begin{pmatrix} -f^2&amp; 1-f\epsilon\ f\epsilon^2 - f^2\epsilon + 1&amp; \epsilon^4 -f\epsilon^3+\epsilon\end{pmatrix}$</li>
+</ul>
+</li>
+<li>Multiplication with constant is the same way as always.</li>
+<li>Multiplication ($f/2 \cdot g$): Use that $-(f/2)^2 + (-g^2) + (f/2 + g)^2 = f\cdot g$.
+<ul>
+<li>$deg(\epsilon) = 4 e_f + 4 e_g + 12$, size=$O(4s_f + 4s_g)$.</li>
+</ul>
+</li>
+<li>We need exponential many matrices in the depth of the circuit. Using formula depth reduction gives the result of polynomial size in formula size.</li>
+<li>Rough bound on the $\epsilon$ degree, exponential in the depth of the formula.</li>
+<li>Rough bound on the size, exponential in the depth of the formula.
+<ul>
+<li>Go up the formula in depth.</li>
+<li>For every gate, we already have computed the two children and need the <code>new size</code> to compute it.</li>
+<li>Hence, per depth increase, we get an increase of at most $4s_f + 4s_g + c$.</li>
+<li>As a formula depth reduction to $\log n$ depth exists, we have polynomial $\epsilon$ degree and polynomial size.</li>
+</ul>
+</li>
+<li>Notice that ABP of width 2 are <strong>not</strong> closed under taking homogeneous components.</li>
+</ul>
+<h1 id="kumar---on-top-fan-in-vs-formal-degree-for-depth-3-arithmetic-circuits">Kumar - On top fan-in vs formal degree for depth-3 arithmetic circuits</h1>
+<h2 id="theorem">Theorem</h2>
+<ul>
+<li>Any homogenous polynomial of degree $d$ can be &ldquo;approximated&rdquo; (in the border complexity sense) by a $\Sigma\Pi\Sigma$ circuit with top fan-in $d+1$.
+<ul>
+<li>The formal degree is $d\cdot 2^d \cdot \binom{n+d-1}{d-1}$.</li>
+<li>The size is large but the top gate has small fan-in.</li>
+</ul>
+</li>
+</ul>
+<h2 id="proof-1">Proof</h2>
+<h3 id="overview">Overview</h3>
+<ul>
+<li>We define $sym$ to be the elementary symmetric polynomial.</li>
+<li>Any polynomial $f$ can be computed by $sym(L_1,\dots,L_m)$ for $L_i$ being homogeneous linear forms (here, $m\in exp(O(d))$).</li>
+<li>Hence, $P= homc(\prod_{i\in [m]} L_1+1)$ of degree equal to $d$.</li>
+<li>Hence, extracting approximate homogeneous components with complexity in $d$ and <em>NOT</em> $m$ finishes the proof.</li>
+</ul>
+<h3 id="homogeneous-components">Homogeneous components</h3>
+<ul>
+<li>Let $f=\sum_{i\in [d]} f_i(x)$ where $f_i$ has degree equal to $i$. Then there $\sum \beta_{i,j} f(\alpha_{i,j}x) = f_i + R$ where every monomial has degree at least $i+1$.
+<ul>
+<li>Let $g(y) = f(yx_1,\dots,yx_n)$.</li>
+<li>$g(y) = \sum_j y^i f_j(x)$.</li>
+<li>Fix an $i$. Take distinct elements from $\mathbb{F}$, $\alpha_1,\dots,\alpha_i$.</li>
+<li>Then for every $k$, we have $Q(\alpha_{k}) = \sum_{j=0}^d \alpha_{k}^j f_j(x)$.</li>
+<li>Let $\gamma_j = (\alpha_j^0, \dots, \alpha_j^i)$.</li>
+<li>Notice that $\gamma_0,\dots,\gamma_i$ are linearly independent.</li>
+<li>Hence, there exists $\beta$ such that $\sum_{j=0}^i \beta_{j}\gamma_j = (0,\dots,0,1)$.</li>
+<li>Hence, $\sum_{j=0}^i \beta_j f(\alpha_j x) = \sum_{j=0} \beta_j \left(\sum_{j'=0}^d \alpha_j^{j'} f_j'(x)\right) = \sum_{j'=0}^d \left(\sum_{j=0}^i \beta_j \alpha_j^{j'} \right) f_{j'}(x)$.</li>
+<li>With the previous requirement on $\beta,\gamma$ this gives the proof.</li>
+<li>Notice that this does not say anything about degree higher than $i$ as $\sum_{j}^i \beta_j\gamma_j$ does not have any requirements on $i'&gt;i$.</li>
+<li>Setting $\alpha' = \alpha\varepsilon$ gives us the approximation. This gives us an $\epsilon^i$ factor but we can divide by it.</li>
+</ul>
+</li>
+</ul>
+<h1 id="summary">Summary</h1>
+<ul>
+<li>These two results give us that:</li>
+<li>$VF \subseteq \overline{ABP_2}\subseteq HOM\subseteq \overline{\Sigma\Pi\Sigma}$.</li>
+</ul>
+<h1 id="symmetric-polynomials">Symmetric Polynomials:</h1>
+<ul>
+<li>We are talking about linear projections of symmetric polynomials, i.e., symmetric polynomials of linear forms.</li>
+<li>Universal (exponential in the degree).</li>
+<li>Lower bounds known:
+<ul>
+<li>$C_{sym}(f) &gt; \sqrt(C_3(f))$  (Symmetric vs depth 3).</li>
+<li>$C_{sym}(\det_{\sqrt{n}}) \geq 2n-3\sqrt{n}$.</li>
+</ul>
+</li>
+</ul>
+<h1 id="lower-bounds-versus-depth-3-circuits-of-symmetric-polynomial-shpilka">Lower bounds versus depth 3 circuits of Symmetric Polynomial (Shpilka)</h1>
+<ul>
+<li>We only show lower bound for $S$ <em>without</em> linear forms, i.e., the symmetric polynomial.</li>
+<li><span style="color:red">Why do the lower bounds transfer?</span></li>
+<li><span style="color:red">Does this lower bound transfer?</span></li>
+</ul>
+<h2 id="theorem-43">Theorem 4.3:</h2>
+<ul>
+<li>For every $d\geq 2$ and every affine subspace $A$ such that degree of $S_n^d|_A$ is smaller than $d$, $dim(A)\leq $\frac{n+d}{2}$.</li>
+</ul>
+<h3 id="prerequisites-to-the-proof">Prerequisites to the proof:</h3>
+<ul>
+<li>Lemma 5.6: In every vector space of dimension $r$ there is a vector with at least $r$ coordinates that are all 1.</li>
+<li>Definition 5.2: For $v\in C^n$ and a polynomial $f\in C[x_1,\dots,x_n]$ $\partial_v(f) = \sum_{i=1}^n v_i \frac{\partial f}{\partial x_i}$.</li>
+<li>Proposition 5.4:
+<ul>
+<li>Linear functions: $\partial_v(L)=L(v_1,\dots,v_n$.</li>
+<li>$\partial_v(fg) = g\partial_v(f) + f\partial_v(g)$.</li>
+<li>$\partial_v(\prod_{i=1}^t L_i) = \sum_{i=1}^t (L_i(v)\prod_{j\neq i} L_j)$.</li>
+</ul>
+</li>
+<li>Lemma 5.5: Let $U = { (x_1,\dots,x_k) \mid x_1=\dots = x_k=0}$ and $v such that $v_1=\dots v_{d-1}=1$, $\sum_{i=1}^k v_i =0$ then for every $r\leq d$ $\partial_v(S_k^r(x_1,\dots,x_k))|_U = (1-r)S_{d-1}^{r01}(x_1,\dots,x_{d-1})$.</li>
+<li>Definition 5.1: For every polynomial $f\in C[x_1,\dots,x_k]$, $\psi(f) = \frac{1}{k!} \sum_{\sigma\in S_k} f(x_{\sigma(1)},\dots,x_{\sigma(k)})$</li>
+<li>Proposition 5.2:
+<ul>
+<li>$\psi(f)$ is a symmetric polynomial of degree $\leq \deg(f)$.</li>
+<li>If $g$ is symmetric then $\psi(gf) = g\psi(f)$.</li>
+<li>$\psi$ is linear.</li>
+</ul>
+</li>
+<li>Theorem 5.1: Every symmetric polynomial $f$ can be written as a polynomial in $S_m^1,\dots,S_m^m$ (notice that these are algebraically independent).</li>
+</ul>
+<h3 id="proof-2">Proof:</h3>
+<ul>
+<li>Let $A$ be given by $x_{k+1} = L_1(x_1,\dots,x_k), \dots, x_{m}=L_{m-k}(x_1,\dots,x_k)$.</li>
+<li>We know that $0=S_m^d|<em>A = \sum</em>{i=0}^d S_k^i(x_1,\dots,x_k) S_{m-k}^{d-i}(L_1,\dots,L_{m-k})$.</li>
+<li>Assume that $k\geq \frac{m+d}{2}$.</li>
+<li>Let $L_0(x_1,\dots,x_k)=x_1+\dots x_k$ and define $V={x \mid L_i(x)=0, 0\leq i\leq m-k}$.</li>
+<li>$dim(V)\geq k-(m-k+1)\geq d-1$
+<ul>
+<li>$k$ is the dimension of the ambient space, $m-k$ is the dimension of the co-space of $A$, 1 is the extra linear form.</li>
+</ul>
+</li>
+<li>By Lemma 5.6, there is a vector $v\in V$ with first $d-1$ coordinates one.</li>
+<li>Since $L_i(v)=0$ $\partial_v(S_k^1(x_1,\dots,x_k))=0$ (they are the same) and $\partial_v(S_{m-k}^l(L_1,\dots,L_{m-k}))=0, 1\leq l\leq d$ (as required by $V$).</li>
+<li>By the previous equation, $0=\partial_v(S_k^d(x_1,\dots,x_k)) + \sum_{i=2}^{d-1} \partial_v(S_k^i(x_1,\dots,x_k))S_{m-k}^{d-i}(L_1,\dots,L_{m-k})$ (again by definition of $V$)</li>
+<li>Let $U={ (x_1,\dots,x_k)\in V\mid x_d = x_{d+1} = \dots = x_k =0 }.</li>
+<li>With Lemma 5.5 and Proposition 5.2: $\partial_v(S_k^r(x_1,\dots,x_k))|<em>U = (1-r)S</em>{d-1}^{r-1}(x_1,\dots,x_{d-1})$.</li>
+<li>We can now restrict the previous equation to $U$, resulting in: $0=(1-d)S_{d-1}^{d-1}(x_1,\dots,x_k) + \sum_{i=2}^{d-1} (1-i) S_{d-1}^{i-1}(x_1,\dots,x_{d-1} S_{m-k}^{d-i}(L_1,\dots,L_{m-k})|_U)$.</li>
+<li>Applying $\psi$ to this, gives us: $0=(1-d)S_{d-1}^{d-1}(x_1,\dots,x_{d-1}) + \sum_{i=2}^{d-1} (1-i)S_{d-1}^{i-1}(x_1,\dots,x_{d-1}) \psi(S_{m-k}^{d-1}(L_1,\dots,L_{m-k})_U)$.</li>
+<li>For $1\leq i\leq d-2$ $\psi(S_{m-k}^i(L_1,\dots,L_{m-k})|_U)$ is a symmetric polynomial of degree at most $d-2$ and hence can be written as a polynomial in $S_{d-1}^1(x_1,\dots,x_{d-1}),\dots,S_{d-1}^{d-2}(x_1,\dots,x_{d-1})$.</li>
+<li>Hence $0=(1-d)S_{d-1}^{d-1} + Q(S_{d-1}^1,\dots,S_{d-1}^{d-2})$ for some polynomial $Q$.</li>
+<li>By Theorem 5.1 all these symmetric polynomials are algebraicaly independent and $1-d$ is not 0. Hence a contradiction.</li>
+</ul>
+<h2 id="theorem-45">Theorem 4.5:</h2>
+<ul>
+<li>$C_3(Sym_n^d)= \Omega(dn-d^2)$.</li>
+</ul>
+<h3 id="proof-3">Proof:</h3>
+<ul>
+<li>We denote by $M_1,\dots,M_r$ the multipication gates with degree at least $d$ in the $\Sigma\Pi\Sigma$ circuit.</li>
+<li>As every gate can have at most $d$ inputs, it suffices to show that $r&lt;\frac{n-d}{2}$.</li>
+<li>Claim: There is an affine subspace $A$ such that $\forall i, M_{i}|_A$ is a constant and $\dim(A)&gt;\frac{n+d}{2}$.</li>
+<li>Look at $S_n^d|_A$ computed by $C$ of $\Sigma\Pi\Sigma$. This circuit under $A$ has now all multiplication gates constant or degree smaller than $d$.</li>
+<li>Hence  $S_n^d|_A$ has small degree.</li>
+<li>This is a contradiction by the first theorem.</li>
+</ul>
+<h1 id="shpilka---affine-linear-form-lower-bound">Shpilka - Affine linear form lower bound</h1>
+<ul>
+<li>Lemma: Given a lower bound for any affine subspace of dimension $g(m)$ that $S_m|_A=0$ and $f$ has a subspace of dimension $D$ such that $f|_B=0$ then $g(sym_complexity(f)))\geq D$ ($f$ has to fulfill that it cannot be represented as a polynomial of less than $n$ linear forms.).</li>
+<li>Any subspace that has $f|_B=0$ also reduces the degree of $f$.</li>
+<li>Theorem: For every affine subspace such that $\deg(S|_A)&lt;d$ we have $\dim(A)&lt;\max(m-d, d-1)$.
+<ul>
+<li>Proof:</li>
+<li>Assume we have a subspace $A$ such that $S_m^d|_A=$ and $dim(A)=k&gt;m\max(m-d,d-1)$.</li>
+<li>Write it in linear forms depending on $x_1,\dots,x_k$.</li>
+<li>Now we can rewrite the symmetric polynomial into $S^j(x_1,\dots,x_k)\cdot S^{d-j}(L_1,\dots,L_{m-k})$.</li>
+<li>We know the sum is zero by our assumption.</li>
+<li>Use the permutation operator on this, as it is linear we know the overall polynomial can be written as:</li>
+<li>$0=S^d(x_1,\dots,x_k) + Q(S^1,S^2,\dots,S^{d-1})$.</li>
+<li>Hence, $S^1,\dots,S^d$ are algebraic dependent but they are in fact not. This is a contradiction.</li>
+</ul>
+</li>
+<li>Lower bound theorem
+<ul>
+<li>By the above theorem, we have a subspace that reduces that degree, hence any subspace reducing to zero has dimension at most $\max(m-d, d-1)$.</li>
+<li>A subspace $B$ of dimension $D$ that is zero for a target polynomial $f$.</li>
+<li>Then $sym_complexity(f) - \deg(f) \geq D$ by the lemma.</li>
+</ul>
+</li>
+</ul>
+<h1 id="others">Others</h1>
+<ul>
+<li>Symmetric Polynomial might lie between these classes.</li>
+<li>The lower bound doesn&rsquo;t seem to imply anything so far.</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/2019-02-27-border-complexity/&amp;text=Border%20Complexity" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/2019-02-27-border-complexity/&amp;t=Border%20Complexity" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Border%20Complexity&amp;body=/post/2019-02-27-border-complexity/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2019-02-27-border-complexity/&amp;title=Border%20Complexity" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Border%20Complexity%20/post/2019-02-27-border-complexity/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/2019-02-27-border-complexity/&amp;title=Border%20Complexity" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href=""><img class="avatar mr-3 avatar-circle" src="/author/christian-engels/avatar_hu6b06e252e3dcd24fd8ae8fe570442bd6_56596_270x270_fill_q75_lanczos_center.jpg" alt="Christian Engels"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="">Christian Engels</a></h5>
+      <h6 class="card-subtitle">PostDoc in Computational Complexity</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=8TIu-lsAAAAJ&amp;hl=de" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/gcushen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://dblp.org/pers/hd/e/Engels:Christian" target="_blank" rel="noopener">
+        <i class="ai ai-dblp"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0003-4378-9358" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/wowchemy.min.6a4d0b4efac1fa0917ed08f790cd66fc.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

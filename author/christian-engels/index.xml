@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Christian Engels | Christian Engels&#39; Homepage</title>
+    <link>/author/christian-engels/</link>
+      <atom:link href="/author/christian-engels/index.xml" rel="self" type="application/rss+xml" />
+    <description>Christian Engels</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Christian Engels</title>
+      <link>/author/christian-engels/</link>
+    </image>
+    
+    <item>
+      <title>Algebraic Formula Size of Component Formulas</title>
+      <link>/post/2020-01-16-polynomial-circuit-size/</link>
+      <pubDate>Thu, 16 Jan 2020 15:51:08 +0900</pubDate>
+      <guid>/post/2020-01-16-polynomial-circuit-size/</guid>
+      <description>&lt;p&gt;Recently, Chaugule, Kumar, Limaye, Mohapatra, She and Srinivasan released their paper &lt;a href=&#34;https://eccc.weizmann.ac.il/report/2019/172&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;Shur Polynomials do not have small formulas if the Determinant doesn&amp;rsquo;t!&amp;quot;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We will explain one of their main lemmas, Lemma 4.2. This post is not meant as a criticizm to the presentation of the paper as it is very understandable written. Rather it is highlight this interesting lemma and help me understand the proof better.&lt;/p&gt;
+&lt;h1 id=&#34;definitions&#34;&gt;Definitions&lt;/h1&gt;
+&lt;p&gt;The Jacobian matrix $J(f_1,\dots,f_k)$ is defined as $J_{ij}=\frac{\partial f_i}{\partial x_j}$.&lt;/p&gt;
+&lt;p&gt;A set of $n$ variate polynomials ${ q_1,\dots, q_k}\subseteq \mathbf{C}[X]$ is said to satisfy &lt;em&gt;Property $S$&lt;/em&gt;, if there exists a $a\in \mathbf{C}_n$ such that&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For all $i\in [k]$, $q_i(a)=0$,&lt;/li&gt;
+&lt;li&gt;The rank of the Jacobian matri of $q_1,\dots,q_k$ when evaluated at $a$ is equal to its symbolic rank, i.e., rank$&lt;em&gt;{\mathbf{C}}(J(q_1,\dots,q_k))(a)=$rank$&lt;/em&gt;{\mathbf{C}(x)}(J(q_1,\dots,q_k))$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;lemma&#34;&gt;Lemma&lt;/h1&gt;
+&lt;p&gt;Let ${ q_1,\dots,q_k}\in \mathbf{C}[x_1,\dots,x_n]$ be a set of algebraically independent polynomials which satisfy Property $S$. Let $g\in \mathbf{C}[z_1,\dots,z_k]$ be a homogeneous $k$ variate polynomial of degree equal to $d$. Let $g(q_1,\dots,q_k)\in \mathbf{C}[X]$ has an algebraic formula of size $s$ and depth $\Delta$. Then $g(z_1,\dots,z_k)$ has an algebraic formula of size $O(s^2n)$ and depth $\Delta+O(1)$.&lt;/p&gt;
+&lt;h1 id=&#34;proof&#34;&gt;Proof&lt;/h1&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Corollary 2.10: Let $P$ have degree at least one.&lt;/p&gt;
+&lt;p&gt;$P(a+z) \equiv P(a)+\sum_{j=1}^n z_j \cdot \frac{\partial P}{\partial x_j}(a) \mod &lt;z&gt;^2$.
+This follows from Taylor expansion.&lt;/p&gt;
+&lt;h2 id=&#34;proof-1&#34;&gt;Proof&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Let $a$ be the assignment coming from Property $S$, such that $q_1(a)=\dots = q_k(a)=0$ and which keeps the rank equal.&lt;/li&gt;
+&lt;li&gt;Since they are algebraically independent, that means that rank$_{\mathbf{C}}(J(q_1,\dots,q_k)(a))=k$.&lt;/li&gt;
+&lt;li&gt;Corollary 2.10 gives us: $q_i(a+x) \equiv \sum_{j=1}^n x_j \cdot \frac{\partial q_i}{\partial x_j} \mod &lt;x&gt;^2$, as $q_i(a)=0$.&lt;/li&gt;
+&lt;li&gt;Let us look at $i$th row of the jacobian. This is the vector $(\frac{\partial q_i}{x_1}(a), \dots, \frac{\partial q_i}{\partial x_n}(a))$.&lt;/li&gt;
+&lt;li&gt;The $i$th vectors are all linear independent as as the jacobian has full rank.&lt;/li&gt;
+&lt;li&gt;Thus the vectors given by $\sum_{j=1}^n x_j \frac{\partial q_i}{\partial x_j}(a)$ are linearly independent.
+&lt;ul&gt;
+&lt;li&gt;Any set of linear forms that is already independent over a smaller field, i.e., $\mod &lt;x&gt;^2$ will be linearly independent over a larger field, i.e., $\mathbf{C}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Let us call these vectors $u_i(x)$.&lt;/li&gt;
+&lt;li&gt;Claim 4.3: Let $d$ be the degree of $g(x)$. Then the homogeneous component of degree $d$ of the polynomial $g(q_1,\dots,q_k)$ is equal to $g(u_1,\dots,u_k)$.&lt;/li&gt;
+&lt;li&gt;Claim 4.4: If $g(u_1,\dots,u_k)$ has a formula of size $s&#39;$ and depth $\Delta$ then g(z) has a formula of size at most $s&amp;rsquo;n$ and depth $\Delta + O(1)$.&lt;/li&gt;
+&lt;li&gt;These two claims finish the proof, as extracting homogeneous components is easy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;claim-43&#34;&gt;Claim 4.3&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Let $d$ be the degree of $g(x)$. Then the homogeneous component of degree $d$ of the polynomial $g(q_1,\dots,q_k)$ is equal to $g(u_1,\dots,u_k)$.&lt;/li&gt;
+&lt;li&gt;Let $f_1,\dots,f_k$ be polynomials which are zero modulo $&lt;x&gt;^2$ such that $q_i(a+x) = u_i(x) + f_i(x)$.&lt;/li&gt;
+&lt;li&gt;Since $g$ is homogeneous of degree $d$, $g(z)= \sum_{b\in \mathbf{N}^k, d= \sum_{i=1}^k b_i} \alpha_b z^b$.&lt;/li&gt;
+&lt;li&gt;We need to look at the homogeneous components of the polynomial $g(q_1(a+x),\dots,q_k(a+x))= \sum_{b\in \mathbf{N}^k, d= \sum_{i=1}^k b_i} \alpha_b (q_1(a+x))^{b_1} \cdots (q_k(a+x))^{b_k}$.&lt;/li&gt;
+&lt;li&gt;Let us look at the homogeneous components of the following polynomial $\prod_{j=1}^k q_j(a+x)^{b_j} = \prod_{j=1}^k (u_j(x) + f_j(x))^{b_j}$.&lt;/li&gt;
+&lt;li&gt;This  is equal to $\prod_{j=1}^k u_j^{b_j}$.&lt;/li&gt;
+&lt;li&gt;Now we know that taking homogeneous components is linear, hence, of the $g(q_1(a+x), \dots, q_k(a+x))$, we can just look at the sums.&lt;/li&gt;
+&lt;li&gt;This gives us that the homogeneous components of $g(q_1(a+x),\dots,q_k(a+x))$ is equal to $\sum_{b\in \mathbf{N}^k, d= \sum_{i=1}^k b_i} \alpha_b \prod_{j=1}^k u_j^{b_j}$.&lt;/li&gt;
+&lt;li&gt;This is equal to the polynomial $g(u_1,\dots,u_k)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;claim-44&#34;&gt;Claim 4.4&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;If $g(u_1,\dots,u_k)$ has a formula of size $s&#39;$ and depth $\Delta$ then g(z) has a formula of size at most $s&amp;rsquo;n$ and depth $\Delta + O(1)$.&lt;/li&gt;
+&lt;li&gt;Remember that $u_i$ are linear forms.&lt;/li&gt;
+&lt;li&gt;We will find linear forms such that $u_i(l_1(z),\dots,l_n(z))=z_i$.&lt;/li&gt;
+&lt;li&gt;For this we solve the equation system $U\cdot x^T = z^T$ where $U$ is the $k\times n$ matrix whose $i$th row is $u_i$.&lt;/li&gt;
+&lt;li&gt;Left to show is that the rank of $U$ is $k$.&lt;/li&gt;
+&lt;li&gt;This was shown earlier and follows immediately from the fact that the vectors $v_i=(\frac{\partial q_i}{\partial x_1}(a),\dots, \frac{\partial q_i}{\partial x_n}(a))$ is linearly independent (by the jordan matrix).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;main-takeaways-or-things-to-remember&#34;&gt;Main Takeaways or Things to Remember&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Checking linear independence over a small subfield might already be enough.&lt;/li&gt;
+&lt;li&gt;Jacobian might help with this.&lt;/li&gt;
+&lt;li&gt;Linearity of homogeneous components can help.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Can we have less requirements on the lemma for circuits with similar or better size bounds.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Revisiting Lower Bounds for Multi-$r$-ic Depth Four Circuits</title>
+      <link>/publication/2019-revisiting-multi-r-ic/</link>
+      <pubDate>Tue, 27 Aug 2019 11:05:13 +0900</pubDate>
+      <guid>/publication/2019-revisiting-multi-r-ic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parameterized Valiant Classes</title>
+      <link>/publication/2019-ipec/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/2019-ipec/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

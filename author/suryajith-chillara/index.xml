@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Suryajith Chillara | Christian Engels&#39; Homepage</title>
+    <link>/author/suryajith-chillara/</link>
+      <atom:link href="/author/suryajith-chillara/index.xml" rel="self" type="application/rss+xml" />
+    <description>Suryajith Chillara</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 27 Aug 2019 11:05:13 +0900</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Suryajith Chillara</title>
+      <link>/author/suryajith-chillara/</link>
+    </image>
+    
+    <item>
+      <title>Revisiting Lower Bounds for Multi-$r$-ic Depth Four Circuits</title>
+      <link>/publication/2019-revisiting-multi-r-ic/</link>
+      <pubDate>Tue, 27 Aug 2019 11:05:13 +0900</pubDate>
+      <guid>/publication/2019-revisiting-multi-r-ic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Near-Optimal Depth-Hierarchy Theorem for Small-Depth Multilinear Circuits</title>
+      <link>/publication/a-near-optimal-depth-hierarchy-theorem-for-small-depth-multilinear-circuits/</link>
+      <pubDate>Sun, 23 Dec 2018 10:32:10 +0100</pubDate>
+      <guid>/publication/a-near-optimal-depth-hierarchy-theorem-for-small-depth-multilinear-circuits/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
