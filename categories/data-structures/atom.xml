@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Data Structures</title>
+    <subtitle>My homepage</subtitle>
+    <link href="https://narfinger.github.io/categories/data-structures/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://narfinger.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-06-13T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/data-structures/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Data Structure Lower Bounds Short Survey</title>
+        <published>2022-06-13T01:00:00+00:30</published>
+        <updated>2022-06-13T01:00:00+00:30</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://narfinger.github.io/posts/2022/2022-06-13-datastructure-survey/overview/" type="text/html"/>
+        <id>https://narfinger.github.io/posts/2022/2022-06-13-datastructure-survey/overview/</id>
+        
+        <content type="html">&lt;p&gt;I wrote a survey on some recent results in data structure lower bounds. It can be found &lt;a href=&quot;https:&#x2F;&#x2F;narfinger.github.io&#x2F;posts&#x2F;2022&#x2F;2022-06-13-datastructure-survey&#x2F;overview&#x2F;here&quot;&gt;main.pdf&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
