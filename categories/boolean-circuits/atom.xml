@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Boolean Circuits</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/boolean-circuits/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-12-22T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/boolean-circuits/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Correlation bounds against polynomials</title>
+        <published>2022-12-22T01:00:00+00:30</published>
+        <updated>2022-12-22T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/correlation-survey/"/>
+        <id>https://narfinger.github.io/posts/2022/correlation-survey/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/correlation-survey/">&lt;h1 id=&quot;paper&quot;&gt;Paper&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2022&#x2F;142&#x2F;&quot;&gt;Viola - Correlation bounds against polynomials&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;correlation-bounds&quot;&gt;Correlation Bounds&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notice that things like AND (which has large degree) easy correlation (the all zero polynomia).&lt;&#x2F;li&gt;
+&lt;li&gt;Cor_D(f,p) = $\lvert \Pr_{x\sim D}[f(x)=p(x)] - \Pr_{x\sim D}[f(x)\neq p(x)]\rvert$&lt;&#x2F;li&gt;
+&lt;li&gt;Cor_D(f,d) = $\max_p Cor_D(f,p)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Open Question:
+&lt;ul&gt;
+&lt;li&gt;Is there an $f$ such that $Cor_D(f,\log n) \leq 1&#x2F;\sqrt{n}$?&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that this is a hardness.&lt;&#x2F;li&gt;
+&lt;li&gt;It asks for a hard $f$ that with $\log n$ degree can only be barely simulated.&lt;&#x2F;li&gt;
+&lt;li&gt;A negative answer to this would imply that NP circuits have quasi polynomial size (non-trivial but easy with right techniques).&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that this says nothing about how easy the polynomial is to compute (algebraic sense) or how many monomials it has.&lt;&#x2F;li&gt;
+&lt;li&gt;This question also related to number-on-forehead communication complexity.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Algebrazation is not a barrier because of non-uniformity.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;bound-1-degree-log-n-but-correlation-epsilon-1-n&quot;&gt;Bound 1: degree &amp;gt;&amp;gt; $\log n$ but correlation $\epsilon$ &amp;gt;&amp;gt; $1&#x2F;n$&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;$Cor_U(Maj,d) \leq O(d&#x2F;\sqrt{n})$.&lt;&#x2F;li&gt;
+&lt;li&gt;$Cor(Maj,d) \geq O(d^2&#x2F;n)$&lt;&#x2F;li&gt;
+&lt;li&gt;$Cor(Maj,1) \leq O(1&#x2F;n)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Tight bounds on Cor(Maj,d) are not known (in cases $d\neq 1$).&lt;&#x2F;li&gt;
+&lt;li&gt;mod_3 is a candidate for small correlation.&lt;&#x2F;li&gt;
+&lt;li&gt;$Cor(mod_3,d) \leq O(d&#x2F;\sqrt{n})$.
+&lt;ul&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;Consider any set $X$ for which the polynomial computes $mod_3$ correctly.&lt;&#x2F;li&gt;
+&lt;li&gt;Use this polynomial of degree $n&#x2F;2+d$ to now represent any boolean function on $X$.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives a relation between the number of functions and the number of polynomials.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives the tradeoff between $\lvert X\rvert$ and $d$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Hardness Amplification:
+&lt;ul&gt;
+&lt;li&gt;Given an explicit function $f$ that has correlation $\epsilon$ of some class $C$, construct a related function on $C&#x27;$ with $n&#x27;\sim n$ and \epsilon&#x27; &amp;lt;&amp;lt; \epsilon$.&lt;&#x2F;li&gt;
+&lt;li&gt;Yao&#x27;s xor lemma: $f&#x27;=f(x_1)+\dots + f(x_n)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Open Question: Does Yao&#x27;s xor lemma hold for polynomials of degree $d\geq \log n$, i.e., $Cor(f,n^{1&#x2F;3})\leq 1&#x2F;3$, $Cor(f&#x27;,\log n^2)\leq 1&#x2F;n^2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Lemma: The correlation of two majority functions with constant degree polynomials  is $\log^{O(1)}&#x2F;n$.
+&lt;ul&gt;
+&lt;li&gt;This requires low degree polynomials!&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;bound-2-degree-log-n-but-correlation-1-sqrt-n&quot;&gt;Bound 2: degree &amp;lt;&amp;lt; $\log n$ but correlation $&amp;lt;&amp;lt;1&#x2F;\sqrt{n}$&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;The Inner product function $\sum_{i} x_i x_{i+1}$ has correlation $Cor(IP,1) = 2^{-n&#x2F;2}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Generalized Inner Product function has just blocks of size $k$.&lt;&#x2F;li&gt;
+&lt;li&gt;For every $n,d$, $Cor(GIP_{d+1},d )\leq \exp(-\Omega(n&#x2F;4^d d))$.&lt;&#x2F;li&gt;
+&lt;li&gt;$Cor_D(\mod_3,d) \leq \exp(-n&#x2F;c^d)$. Here the distribution is a bit special.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Smaller ACC0 Circuits for Symmetric Functions</title>
+        <published>2022-11-29T01:00:00+00:30</published>
+        <updated>2022-11-29T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/smaller-acc0/"/>
+        <id>https://narfinger.github.io/posts/2022/smaller-acc0/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/smaller-acc0/">&lt;h1 id=&quot;the-strength-of-equality-oracles-in-communiucation&quot;&gt;The Strength of Equality Oracles in communiucation&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2107.04706&quot;&gt;Chapman, Williams - Smaller ACC0 Circuits for Symmetric Functions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;knownledge&quot;&gt;Knownledge&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;We study constant depth circuits with Mod_m gates.&lt;&#x2F;li&gt;
+&lt;li&gt;We know that constant depth Mod_q require super-polynomial size circuits to represent Mod_m (if $q$ is a prime).&lt;&#x2F;li&gt;
+&lt;li&gt;Little is known if $m$ is not a prime power.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;result&quot;&gt;Result&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;There is a modulus $m\leq (1&#x2F;\epsilon)^{2&#x2F;\epsilon}$ such that every symmetric function on $n$ bits can be computed by a depth 3 MOD_m circuit of size exp($O(n^3)$).&lt;&#x2F;li&gt;
+&lt;li&gt;Let $m$ be a prime product then any symmetric function can be computed by depth-$d$ size exp($\tilde O(n^{1&#x2F;(r+d-3)})$ where $r$ is the number of primes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Any Mod_m gate can be simulated by Mod_mn gate with a fan-in increase factor of $n$.&lt;&#x2F;li&gt;
+&lt;li&gt;Every AND of $k$ MOD_b gates can be represented by MOD_a \circ MOD_b circuit of $O(b^k)$ gates.&lt;&#x2F;li&gt;
+&lt;li&gt;There is an &lt;em&gt;arithmetic circuit&lt;&#x2F;em&gt; of size $n^{O(i^{2&#x2F;d})}$ of depth $d$ computing the $i$th elementary symmetric polynomial.&lt;&#x2F;li&gt;
+&lt;li&gt;Lucas Theorem:
+&lt;ul&gt;
+&lt;li&gt;For all primes $p$ and natural numbers $n$, $\binom{n}{p^i}\mod p$ is the $i$th digit of the $p$-ary representation of $n$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof&quot;&gt;Proof&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Main Theorem: Every symmetric function $g$ has a depth-three circuit of the form MOD_5\circ MOD_6 \circ MOD_6 of size $O(\exp(n^{1&#x2F;3}\log n))$&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem 3.2: Let $T\subseteq [n]$ be any subset. There is a polynomial $P$ on $n$ variables of degree $O(\sqrt{n})$ that vanishes $\mod 6$.
+&lt;ul&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;This uses elementary symmetric polynomials and Lucas theorem.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $e_{J}$ be the elementary symmetric polynomial.&lt;&#x2F;li&gt;
+&lt;li&gt;For all vectors $a$, $e_{p^i}(a_1,\dots,a_n) = \binom{\sum_i a_i}{J}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Define the polynomial $p_2(y_1,\dots,y_n) = 1-\prod_{j=0}^{s-1} (1-(b_j-e_{2^j}(y))\mod 2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now $p_2(a)=0\mod 2$ if and only if the binary representation of $\sum_i a_i$ equals $b_j$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, I can enforce an arbitrary subset size.&lt;&#x2F;li&gt;
+&lt;li&gt;A similar thing exists for $\mod 3$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Proof of main theorem:
+&lt;ul&gt;
+&lt;li&gt;The output gate:
+&lt;ul&gt;
+&lt;li&gt;Sum over all possible choices of $T\in [n]$ such that $g(T)=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Sum over all possible to partition $T$ into sum of $t=n^{1&#x2F;3}$ parts, called $T_1,\dots,T_t\in [T]$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;We associate each $T_i$ with a set $S_i$ of at most $n^{2&#x2F;3}$ variables.&lt;&#x2F;li&gt;
+&lt;li&gt;We can use mod5sum to sum over the choices for $S_i$&lt;&#x2F;li&gt;
+&lt;li&gt;We now use a EMAJ polynomial (from Theorem 3.2) to check the sets $S_i$ which is a AND \circ MOD_p for different p.&lt;&#x2F;li&gt;
+&lt;li&gt;With the proposition we can change this to a single MOD_6 gate.&lt;&#x2F;li&gt;
+&lt;li&gt;We replace AND by MOD_5.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>
