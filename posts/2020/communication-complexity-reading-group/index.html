@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>A Short Overview of Communication Complexity for Algorithms Designers (Reading Group) | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2020/communication-complexity-reading-group/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2020/communication-complexity-reading-group/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2020/communication-complexity-reading-group/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="A Short Overview of Communication Complexity for Algorithms Designers (Reading Group) | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="A Short Overview of Communication Complexity for Algorithms Designers (Reading Group) | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2020-04-01" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2020/communication-complexity-reading-group/">A Short Overview of Communication Complexity for Algorithms Designers (Reading Group)</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> April 01, 2020 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/communication-complexity/">Communication Complexity</a>]</span>
+
+    
+
+
+<h1 id="communication-complexity">Communication Complexity</h1>
+<p><a rel="noopener" target="_blank" href="https://arxiv.org/abs/1509.06257">Communication Complexity for Algorithm Designers</a></p>
+<h1 id="communication-complexity-basics-based-on-chapter-4">Communication Complexity Basics (Based on Chapter 4)</h1>
+<ul>
+<li>Alice and Bob, have $x\in {0,1}^a$ and $y\in {0,1}^b$ both as private information.</li>
+<li>Both want to communicate to figure out a function $f:{0,1}^{a+b}\rightarrow {0,1}$.</li>
+</ul>
+<h2 id="one-way-communication-protocol">One Way Communication Protocol</h2>
+<ul>
+<li>Alice computes $A(x)$ and sends it to Bob for a function $A:{0,1}^a\rightarrow {0,1}^m$.</li>
+<li>Bob then decides by computing $B(y,A(x))$.</li>
+<li>Alice and Bob do not have a computation bound.</li>
+<li>The one way complexity of a function is the minimum over all protocols, worst case number of bits used by any one-way protocol that decides $f$ (remember, $A$, $B$ can be randomized).</li>
+<li>I.e., $\min_{ P\text{ protocol}} \max_{x\in {0,1}^a, y\in {0,1}^b} \lvert A(x)\rvert$ for all correct protocols $A(x)$. Similar definition for two-way communication.</li>
+</ul>
+<h2 id="disjointness-problem">Disjointness Problem</h2>
+<ul>
+<li>Let the Universe be $[n]$ and Alice, Bob having vectors $x,y$ being characteristic vectors of sets of size $k$.</li>
+<li>I.e., $[1,0,0,1]= {x_1,x_4}$ vs $[1,1,1,0] = { x_1, x_2, x_3}$.</li>
+<li>Accept if $S_x\cap S_y=\emptyset$.</li>
+</ul>
+<h3 id="deterministic-one-way-communication-complexity-for-disjointness">Deterministic One-way Communication Complexity for Disjointness</h3>
+<ul>
+<li>Every deterministic one-way protocol for disjointness has $n$ has worst-case communication complexity.</li>
+<li>Proof:
+<ul>
+<li>Consider Alice only sending $n-1$ bits.</li>
+<li>Now let us look at the set $S={ y\mid y=A(x) \text{ for any } x}$</li>
+<li>The size of this is obviously $2^{n-1}$.</li>
+<li>By pigeonhole principle, there are two distinct inputs where Alice sends the same message.</li>
+<li>As $x_1,x_2$ differ in at least one bit, Bob can have a set that is compatible with $x_1$ but not $x_2$ violating the correctness of the protocol.</li>
+</ul>
+</li>
+</ul>
+<h3 id="probabilistic-one-way-communication-complexity-for-disjointness">Probabilistic One-way Communication Complexity for Disjointness</h3>
+<ul>
+<li>
+<p>Public coins are both visible by Alice and Bob at the same time and don't contribute to the communication.</p>
+</li>
+<li>
+<p>Private coins where Alice and Bob have a private pool.</p>
+</li>
+<li>
+<p>Public coins are strictly more powerful.</p>
+</li>
+<li>
+<p>Public coin protocols are equivalent to distributions over deterministic protocols.</p>
+</li>
+<li>
+<p>Error constants and one vs two-sided errors follow with similar definitions as from normal complexity theory.</p>
+</li>
+<li>
+<p>Every randomized protocol that decides disjointness with probability $2/3$ correctly uses $\Omega(n)$ communication.</p>
+</li>
+<li>
+<p>Proof:</p>
+<ul>
+<li>[Yao Lemma]: Let $D$ be a distribution over the space of inputs $(x,y)$. Suppose that every deterministic one-way protocol cost at least $k$  with $\Pr[P\text{ is wrong on } (x,y)]\leq \varepsilon$. Then every public coin randomized protocol with error $\varepsilon$ has communication cost at least $k$.</li>
+<li>Proving the lemma:
+<ul>
+<li>Let $R$ be a randomized protocol that uses less than $k$ communication cost.</li>
+<li>Then $R$ is a distribution of deterministic protocols $P_1,\dots, P_s$, each with communication cost less than $k$ and some error probability.</li>
+<li>Assume every $P_i$ has error larger than $\varepsilon$, then no matter the distribution, $R$ would have error probability higher than $\varepsilon$.</li>
+<li>Hence there exists an $i$ such that $P_i$ has error probability less than $\varepsilon$ and it uses less than $k$ communication.</li>
+<li>This is a contradiction to the assumption.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="normal-communication">Normal Communication</h2>
+<ul>
+<li>Matrix view of input/output behavior $M(f)$.
+<ul>
+<li>Let us look in the following at Disjointness with the rows and columns being $\emptyset, { x_1}, {x_2}, {x_1, x_2}$ for $X$ and $Y$ respectively.</li>
+<li>$\begin{pmatrix} 1&amp; 1&amp; 1&amp; 1\ 1&amp; 0&amp; 1&amp; 0\ 1&amp; 1&amp; 0&amp; 0\ 1&amp; 0&amp; 0&amp; 0&amp;\end{pmatrix}$</li>
+</ul>
+</li>
+<li>Rectangles, i.e., take $X,Y$, chose subsets $A\subseteq X$ of rows and $B\subseteq Y$ of columns such that all $(x,y)\in A\times B$ have the same value (monochromatic).</li>
+<li>These Rectangles do not need to be continuous!</li>
+<li>Theorem: Let $f$ be a function such that every partition into monochromatic rectangles requires at least $t$ rectangles. Then the deterministic communication complexity is at least $\log t$.
+<ul>
+<li>Proof: A deterministic protocol of complexity $\log t$ can only have $t$ many different transcripts.</li>
+<li>It has to partition the sets into rectangles, as otherwise there would be a non-monochromatic rectangle where the protocol would make a mistake.</li>
+</ul>
+</li>
+<li>Corollary: Every covering of $M(f)$ by monochromatic rectangles requires at least $t$ rectangles, then the deterministic communication complexity is at least $\log t$.</li>
+<li>Note, $\log r$ where $r$ is the rank is a lower bound for the communication complexity but unknown if it is an upper bound for the complexity.</li>
+<li>Examples:
+<ul>
+<li>Equality is the identity matrix.</li>
+<li>$\begin{pmatrix} 1&amp; 0&amp; 0&amp; 0&amp;\ 0&amp; 1&amp; 0&amp; 0\ 0&amp; 0&amp; 1&amp; 0\ 0&amp; 0&amp; 0&amp; 1\end{pmatrix}$.</li>
+</ul>
+</li>
+<li>Disjointness has $\log \binom n k = k\log n/k$ as there are $\binom n k$ sets for a universe of size $n$ and subsets of size $k$.</li>
+</ul>
+<h2 id="randomized-disjointness">Randomized Disjointness</h2>
+<ul>
+<li>Theorem: There exists a distribution such that Disjointness has communication complexity at least $\Omega(k)$$.</li>
+<li>What is the distribution?
+<ul>
+<li>Take uniform distribution, the chance that $f(x,y)=1$ is $(3/4)^n$, hence, a algorithm that outputs the constant 1 has high success probability. Hence, accept and reject cases need constant probabilities.</li>
+<li>The inputs need to be distributed to not have significantly less than $\log n$ information content per input as otherwise the input can be send.</li>
+</ul>
+</li>
+<li>Distribution:
+<ul>
+<li>With probability $3/4$: $(x,y)$ is chosen uniformly at random subject to: $x,y$ have exactly $n/4$ ones and there <em>is no</em> index such that $x_i=y_i=1$.</li>
+<li>With probability $1/4$: $(x,y)$ is chosen uniformly at random subject to: $x,y$ have exactly $n/4$ ones and there <em>is</em> an index such that $x_i=y_i=1$.</li>
+</ul>
+</li>
+<li>Almost monochromatic 1 rectangles $R$ with respect to distribution $D$:
+<ul>
+<li>$\Pr[(x,y)\in R\text{ and } f(x,y)=0] \leq 8\varepsilon \Pr[(x,y)\in R\text{ and } f(x,y)=1]$</li>
+</ul>
+</li>
+<li>Show that an almost chromatic rectangle contains at most $2^{-c}$ mass of the distribution where $c$ is as large as possible.</li>
+<li>Proof not given.</li>
+<li>There is also a protocol that achieves this:
+<ul>
+<li>$Z_1,\dots$ uniform random subsets.</li>
+<li>Send: smallest index such that $X\subseteq Z_i$ for both.</li>
+<li>Discard elements that are not in the $Z_i$ you got.</li>
+<li>Repeat until empty set.</li>
+<li>Cut off communication at some probability related point.</li>
+</ul>
+</li>
+</ul>
+<h1 id="communication-complexity-datastructures-chapter-6">Communication Complexity Datastructures (Chapter 6)</h1>
+<ul>
+<li>The main point of this section will be to show Datastructure Lower Bounds for $\varepsilon$-Gap Hamming in the Cell Probe Model.</li>
+<li>Nearest Neighbor:
+<ul>
+<li>Given points $S={x_1,\dots,x_n}$ in the hamming cube $H^d={0,1}^d$ ($d$ roughly $\Omega(\sqrt{n})$).</li>
+<li>Build a structure $D$ such that: Given a point $x\in H^d$ find the closest point in $S$ to $x$ using $D$.</li>
+<li>This problem can be transferred to other metric spaces.</li>
+<li>Approximation problem where the distance between the real point and the point returned is $l(q,p)\leq (1+\varepsilon)l(q,p)$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="varepsilon-gap-hamming">$\varepsilon$-Gap Hamming</h2>
+<ul>
+<li>Specialization of Nearest Neighbor.</li>
+<li>$\varepsilon$-Gap Hamming: Decide if the hamming distance $l(x,y)$ is at most $L$ or at least $(1+\varepsilon)L$ for some input $L$.</li>
+<li>A communication protocol for this problem:
+<ul>
+<li>Sample a random string $r_1,\dots,r_s$, $r_i\in { 0,1}^d$ where $r_{i,j}=1$ with probability $\frac{1}{2L}$.</li>
+<li>Alice sends $h=&lt; x,r_1&gt;\mod 2, \dots, &lt;x,r_s&gt;\mod 2$.</li>
+<li>Bob compares $h=&lt;y,r_1&gt;\mod 2,\dots, &lt;y,r_s&gt;\mod 2$ and accepts if it differs only in a small number of coordinates.</li>
+<li>Intuitively this is close to testing equality, except with a bias for the testing string to be zero, i.e., ignore certain errors.
+<ul>
+<li>If $x,y$ differ in only a single bit, the probability for uniformly $r$ would be $1/2$ to reject.</li>
+<li>With every choice being $\frac{1}{2L}$, we are much more likely to produce zeroes where and hence, not recognize this.</li>
+</ul>
+</li>
+<li>The protocol has two-sided error (because of the "at most $L$").</li>
+</ul>
+</li>
+<li>Proof:
+<ul>
+<li>See the random process in a different light.</li>
+<li>Select relevant coordinate with probability $1/L$ and for relevant coordinates choose uniformly at random between $0$ and $1$.</li>
+<li>If $l(x,y)=\Delta$, then:</li>
+<li>$\Pr_j[\langle r_j,x\rangle \mod 2 \not\equiv \langle r_j,y\rangle\mod 2] = 1/2 \cdot \left(1- \left(1-\frac{1}{L}\right)^\Delta\right)$.</li>
+<li>i.e., at least one of the $\Delta$ coordinates is chosen (it is not true that all are not chosen) and then $r_i$ is chosen such that it recognizes the difference with probability $1/2$.</li>
+<li>Now what is the difference if $\Delta \geq (1+\varepsilon)L$?</li>
+<li>$\Pr_j [\langle r_j,x\rangle \mod 2 \not\equiv \langle r_j,y \rangle \mod 2] = 1/2 \left( 1-\frac{1}{L}\right)^L\left(1- \left(1-\frac{1}{L}\right)^{\varepsilon L}\right)$ by plugging $\Delta=(1+\varepsilon)L$.</li>
+<li>Now by $1-x\in [e^{-2x}, e^x]$ for $x\in [0,1]$ we can bound this by</li>
+<li>$\geq 1/2 \cdot e^{\frac{-2L}{L}} \cdot \left(1- e^{\frac{\varepsilon  L}{L}}\right)$.</li>
+<li>$\geq \frac{1}{2e^2}(1-e^{-\varepsilon})$.</li>
+<li>This is now constant.</li>
+<li>Let $t$ be the probability that $\langle r_i,x\rangle \mod 2 \not\equiv \langle r_i,y\rangle \mod 2$.</li>
+<li>So if $l(x,y)\leq \Delta$, we expect $ts$ many random inner products to be different while if $l(x,y)\geq (1+\varepsilon)\Delta$ then at least $(t+O(\varepsilon))s$ to be different.</li>
+<li>Chernoff now implies the following:</li>
+<li>If the distance is less than $L$ between $x,y$ then the distance of the resulting vectors is at most $(t+1/2 \cdot h(\varepsilon))s$</li>
+<li>If the distance is greater than $(1+\varepsilon)L$ between $x,y$ then the distance of the resulting vectors is at least $(t+1/2 \cdot h(\varepsilon))s$</li>
+</ul>
+</li>
+</ul>
+<h2 id="lower-bounds-via-asymmetric-communication-complexity">Lower Bounds via Asymmetric Communication Complexity</h2>
+<ul>
+<li>Cell Probe model:
+<ul>
+<li>Computation Model, so we can prove lower bounds against this model for some problems.</li>
+<li>$D:{0,1}^n \times {0,1}^* \rightarrow {0,1}^{s w}$</li>
+<li>Store a database $D$ to answer a set of Queries $Q$ that is known up front. Store $D$ as $s$ cells of $w$ bits.</li>
+<li>Every query algorithm gets the content of cells he specifies.</li>
+<li>Answer every query in $Q$ correctly.</li>
+<li>Query Space (something like this): $\max_x \max_Q \log_w |D(x,Q)|$.</li>
+<li>Every query is if $q\in D$, hence $\log Q$ is the trivial upper bound.</li>
+</ul>
+</li>
+<li>Index Problem:
+<ul>
+<li>Alice has an $i\in [n]$ and Bob $y\in {0,1}^n$. The question is to compute $y_i$.</li>
+<li>Every randomized communication protocol for index has either Alice send at least $\delta \log n$ bits or Bob send at least $n^{1-2\delta}$ bits, both in the worst case.</li>
+<li>Miltersen Lemma: If $M(f)$ has at least $v$ columns that have at least $u$ 1-inputs and there is a deterministic protocol that computes $f$ and Alice, Bob send at most $a,b$ bits respectively. Then $M(f)$ has a 1-rectangle $A\times B$ with $\lvert A\rvert \geq u/2^a$ and $\lvert B\rvert \geq v/2^{a+b}$.</li>
+<li>A datastructure with query time $t$, space $s$, word size $w$ induces a communication protocol for INDEX in which Alice sends $t\log s$ bits and Bob sends at most $tw$ bits.
+<ul>
+<li>Bob builds the datastructure, Alice queries it.</li>
+<li>Alice makes $t$ queries with everything an cell in the database.</li>
+<li>Bob answers the $t$ queries with the content of the cells of size $w$.</li>
+<li>If Alice can afterwards decide INDEX, then the communication protocol worked.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>$(k,l)$ Disjointness:
+<ul>
+<li>Alice has set of size $k$ and Bob of size $l$ from a common universe and they need to decide if the sets are disjoint.</li>
+<li>Solving $(1/\varepsilon^2, n)$-Disjointness on a Universe of size $2n$ has either Alice send at least $\delta/\varepsilon^2 \log n$ bits or Bob send at least $n^{1-2\delta}$ bits for large enough constant $\delta$.</li>
+</ul>
+</li>
+<li>Finding hardness of Gap-Hamming in the Cell probe model via reduction to $(1/\varepsilon,n)$-Disjointness.
+<ul>
+<li>
+<p>I.e., If we solve Gap-Hamming, we solve $(1/\varepsilon,n)$-Disjointness.</p>
+</li>
+<li>
+<p>Nearest Neighbor:</p>
+<ul>
+<li>Given points $S={x_1,\dots,x_n}$ in the hamming cube $H^d={0,1}^d$ ($d$ roughly $\Omega(\sqrt{n})$).</li>
+<li>Build a structure $D$ such that given a point $x\in H^d$ find the closest point in $S$ to $x$ using $D$.</li>
+</ul>
+</li>
+<li>
+<p>$(1/\varepsilon,n)$-Disjointness: Are sets disjoint with size $1/\varepsilon$ and $n$.</p>
+</li>
+<li>
+<p>Solve $(1/\varepsilon,n)$-Disjointness with Gap Hamming</p>
+</li>
+<li>
+<p>Easy reduction:</p>
+<ul>
+<li>Map to $2n$ dimensional hypercube ${0,1}^{2n}$.</li>
+<li>Alice has a set of size $1/\varepsilon$ from universe of dimension $2n$.</li>
+<li>Alice maps her input set $S$ to the characteristic vector in ${0,1}^{2n}$.</li>
+<li>Bob maps his input set $T$ to the point set ${ e_i\mid i\in T}$  where $e_i$ is the characteristic vector of the singleton set.</li>
+<li>If $S,T$ are disjoint then the query has distance $1/\varepsilon +1$ distance from every point.</li>
+<li>If they are not disjoint, there exists a point that has distance at most $1/\varepsilon -1$.</li>
+<li>Both are easy to see. Remember that $\lvert S\rvert = 1/\varepsilon$, i.e., Alice has a vector of hamming weight $1/\varepsilon$.</li>
+<li>Having overlap, means that there exists an $e_i$ where the corresponding value is also 1. Looking at the distance, we have $\sum_{i\in S} 1\leq \lvert S\rvert -1 = 1/\varepsilon -1$.</li>
+<li>Thus we reduce to Gap-Hamming with $1/\varepsilon+1$ vs $1\geq 1/\varepsilon-1$ (notice that this is the smallest increase, hence it holds for all reasonable gaps).</li>
+<li>If we could decide Gap-Hamming in Cell Probe model with these approximation with $w$ word size, $s$ space and $t$ queries then we would have a $t\log s + tw$ communication protocl.
+<ul>
+<li>This is just Alice queries Bob who has the datastructure $t$ times with cell described by $\log s$.</li>
+<li>Bob answers $t$ queries with the content of the cell of size $w$.</li>
+</ul>
+</li>
+<li>As $(1/\varepsilon,n)$-Disjointness communication has lower bounds of $\delta/\varepsilon \log n$ and $n^{1-2\delta}$.</li>
+<li>Hence, $t\log s\geq \delta/\varepsilon \log n$ and $tw\geq n^{1-2\delta}$.</li>
+</ul>
+</li>
+<li>
+<p>Hardness of high dimensional Gap-Hamming is not very interesting.</p>
+</li>
+<li>
+<p>Lemma 6.6:</p>
+<ul>
+<li>There exists a randomized function $f$ from ${0,1}^{2n}\rightarrow {0,1}^d$ such that for every set $P$ of $n$ points and query $q$ produced by the reduction above, then with probability at least $1-1/n$:</li>
+<li>If the nearest neighbor distance between $q$ and $P$ is $1/\varepsilon +1$ then the nearest neighbor distance between $f(q)$ and $f(P)$ is at most $\alpha$.</li>
+<li>If the nearest neighbor distance between $q$ and $P$ is at most $1/\varepsilon -1$ then the nearest neighbor distance between $f(q)$ and $f(P)$ is at most $\alpha(1+h(\varepsilon))$.</li>
+<li>This map takes $d=\Theta(\varepsilon^{-2}\log n)$ and random inner products with $2n$ bit vectors.</li>
+<li>In essence, this lemma allows us to reduce the dimension of the easy reduction with some probability.</li>
+</ul>
+</li>
+<li>
+<p>Corollary: Every lower bound for $(1/\varepsilon,n)$-Disjointness carries over to the Query-Database problem for the $(1+\varepsilon)$ approximate Nearest Neighbor problem in $d=\Omega(\varepsilon^{-2} \log n)$.</p>
+</li>
+<li>
+<p>Corollary: Every datastructure for $(1+\varepsilon)$-approximate nearest neighbor with query time $t=\theta(1)$ and word size $O(n^{1-\delta})$ uses space $s=n^{\Omega(\varepsilon^{-1})}$.</p>
+<ul>
+<li>Plugging this into our equations gives roughly:
+<ul>
+<li>$c\log s \geq c'/\varepsilon \log n$ and $cn^{1-\delta}\geq n^{1-2\delta}$.</li>
+<li>This gives us a bound of $s\geq n^{c'/\varepsilon}$, what the corollary says.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This can be refined to $s=n^{\Omega(\varepsilon^{-2})}$ with a slightly better reduction.</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2020/lowerbounds-25power/">&#8249; Lower bounds on the sum of 25th-powers of univariates lead to complete derandomization of PIT</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2020/circuitlowerbounds-from-algorithms/"> Lower Bounds in Computational Complexity Boot Camp &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

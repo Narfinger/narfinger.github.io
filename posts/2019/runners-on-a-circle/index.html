@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>On the Distribution of Runners on a Circle | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2019/runners-on-a-circle/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2019/runners-on-a-circle/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2019/runners-on-a-circle/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="On the Distribution of Runners on a Circle | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="On the Distribution of Runners on a Circle | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2019-07-02" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2019/runners-on-a-circle/">On the Distribution of Runners on a Circle</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> July 02, 2019 <span class="rpad"></span></span>
+
+    
+
+
+<h1 id="resources">Resources</h1>
+<ul>
+<li>[https://arxiv.org/abs/1906.02511](Pavel Hrubes - On the distribution of Runners on a circle)</li>
+<li>We slightly modify the notation to make it clearer in our eyes.</li>
+</ul>
+<h1 id="main-theorem">Main Theorem</h1>
+<ul>
+<li>$n$ runners on a circle of unit length having exactly $k$ distinct speeds.</li>
+<li>Then there exists a sector $S$ such that $S$ contains at least $\lvert S\rvert n + c\sqrt{k}$ runners where $c&gt;0$ is some fixed constant.</li>
+<li>Real tau conjecture implies the conjecture on newton polynomials.</li>
+</ul>
+<h1 id="main-definitions">Main Definitions</h1>
+<ul>
+<li>We will identify the interval $[0,1)$ with a circle.</li>
+<li>Let $S_{\alpha,\gamma} = \lbrace x \in [0,1] \mid x-a \mod 1 \leq \gamma \rbrace$, i.e, the sector that starts at $\alpha$ and continues for $\gamma$.</li>
+<li>$\chi_S(x) = \begin{cases} 1&amp; x\mod 1 \in S\ 0&amp; \text{otherwise}.\end{cases}$</li>
+<li>$#\chi_S=\sum_{i=1}^n \chi_S(x_i)$.</li>
+</ul>
+<h2 id="discrepancy">Discrepancy</h2>
+<ul>
+<li>Discrepancy $D(r_1,\dots,r_n)= \sup_{0\leq a\leq b\leq 1} \frac{1}{n} \lvert (\lvert i\mid r_i\in [a,b]\rvert) -n(b-a)\rvert$.</li>
+<li>Bias = $nD(r_1,\dots,r_n)$.</li>
+<li>Notice that all these things will be applied $\mod 1$ in our case.</li>
+<li>What is discrepancy?
+<ul>
+<li>It measures roughly how equi distributed across the circle.</li>
+<li>I.e., equidistributed tends to 0 while a heap tends to 1.</li>
+</ul>
+</li>
+<li>Theorem 1 in discrepancy statement:
+<ul>
+<li>Let $s_1,\dots,s_n\in [0,1)$ and $v_1,\dots, v_n\in \mathbb{R}$ with $k$ distinct $v_i$s. Then there exists a $t$ such that $B(s_1+tv_1,\dots, s_n + tv_n) \geq \sqrt{k/12}$.</li>
+</ul>
+</li>
+<li>How the theorems are identical is clear, as the $a,b$ in the discrepancy gives us our sector.</li>
+</ul>
+<h1 id="main-proof">Main Proof</h1>
+<h2 id="lemma-4">Lemma 4</h2>
+<ul>
+<li>$\int_{t=0}^1 \int_{\alpha=0}^1 \chi_{S_{\alpha,\gamma}}(s_1 + t v_1) d\alpha dt = \gamma$</li>
+<li>$\int_{t=0}^1 \int_{\alpha=0}^1 \chi_{S_{\alpha,\gamma}}(s_1 + t v_1)\chi_{S_{\alpha,\gamma}}(s_ + t v_2) d\alpha dt = \gamma^2$</li>
+<li>Proof:
+<ul>
+<li>$\int_{\alpha=0}^1 \chi_{S_{\alpha,\gamma}}(s_1 + t v_1) d\alpha = \int_{t=0}^1 \chi_{S_{\alpha,\gamma}}(s_1 + t v_1)dt = \gamma$
+<ul>
+<li>Because $\chi$ is a step function that is one for $\gamma$ steps. Hence, if we "rotate" our sector or "rotate" our point, we will land for a $\gamma$ interval in it.</li>
+<li>As $\chi_{S_{\alpha,\gamma}}(x+z) = \chi_{S_{\alpha-z,\gamma}}$ we can rewrite the statement</li>
+<li>$\int_{\alpha=0}^1 \chi_{S_{\alpha-tv_1,\gamma}}(s_1)\chi_{S_{\alpha-tv_2,\gamma}}(s_2 + t v_2) d\alpha$</li>
+<li>By shifting the range we get $\int_{\alpha=-tv_1}^{tv_1} \chi_{S_{\alpha,\gamma}}(s_1)\chi_{S_{\alpha+(v_1-v_2)t,\gamma}}(s_2) d\alpha$</li>
+<li>As $\chi_{S_{\alpha,\gamma}}$ is 1 periodic in the first argument, we can shift the borders without shifting the indices, giving us:</li>
+<li>$\int_{t=1}^1 \int_{\alpha=0}^{1} \chi_{S_{\alpha,\gamma}}(s_1)\chi_{S_{\alpha+(v_1-v_2)t,\gamma}}(s_2) d\alpha dt$</li>
+<li>Now we can change the order of integration and notice that the first part is independent of $t$:</li>
+<li>$\int_{t=1}^1  \chi_{S_{\alpha,\gamma}}(s_1) \int_{\alpha=0}^{1} \chi_{S_{\alpha+(v_1-v_2)t,\gamma}}(s_2) d\alpha dt$</li>
+<li>Now by a similar border shifting as above, we get that this is equal to:</li>
+<li>$\int_{t=1}^1  \chi_{S_{\alpha,\gamma}}(s_1) \gamma d\alpha dt = \gamma^2$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lemma-6">Lemma 6</h2>
+<ul>
+<li>Let there be $m$ different runners and  $#\chi_{S_{\alpha,\gamma}}(\bar s+t\bar v)$ then $\int_{\gamma=0}^1 \left(#\chi_{S_{\alpha,\gamma}} -ym\right)^2\geq \frac{1}{12}$.</li>
+<li>Proof:
+<ul>
+<li>As $#\chi_{S_{\alpha,\gamma}}$ is integer valued, $\lvert #\chi_{S_{\alpha,\gamma}} - \gamma m\rvert \geq d(\gamma m)$ where $d(x) \in [0,1/2]$, the distance to the nearest integer.</li>
+<li>By the definition $d(\gamma n)$ is $1/m$ periodic and symmetric around $\frac{1}{2m}$.</li>
+<li>Hence $\int_{\gamma=0}^1 d(\gamma m)^2 = 2n \int_{\gamma=0}^{1/2 m} d(\gamma m)^2$ (where the left hand side is a lower bound of the equation we want to estimate).</li>
+<li>As if $\gamma \in [0,\frac{1}{2m}]$ then $d(\gamma m)=\gamma m$.</li>
+<li>$\int_{\gamma=0}^{\frac{1}{2m}} d(\gamma m)^2 = m^2 \int_{\gamma =0}^{\frac{1}{2m}} \gamma^2 = \frac{m^2}{3 (2m)^3} = \frac{1}{24m}$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="theorem-1-proof">Theorem 1 Proof</h2>
+<ul>
+<li>Let $v_1,\dots,v_k$ be the distinct speeds of the overall speeds $v_1,\dots,v_n$.</li>
+<li>Let $A_i$ be the runners with speed $v_i$, $i\in [k]$.</li>
+<li>We can look at $#<em>j\chi</em>{S_{\alpha,\gamma}}(\bar s + t \bar v)$ where we only sum over the bucket $A_j$, $j\in [k]$, i.e., $\sum_{i \in A_i} \chi_{S_{\alpha,\gamma}}(s_i + t v_i)$. And $#\chi_{S_{\alpha,\gamma}}(\bar s + t\bar v)$ is the total sum.</li>
+<li>We will estimate $\int_{\alpha=0}^1\int_{\gamma=0}^1 \int_{t=0}^1 \left(#\chi_{S_{\alpha,\gamma}}(\bar s + t\bar v)\right)$.</li>
+<li>For ease of notation let $g_j(\alpha,\gamma,t)=#<em>j\chi</em>{S_{\alpha,\gamma}}(\bar s + t\bar v) - \gamma \lvert A_j\rvert$.</li>
+<li>Lemma 6 gives us that $\int_{\alpha=0}^1\int_{\gamma=0}^1 \int_{t=0}^1 g_j(\alpha,\gamma,t) \geq 1/12$.</li>
+<li>By Lemma 4, $\int_{\alpha=0}^1\int_{\gamma=0}^1 \int_{t=0}^1 g_j(\alpha,\gamma,t)g_{j'}(\alpha,\gamma,t)=0$ if $j\neq j'$.
+<ul>
+<li>By Lemma 4, we have $\int_{\alpha=0}^1 \int_{t=0}^1 #<em>j\chi</em>{S_{\alpha,\gamma}}(\bar s + t \bar v) = \gamma \lvert A_j\rvert$ (notice that we have $\lvert A_j\rvert$ many parts which by linearity of integrals just multiply out)</li>
+<li>Hence, again by Lemma 4: $\int_{\alpha=0}^1 \int_{t=0}^\infty g_j(\alpha,\gamma,t)g_{j'}(\alpha,\gamma,t)$ can be written as</li>
+<li>$\int_{\alpha=0}^1\int_{t=0}^1 #<em>j\chi</em>{S_{\alpha,\gamma}} #<em>{j'}\chi</em>{S_{\alpha,\gamma}} -\int_{\alpha=0}^1\int_{t=0}^1\gamma \lvert A_j\rvert #<em>{j'}\chi</em>{S_{\alpha,\gamma}} - \int_{\alpha=0}^1\int_{t=0}^1 \gamma \lvert A_{j'}\rvert #<em>j\chi</em>{S_{\alpha,\gamma}}  + \int_{\alpha=0}^1\int_{t=0}^1 \gamma^2\lvert A_j\rvert \lvert A_{j'}\rvert$.</li>
+<li>This is equal to $\int_{\alpha=0}^1\int_{t=0}^1 #<em>j\chi</em>{S_{\alpha,\gamma}} #<em>{j'}\chi</em>{S_{\alpha,\gamma}} - \gamma^2\lvert A_j\rvert \lvert A_{j'}\rvert$. (using linearity and that we know $\int_{\alpha=0}^1 \int_{t=0}^1 #<em>j\chi</em>{S_{\alpha,\gamma}}(\bar s + t \bar v) = \gamma \lvert A_j\rvert$).</li>
+<li>We can also see $\int_{\alpha=0}^1\int_{t=0}^1 #<em>j\chi</em>{S_{\alpha,\gamma}} #<em>{j'}\chi</em>{S_{\alpha,\gamma}}=\sum_{i\in A_j, i'\in A_{j'}} \int_{\alpha=0}^1 \int_{t=0}^1 \chi_{S_{\alpha,\gamma}}(s_i + t v_i) \chi_{S_{\alhpa,\gamma}}(s_{i'} + t v_{i'})$.</li>
+<li>By the second part of the lemma, this is equal to $\gamma^2 \lvert A_i\rvert \lvert A_{i'}\rvert$.</li>
+<li>Hence, the equation is zero.</li>
+</ul>
+</li>
+<li>$\int_{\alpha=0}^1\int_{t=0}^1 \left(#\chi_{S_{\alpha,\gamma}} - \gamma n\right)^2$</li>
+<li>By substitution this is equal to $\int_{\alpha=0}^1\int_{t=0}^1 \left(\sum_{j=1}^k g_j\right)^2$</li>
+<li>By linearity of integral $=\sum_{j=1}^k \int_{\alpha=0}^1\int_{t=0}^1 g_j^2 + \sum_{j\neq j'} \int_{\alpha=0}^1\int_{t=0}^1 g_j g_{j'}$.</li>
+<li>By the above argument this is $\geq k/12$.</li>
+<li>This implies that there exists $\alpha,t,\gamma$ such that $\lvert\int_{\alpha=0}^1\int_{t=0}^1 #\chi_{S_{\alpha,\gamma}} - \gamma n\rvert \geq \sqrt{\frac{k}{12}}$.</li>
+<li>This is a standard argument. Assume all would be smaller than as k does not depend on $\alpha,\gamma$ or $t$ the integral would just be $\geq k/12$.</li>
+</ul>
+<h1 id="theorem-1-is-tight">Theorem 1 is tight</h1>
+<h2 id="theorem-7">Theorem 7</h2>
+<ul>
+<li>Let $v_i=i$. For every $s_1,\dots,s_n$ and every $t,\gamma$ the following holds: For every sector of aperture $\gamma$, $B(s_1+tv_1,\dots,s_n + tv_n) \leq O(\sqrt{n\log n})$.</li>
+</ul>
+<h1 id="tau-conjecture-relation-proof">Tau conjecture relation proof</h1>
+<h2 id="setup">Setup</h2>
+<ul>
+<li>Real $\tau$ conjecture: a real univariate polynomial $\sum_{i=1}^p \prod_{j=1}^q f_{i,j}$ where $f_{i,j}$ has support smaller than $r$ has at most $(pqr)^c$ distinct real roots.</li>
+<li>Newt(f(x,y)): Let $f(x,y)=\sum_{i,j} \alpha_{i,j} x^i y^j$ and let supp(f)=${ (i,j) \mid \alpha_{i,j}\neq 0}$. Then the Newton polytope is the convex hull of supp(f).</li>
+<li>Newton conjecture: Let $f(x,y)$ be a real polynomial than Newt(f(x,y)) has at most $(pqr)^c$ vertices.</li>
+</ul>
+<h2 id="theorem-3">Theorem (3)</h2>
+<ul>
+<li>Let $f(x,y)$ be a bivariate complex polynomial such that Newt(f(x,y)) has $k$ vertices. Then there exists a real polynomial with $\Omega(k)$ roots.</li>
+</ul>
+<h3 id="lemma-14">Lemma 14</h3>
+<h4 id="statement">Statement</h4>
+<ul>
+<li>Let $g(x,y) = y^m \sum_{j=n_1}^{n_2} c_j x^j y^{qj}$.</li>
+<li>Let $h(x,y)$ be a real polynomial such that $Newt(h)$ lies strictly above the line $l$.</li>
+<li><strong>Then</strong>: There $0&lt;d&lt;d'$ such that for every $r$ sufficiently small, $g(x,r)+h(x,r)$ contains a root in the interval $(dr^{-q}, d'r^{-q})$</li>
+</ul>
+<h4 id="proof">Proof</h4>
+<p><strong>FILL</strong></p>
+<h3 id="lemma-15">Lemma 15</h3>
+<h4 id="statement-1">Statement</h4>
+<ul>
+<li>Let $V(r_1,\dots,r_k)=\lvert { i\in [k] \mid r_i r_{i+1}&lt;0}\rvert$ the number of sign variations in a sequence.</li>
+<li><strong>Then</strong>: $V(\cos(\alpha_1 + \phi n_1),\dots, \cos(a_k + \phi n_k)) \geq (k-1)/8$.</li>
+</ul>
+<h3 id="proof-of-the-theorem">Proof of the Theorem</h3>
+<ul>
+<li>Let $Newt(f(x,y))$ be such that it has $k$ edges.</li>
+<li>Let it have $s\geq (k-2)/2$ lower edges <strong>WHY?</strong></li>
+<li>Let $e_1,\dots,e_s$ with gradients $q_1,\dots,q_s$ be these edges (with the edge $e_i$ connecting $(a_i,b_i)$ and $(a_{i+1},b_{i+1})$).</li>
+<li>Let $re^{\iota \alpha_i}$ be the coefficient of $x^{a_i b_i}$.</li>
+<li>We can write the real part of $f_{e_i}(x,re^{\iota \phi})$ as $\cos(\alpha_i + b_i \phi)r_ir^{b_i}x^{a_i} + \cos(\alpha_{i+1} + b_{i+1}\phi)r_{i+1}r^{b_i}x^{a_{i+1}} + R(u_i)$ where $u_i$ is such that $Newt(u_i)$ is strictly contained between $(a_i,b_i)$ and $(a_{i+1},b_{i+1})$.</li>
+<li>Let $T(\phi)$ be the sequence $\cos(\alpha_1 + \phi b_1),\dots,\cos(\alpha_{s+1} + \phi b_{s+1})$.</li>
+<li>By the previous lemma, there exist a $\phi$ such that $V(T(\phi))$ has at least $(k-1)/8$ many sign changes.</li>
+<li>By Lemma 14, we can conclude that $R(f(x,re^{\iota \phi}))$ has a root in the interval $(d_ir^{-q_i}, d'_ir^{-q_i})$ for every $r$ sufficiently small. <strong>FIGURE THIS OUT EXACTLY</strong></li>
+<li>As $r$ shrinks, the intervals become disjoint and hence, we have at least $(s-1)/8$ distinct roots.</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2019/parity-helps-compute/">&#8249; Parity helps to compute majority</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2019/balancing-sets/"> Balancing Sets and Majority Lower bounds &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

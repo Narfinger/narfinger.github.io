@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2021/randomized-computation/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2021/randomized-computation/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2021/randomized-computation/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2021-11-16" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2021/randomized-computation/">Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> November 16, 2021 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/communication-complexity/">Communication Complexity</a>]</span>
+
+    
+
+
+<h1 id="2021-07-25-md-tight-bounds-for-the-randomized-and-quantum-communication-complexities-of-equality-with-small-error">2021-07-25-MD-Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error</h1>
+<p><a rel="noopener" target="_blank" href="https://eccc.weizmann.ac.il/report/2021/113/">paper</a></p>
+<h1 id="results">Results</h1>
+<ul>
+<li>I am only going to cover the convertion between public coin protocols to private coin protocols.</li>
+<li>This is an improvement over the original Newman's Theorem.</li>
+<li>Theorem (Neumann): $R_{\epsilon +\delta}^{priv}(F) \leq R_\epsilon^{pub}(F) + \log n/\delta^2 + O(1)$.</li>
+<li>Result: $\forall \epsilon,\delta$ in sufficient ranges $R_{\epsilon (1 +\delta)}^{priv}(F) \leq R_\epsilon^{pub}(F) + \log n/\epsilon + \log 6/\delta^2$.
+<ul>
+<li>This follows similar to Neumann but uses a multiplicative Chernoff bound instead of an additive one.</li>
+<li>This seems like a good way to get familiar with this proof.</li>
+</ul>
+</li>
+</ul>
+<h1 id="proof">Proof</h1>
+<ul>
+<li>Let $\Pi$ be a protocol that computes $F$ with error $\epsilon$.</li>
+<li>Set $B=6n/\delta^2\epsilon$.</li>
+<li>Independently choose random strings $r_1,\dots,r_B$ according to the distribution used by $\Pi$.</li>
+<li>Let $I_{j,x,y}$ denote the indicator that $r_j$ is a bad random string for $x,y$.</li>
+<li>Fix two arbitrary inputs $x,y$. The error probability implies that $\Pr_{r_1,\dots,r_B}[I_{j,x,y}=1] \leq \epsilon$.</li>
+<li>Linearity of expecation now gives $E_{r_1,\dots,r_B}[\sum_{j\in B}I_{j,x,y}]\leq B\epsilon =6n/\delta^2$.</li>
+<li>Now we give an upper bound on $\Pr_{r_1,\dots,r_B}[\sum_{j\in B}I_{j,x,y} \geq B\epsilon(1+\delta)]$.</li>
+<li>This can be bounded by Chernoff with $\leq \exp(-\delta^2 6n/3\delta^2)=\exp(-2n) &lt; 2^{-2n}$.</li>
+<li>Now we union bound over all $x,y$ giving us $Pr[\text{the sum is above B\epsilon(1+\delta) for some x,y}]\leq \sum_{x,y} Pr[...]$</li>
+<li>This is bounded by $2^{2n} 2^{-2n}=1$.</li>
+<li>Hence, there exists a choice of $r_1,\dots,r_B$ that gives the protocol random private coin bits.</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/symmetric-mod-bound/">&#8249; Smaller ACC0 Circuits for Symmetric Functions</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/dealer-guesser/"> Keep that card in mind &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Lower Bounds in Computational Complexity Boot Camp | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2020/circuitlowerbounds-from-algorithms/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2020/circuitlowerbounds-from-algorithms/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2020/circuitlowerbounds-from-algorithms/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Lower Bounds in Computational Complexity Boot Camp | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Lower Bounds in Computational Complexity Boot Camp | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2020-03-25" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2020/circuitlowerbounds-from-algorithms/">Lower Bounds in Computational Complexity Boot Camp</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> March 25, 2020 <span class="rpad"></span></span>
+
+    
+
+
+<h1 id="lower-bounds-in-computational-complexity-boot-camp">Lower Bounds in Computational Complexity Boot Camp</h1>
+<ul>
+<li>Based on Simons Institute Lectures: Lower Bounds in Computational Complexity Boot Camp on <a rel="noopener" target="_blank" href="https://simons.berkeley.edu/videos">Simons</a></li>
+</ul>
+<h1 id="circuit-lower-bounds-from-algorithm-design-part-1">Circuit Lower Bounds from Algorithm Design Part 1</h1>
+<ul>
+<li>Find Task $A'$ is possible for computation model $B'$ <em>implies</em> Task $A$ is possible for model $B$.</li>
+<li>Show that Task $A'$ is possible for computation model $B'$.
+<ul>
+<li>Task $A'$ is about analyzing model $B$.</li>
+<li>Define Task $A$ in terms of model $B'$.</li>
+</ul>
+</li>
+<li>If there exists a non-trivial circuit analysis, then this tells us about the limiatations of circuits in modeling algorithms.</li>
+</ul>
+<p>Open Questions:</p>
+<ul>
+<li>$NEXP\subseteq P/poly$?</li>
+<li>$NP\subseteq SIZE(O(n))$? Best known $NP\subseteq SIZE(5n), SIZE(3.01n)$.</li>
+</ul>
+<p>Generalized Circuit Satisfiability</p>
+<ul>
+<li>For any circuit class $\mathcal{C}$ we can define $\mathcal{C}$-Sat: Given a circuit $C$ from $\mathcal{C}$ is there an assignment such that $C(a_1,\dots,a_n)=1$?
+<ul>
+<li>$\mathcal{C}$-Sat is NP-complete and solvable in $O(2^n \lvert C\rvert)$</li>
+</ul>
+</li>
+<li>Gap-$\mathcal{C}$-Sat, with promise $C\equiv 0$ or $\Pr[C(x)=1]\geq 1/2$. Decide which true.
+<ul>
+<li>Solvable in randomized polytime.</li>
+<li>If Gap-Circuit-SAT in $P$ then $P=RP$.</li>
+<li>Gap-kSAT is $P$ for all $k$.</li>
+</ul>
+</li>
+</ul>
+<p>Proved Connections:</p>
+<ul>
+<li>Deterministic for Circuit SAT in $O(2^n/n^{10})$ with $N$ inputs and $n^k$ gates <em>then</em> $NEXP\not\subseteq P/poly$.</li>
+<li>Formula SAT in $O(2^n/n^{10})$ <em>then</em> $NEXP\not\subseteq$ Poly size formulas</li>
+<li>$\mathcal{C}-SAT$ in $O(2^n/n^{10})$ <em>then</em> $NEXP\not\subseteq $poly size $\mathcal{C}$ (under reasonable assupmption)</li>
+<li>Gap-$\mathcal{C}$-SAT in $O(2^n/n^{10})$ time on $n^k$ size then $NEXP\not\subseteq $poly size $\mathcal{C}$.</li>
+<li>Notice that the model on the left side does not really matter.</li>
+<li>For ACC and ACC of Thr, the concrete lower bounds improved.</li>
+<li>If you improve the circuit SAT on the left, we get better lower bounds, i.e., Circuit SAT in $O(2^{n-n^\varepsilon})$ and $2^{n^\varepsilon}$ gates then NTIME[$n^P polylog n}]\not\subseteq P/poly$.</li>
+</ul>
+<p>Even Finer Grained Sat gives us bound against NP</p>
+<ul>
+<li>Circuit SAT in $O(2^{(1-\varepsilon)n})$ on $n$ inputs and $2^{n\varepsilon}$ <em>then</em> NP does not have $n^k$ size circuits for all $k$.
+<ul>
+<li>This is not equal to $NP\neq P/poly$.</li>
+<li>I.e., You pick a $k$ and it will not have a $n^k$ size circuit (but might have $n^{k^k})$ circuits.</li>
+</ul>
+</li>
+<li>Some variants of this would refute Strong ETH</li>
+<li>Gap-$\mathcal{C}$-SAT in $O(2^{(1-\varepsilon)n})$ on $2^{\varepsilon n}$ gates is believed to be true.</li>
+<li>Proven for some circuit class SUM of THR, RUM of RELL, SUM of POL [W18].</li>
+</ul>
+<h1 id="circuit-lower-bounds-from-algorithm-design-part-2">Circuit Lower Bounds from Algorithm Design Part 2</h1>
+<ul>
+<li>
+<p>Quasi-NP does not have ACC $\circ$ Thr circuits of polynomial size.</p>
+</li>
+<li>
+<p>Theorem A: If for all $k$, Gap $\mathcal{C}$-SAT on $n^k$ size is in $O(2^n/n^k)$ time then NEXP does not have poly size $\mathcal{C}$ circuits.</p>
+<ul>
+<li>Proof by contradiction, assume NEXP has poly-size $\mathcal{C}$ circuits and a faster GAP $\mathcal{C}$-SAT algorithm, then NTIME$[2^n]\subseteq$ NTIME[$o(2^n)]$.</li>
+<li>Guess a witness of $O(2^n)$ length and check if it is a witness for $x$ in $O(2^n)$. <em>Easy Witness Lemma</em></li>
+<li>Speed up both of these steps.</li>
+<li>If NEXP has small poly size circuits, then there are witnesses of length $o(2^n)$.</li>
+<li>Use highly-structured PCPs to check a witness $y$ for $x$ in $o(2^n)$ time (reduces to GAP $\mathcal{C}$-SAT to check the PCP).</li>
+</ul>
+</li>
+<li>
+<p>Easy Witness Lemma:</p>
+</li>
+<li>
+<p>For all verifiers, if we have a witness than the verifier accepts on that witness and it can be compressed, i.e., there exists a circuit of $\lvert x\rvert + d$ inputs and the
+truth table is also a witness</p>
+</li>
+<li>
+<p>If NEXP is in P/poly than all NEXP problems have easy witnesses [IKW02].</p>
+</li>
+<li>
+<p>If NEXP is in P/poly, we can guess a circuit that is the compressed witness.</p>
+</li>
+<li>
+<p>Then use GAP $\mathcal{C}$-SAT algorithm to check if the circuit encodes a witness.</p>
+</li>
+<li>
+<p>Easy Witness Lemma only works for NEXP.</p>
+</li>
+<li>
+<p>New Easy Witness Lemma exists for NP and Quasi-NP [ME28].</p>
+</li>
+</ul>
+<p>IKW Easy Witness Lemma</p>
+<ul>
+<li>NTIME[$2^n$] $\subseteq $ SIZE[$n^k$] for some $k$ then NTIME[$$2^n$] has $n^c$ size witness circuits for some $c$.</li>
+<li>Proof:
+<ul>
+<li>Assume the negation: exists k NTIME[$2^n$]$\subseteq$ SIZE[n^k]]]$ and for all $c$ NTIME[$2^n$] <em>does not</em> have $n^c$ size witness circuits.</li>
+<li>Start with $L$ that is solvable in SPACE[$n^{k+1}$] but not in SIZE[$n^k$] infinitely often.</li>
+<li>Assumptions now apply SPACE[$n^{k+1}$] $\subseteq $ MA $\subseteq$ infinitely often NTIME[$2^n$]$/n$ ($n$ bit advice) $\subseteq$ infinitely often SIZE[$n^k$].</li>
+</ul>
+</li>
+</ul>
+<p>Scaling Witness Lemma down to NP</p>
+<ul>
+<li>New lower bound for MA lower bound.</li>
+<li>There is a language $L$ in MA-TIME[$n^{k^2}$]$/O(\log n)$ such that for all but finitely many input length $n$, either $L_n$ has circuit complexity at least $n^k$ or $L_{n^k}$ has circuit complexity at least $n^{k^2}$.</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2020/communication-complexity-reading-group/">&#8249; A Short Overview of Communication Complexity for Algorithms Designers (Reading Group)</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2019/parity-helps-compute/"> Parity helps to compute majority &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

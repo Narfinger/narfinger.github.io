@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Smaller ACC0 Circuits for Symmetric Functions | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2021/symmetric-mod-bound/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2021/symmetric-mod-bound/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2021/symmetric-mod-bound/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Smaller ACC0 Circuits for Symmetric Functions | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Smaller ACC0 Circuits for Symmetric Functions | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2021-11-17" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2021/symmetric-mod-bound/">Smaller ACC0 Circuits for Symmetric Functions</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> November 17, 2021 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/boolean-circuit-complexity/">Boolean Circuit Complexity</a>]</span>
+
+    
+
+
+<h1 id="2021-07-09-cw-smaller-acc0-circuits-for-symmetric-functions">2021-07-09-CW-Smaller ACC0 Circuits for Symmetric Functions</h1>
+<p><a rel="noopener" target="_blank" href="http://arxiv.org/abs/2107.04706v1">paper</a></p>
+<h1 id="results">Results</h1>
+<ul>
+<li>Theorem 1.1: For every $\epsilon$ and $m&lt;(1/3)^{2/\epsilon}$ such that every symmetric function can be computed by a depth 3 circuit of form $\mod_{p_1}\circ \mod_{p_2,\dots,p_r}\circ \mod_{p_r}$ where these are distinct primes of size $\exp(O(n^{\epsilon}))$.</li>
+<li>Theorem 1.2: Every symmetric function can be computed by a depth $d$ $\mod_m$ circuit of size $\exp(\tilde O(n^{1/(r+d-3)}))$.</li>
+<li>Hypothesis (Sym And): There is a function $f$ computable by a TC$_0$ circuit with at most $\tilde O(n)$ gates with fan-in $\tilde O(n)$ such that $f$ does not have $\exp(O(n^{1/k}))$ size $\text{SYM}\circ \text{AND}$ circuits.</li>
+<li>ACC$_0[m]$ is the class of constant depth poly size circuits with unbounded fan-in that are allowed $\mod_m$ gates.</li>
+<li>Theorem 1.5: Assuming Sym And Hypothesis there is a fixed $\alpha$ such that for every $m,d$, every ACC$_0[m]$ computing the majority function has size at least $\exp(n^{\alpha/rd})$.</li>
+</ul>
+<h1 id="proof-of-theorem-1-1">Proof of Theorem 1.1</h1>
+<h2 id="prerequisite">Prerequisite</h2>
+<ul>
+<li>Lucas Theorem: $\binom{n}{p^i}\mod p$ is the $i$th digit in the $p$-ary representation of $n$.
+<ul>
+<li>This implies that taking the elementary symmetric polynomial $e_{p^i}(a_1,\dots,a_n)\mod p$ of degree $p^i$ equals the $i$th digit in the $p$-ary representation of $\sum_i a_i$.</li>
+</ul>
+</li>
+<li>Proposition 2.2(BIS90,CP19): Let $a,b$ be fixed integers with $\gcd(a,b)=1$. Every $\land\circ \mod_b$ gate can be represented by a $\mod_a\circ\mod_b$ circuit of $O(b^k)$ gates.</li>
+<li>Theorem 3.1 (Non Generalized form of 1.1): Every symmetric boolean function has a depth 3 circuit of the form $\mod_5 \circ \mod_6\circ \mod 5$ of size $\exp(O(n^{1/3} \log n))$.</li>
+<li>Theorem 3.2: For every $T\in {0,1,\dots,n}$ there exists a polynomial on $n$ variables of degree at most $3\sqrt{n}$ such that for all $a\in {0,1}^n$, $P_T(a)=0\mod 6$ if and only if $\sum_{i} a_i = T$.</li>
+<li>Proof:
+<ul>
+<li>Use the elementary symmetric polynomial $e_J$ of degree $J$.</li>
+<li>By Lucas Theorem $e_{p^i}(a_1,\dots,a_n)\mod p$ equals the $i$th digit in the $p$-ary representation of $\sum_i a_i$.</li>
+<li>We can easily check the $p$-ary representation with a $\mod_p$ polynomial.</li>
+<li>This is just $p_q(a_1,\dots,a_n) =1 - \prod_{j=0}^{t-1} (1-(c_j -e_{q^i})^{q-1})$.</li>
+<li>Doing this for $s,t$ and primes $2,3$ such that $2^s\cdot 3^t&gt;n$ we get the required polynomial.</li>
+</ul>
+</li>
+</ul>
+<h2 id="proof-of-theorem-3-1">Proof of Theorem 3.1:</h2>
+<ul>
+<li>Let $f$ be our function.</li>
+<li>We define $g:[n]\rightarrow {0,1}$ as $f(x)=g(|x|_1)$.</li>
+<li>The output gate sums over (a) all possible choices of $T\in [n]$ such that $g(T)=1$ and (b) sums over all ways to partition $T$ into a <em>sum</em> of $\lceil n^{1/3}\rceil$ many parts $T_1,\dots,T_{t} \in [T]$.</li>
+<li>There are $2^{O(n^{1/3}\log n)}$ many choices.</li>
+<li>Associate each $T_i$ with a disjoint set $S_i$ of at most $\lceil n^{2/3}\rceil$ many input variables.</li>
+<li>We want to verify that each $T_i$ the sum over the variables in $S_i$ equals $T_i$.</li>
+<li>Notice that there is <em>at most</em> one choice from (a) and (b) that could be consistent with the given input.
+<ul>
+<li>This is clear, as the sets and size describe it.</li>
+</ul>
+</li>
+<li>Hence, we can sum over these choices by using a $\mod_5$ gate, as the value is either $0$ or $1$.</li>
+<li>That means we now have a given size $T_i$ and $S_i$. We already checked that $T_i$ corresponds to $|S_i|$ on the second layer.</li>
+<li>We now check that the set is correct by an $\mod_6\circ$ $\land$ gate.
+<ul>
+<li>For this we use Theorem 3.2.</li>
+<li>As the polynomial has degree $\sqrt{n}$, we can simulate it by a $\mod_6$ gate over the monomials represented by and $\land$ gate.</li>
+<li>As this uses something like Chinese Remainder, we need another $\land$ gate.</li>
+</ul>
+</li>
+<li>This gives us a circuit $\mod_6\circ \mod_5\circ \land \circ \mod_6 \circ \land$.</li>
+<li>Now Proposition 2.2 eliminates the $\land$ gate.
+<ul>
+<li>Note: While this is the original as written in the paper, I do not quite understand the application of it.</li>
+<li>However, there is a SYM$\circ\land$ which they reference and gives subexponential size.</li>
+<li>The new size of the proposition is then $2^{(\log n)^d}$.</li>
+<li>This stays inside the overall size bound.</li>
+</ul>
+</li>
+<li>Proof Sketch of Theorem 1.1:
+<ul>
+<li>The proof works similar, except that we partition the sum into $n^{1/k}$ parts and use Chinese Remainder.</li>
+</ul>
+</li>
+</ul>
+<h1 id="proof-of-theorem-1-5">Proof of Theorem 1.5</h1>
+<ul>
+<li>Contraposition: Assume there is some $m=p_1\cdot p_r$ along with depth $d$ such that majority can be computed by depth-$d$ ACC$_0[m]$ circuit of size $\exp(O(n^{\alpha/rd}))$.</li>
+<li>Let $C$ be a TC$_0$ circuit.</li>
+<li>Replace every majority gate with a copy of the assumed circuit.</li>
+<li>This gives us a ACC$_0[m]$ circuit of depth at most $cd$ and size $\exp(O(n^{\alpha/rd}))$.</li>
+<li>By (CP19) every depth $cd$ circuit of size $s$ over $\land,\lor,\mod_m$ gates is equivalent to a SYM$\circ\land$ circuit of size $D'$ with $2^{(m\log s)^{10rcd}}$.</li>
+<li>This gives us the contradiction.</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/">&#8249; Small Circuits Imply Efficient Arthur-Merlin Protocols</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/randomized-computation/"> Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

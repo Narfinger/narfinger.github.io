@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Correlation bounds against polynomials | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2022/correlation-survey/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2022/correlation-survey/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2022/correlation-survey/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Correlation bounds against polynomials | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Correlation bounds against polynomials | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2022-12-22" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2022/correlation-survey/">Correlation bounds against polynomials</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> December 22, 2022 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/boolean-circuits/">Boolean Circuits</a>]</span>
+
+    
+
+
+<h1 id="paper">Paper</h1>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://eccc.weizmann.ac.il/report/2022/142/">Viola - Correlation bounds against polynomials</a></li>
+</ul>
+<h1 id="correlation-bounds">Correlation Bounds</h1>
+<ul>
+<li>Notice that things like AND (which has large degree) easy correlation (the all zero polynomia).</li>
+<li>Cor_D(f,p) = $\lvert \Pr_{x\sim D}[f(x)=p(x)] - \Pr_{x\sim D}[f(x)\neq p(x)]\rvert$</li>
+<li>Cor_D(f,d) = $\max_p Cor_D(f,p)$.</li>
+<li>Open Question:
+<ul>
+<li>Is there an $f$ such that $Cor_D(f,\log n) \leq 1/\sqrt{n}$?</li>
+<li>Notice that this is a hardness.</li>
+<li>It asks for a hard $f$ that with $\log n$ degree can only be barely simulated.</li>
+<li>A negative answer to this would imply that NP circuits have quasi polynomial size (non-trivial but easy with right techniques).</li>
+<li>Notice that this says nothing about how easy the polynomial is to compute (algebraic sense) or how many monomials it has.</li>
+<li>This question also related to number-on-forehead communication complexity.</li>
+</ul>
+</li>
+<li>Algebrazation is not a barrier because of non-uniformity.</li>
+</ul>
+<h1 id="bound-1-degree-log-n-but-correlation-epsilon-1-n">Bound 1: degree &gt;&gt; $\log n$ but correlation $\epsilon$ &gt;&gt; $1/n$</h1>
+<ul>
+<li>$Cor_U(Maj,d) \leq O(d/\sqrt{n})$.</li>
+<li>$Cor(Maj,d) \geq O(d^2/n)$</li>
+<li>$Cor(Maj,1) \leq O(1/n)$.</li>
+<li>Tight bounds on Cor(Maj,d) are not known (in cases $d\neq 1$).</li>
+<li>mod_3 is a candidate for small correlation.</li>
+<li>$Cor(mod_3,d) \leq O(d/\sqrt{n})$.
+<ul>
+<li>Proof:
+<ul>
+<li>Consider any set $X$ for which the polynomial computes $mod_3$ correctly.</li>
+<li>Use this polynomial of degree $n/2+d$ to now represent any boolean function on $X$.</li>
+<li>This gives a relation between the number of functions and the number of polynomials.</li>
+<li>This gives the tradeoff between $\lvert X\rvert$ and $d$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hardness Amplification:
+<ul>
+<li>Given an explicit function $f$ that has correlation $\epsilon$ of some class $C$, construct a related function on $C'$ with $n'\sim n$ and \epsilon' &lt;&lt; \epsilon$.</li>
+<li>Yao's xor lemma: $f'=f(x_1)+\dots + f(x_n)$.</li>
+<li>Open Question: Does Yao's xor lemma hold for polynomials of degree $d\geq \log n$, i.e., $Cor(f,n^{1/3})\leq 1/3$, $Cor(f',\log n^2)\leq 1/n^2$.</li>
+<li>Lemma: The correlation of two majority functions with constant degree polynomials  is $\log^{O(1)}/n$.
+<ul>
+<li>This requires low degree polynomials!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="bound-2-degree-log-n-but-correlation-1-sqrt-n">Bound 2: degree &lt;&lt; $\log n$ but correlation $&lt;&lt;1/\sqrt{n}$</h1>
+<ul>
+<li>The Inner product function $\sum_{i} x_i x_{i+1}$ has correlation $Cor(IP,1) = 2^{-n/2}$.</li>
+<li>Generalized Inner Product function has just blocks of size $k$.</li>
+<li>For every $n,d$, $Cor(GIP_{d+1},d )\leq \exp(-\Omega(n/4^d d))$.</li>
+<li>$Cor_D(\mod_3,d) \leq \exp(-n/c^d)$. Here the distribution is a bit special.</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2023/reading/">&#8249; Reading January</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2022/smaller-acc0/"> Smaller ACC0 Circuits for Symmetric Functions &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Projects</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/projects/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-12-03T00:00:00+00:00</updated>
+    <id>https://narfinger.github.io/categories/projects/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Toukakoukan</title>
+        <published>2023-12-03T00:00:00+00:00</published>
+        <updated>2023-12-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/toukakoukan/"/>
+        <id>https://narfinger.github.io/projects/toukakoukan/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/toukakoukan/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Musicbrainz Release Grabber</title>
+        <published>2022-07-20T00:00:00+00:00</published>
+        <updated>2022-07-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/musicbrainzreleasegrabber/"/>
+        <id>https://narfinger.github.io/projects/musicbrainzreleasegrabber/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/musicbrainzreleasegrabber/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Automove</title>
+        <published>2018-03-11T00:00:00+00:00</published>
+        <updated>2018-03-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/automove/"/>
+        <id>https://narfinger.github.io/projects/automove/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/automove/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>SerieViewer</title>
+        <published>2018-03-11T00:00:00+00:00</published>
+        <updated>2018-03-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/serieviewer/"/>
+        <id>https://narfinger.github.io/projects/serieviewer/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/serieviewer/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Student System</title>
+        <published>2018-03-11T00:00:00+00:00</published>
+        <updated>2018-03-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/student-system/"/>
+        <id>https://narfinger.github.io/projects/student-system/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/student-system/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Subscriptemember</title>
+        <published>2018-03-11T00:00:00+00:00</published>
+        <updated>2018-03-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/subscriptemember/"/>
+        <id>https://narfinger.github.io/projects/subscriptemember/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/subscriptemember/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Viola</title>
+        <published>2018-03-11T00:00:00+00:00</published>
+        <updated>2018-03-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/viola/"/>
+        <id>https://narfinger.github.io/projects/viola/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/viola/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>TheoryGrabber</title>
+        <published>2017-10-23T00:00:00+00:00</published>
+        <updated>2017-10-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/projects/theorygrabber/"/>
+        <id>https://narfinger.github.io/projects/theorygrabber/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/projects/theorygrabber/"></content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Data Structures</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/data-structures/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-01-24T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/data-structures/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Reading January</title>
+        <published>2023-01-24T01:00:00+00:30</published>
+        <updated>2023-01-24T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2023/reading/"/>
+        <id>https://narfinger.github.io/posts/2023/reading/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2023/reading/">&lt;h1 id=&quot;paper-1&quot;&gt;Paper 1&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2108.05970v3&quot;&gt;Golovnev, Gur, Shinkar - Derandomization of Cell Sampling&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;result&quot;&gt;Result&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Previously there was a problem on $n$ inputs and $m$ possible queries:
+&lt;ul&gt;
+&lt;li&gt;Such that any data structure that answers queries by probing $t$ memory cells requires space $s\geq \tilde \Omega(n (m&#x2F;n)^{1&#x2F;t})$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This paper improves this to $s\geq \tilde\Omega(n (m&#x2F;n)^{1&#x2F;(t-1)})$ for $t\geq 2$ for non-adaptive data structures.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proof&quot;&gt;Proof&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Theorem: Let $G$ be a large enough $t$-hypergraph with at least $|V| (1+\epsilon)$ edges for large enough $\epsilon$. If $|E| \geq 3|V|\left( \frac{2^{t+3} |V| \log |V|}{k}\right)^{t-2}$ for $2^{t+2}\log |V| \leq k \leq |V|$. Then there exists a subset $S$ of size $|S|\leq k$ that spans at least $|S| + \frac{k}{2^{t+1}\log s}$ hyperedges.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;how-to-use-this-to-get-the-data-structure-lower-bound&quot;&gt;How to use this to get the data structure lower bound?&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A function $f:F^n \rightarrow F^m$ is called $k$-wise independent if for every possible output $S$ the uniform distribution of the $n$ inputs induces the uniform distribution of the outputs.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;We build a data structure for the $k$-wise independent problem.&lt;&#x2F;li&gt;
+&lt;li&gt;We need to read at least $k$ memory cells.&lt;&#x2F;li&gt;
+&lt;li&gt;For $t=2$ construct a multigraph with $s$ vertices corresponding to the memory cells.&lt;&#x2F;li&gt;
+&lt;li&gt;Each edge will be a pair of cells read for a query.&lt;&#x2F;li&gt;
+&lt;li&gt;Then by the graph theorem, there exists a set of $k$ queries that depend on $k-1$ memory cells.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, it must satisfy that $s\geq m&#x2F;(1+16 \log s &#x2F;k)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;paper-2&quot;&gt;Paper 2&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2301.05658&quot;&gt;Lovett, Zhang - Streaming Lower Bounds and Asymmetric Set-Disjointness&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;result-1&quot;&gt;Result&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Needle problem: $t$, number of samples, $n$ universe size, $p$ probability of needle.&lt;&#x2F;li&gt;
+&lt;li&gt;Distinguish in a streaming setting with $s$ space the following two distributions:
+&lt;ul&gt;
+&lt;li&gt;Uniformly sampled from $[n]$.&lt;&#x2F;li&gt;
+&lt;li&gt;Sample each with probability $p$ to be the needle $x\in [n]$ and with $1-p$ sample uniformly from $[n]$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;We assume with high probability all elements are unique by setting $n=\Omega(t^2)$.&lt;&#x2F;li&gt;
+&lt;li&gt;$p=\Omega(1&#x2F;t)$ as otherwise the distributions are too close.&lt;&#x2F;li&gt;
+&lt;li&gt;Algorithms examples:
+&lt;ul&gt;
+&lt;li&gt;Test if two adjacent elements are equal.
+&lt;ul&gt;
+&lt;li&gt;$t=\Omega(1&#x2F;p^2)$ samples and space $\Theta(\log n)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Store the entrie stream in memory and check for repeated elements.
+&lt;ul&gt;
+&lt;li&gt;$t=\Theta(1&#x2F;p)$ but space $s=t\log n$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;Conjecture&lt;&#x2F;em&gt;: Any single-pass streaming algorithm which can solve the needle problem satisfies $p^2st=\Omega(1)$.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;Result&lt;&#x2F;em&gt;: Any $l$ pass streaming algorithm satisfies $lp^2st\log t = \Omega(1)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proof-aproach&quot;&gt;Proof Aproach&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduction to unique set disjointness in communication complexity.&lt;&#x2F;li&gt;
+&lt;li&gt;Partition the stream into intervals $I_1,\dots,I_k$.&lt;&#x2F;li&gt;
+&lt;li&gt;Any streaming algorithm can be transformed into a communication protocol that solves the $k$-party unqiue set disjointness.&lt;&#x2F;li&gt;
+&lt;li&gt;This requires one needle per interval.&lt;&#x2F;li&gt;
+&lt;li&gt;The rest of the paper is devoted to fixing this.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;paper-3&quot;&gt;Paper 3&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;link.springer.com&#x2F;chapter&#x2F;10.1007&#x2F;3-540-48447-7_18&quot;&gt;Benoit, Demaine, Munro, Raman, Raman, Rao-Representing Trees of Higher Degree&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;The lower bound for $k$-ary trees is $\log C_n^k = nk\log k -n(k-1)\log (k-1) - O(\log kn)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Their bound is $n\log k + n\log e$ (for a slowly growing function of $k(n)$).
+&lt;ul&gt;
+&lt;li&gt;This answers queries of parent, $i$th child, subtree size in constant time.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;There exists a data structure of size $\log C_n^k + o(n+\log k)$. &lt;a href=&quot;https:&#x2F;&#x2F;narfinger.github.io&#x2F;posts&#x2F;2023&#x2F;reading&#x2F;#Paper-4&quot;&gt;See Paper 4&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;This answers queries of parent, $i$th child with constant time and subtree size needs more time.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;What strikes me odd is that it seems difficult to store labels in the tree and access this label efficiently.
+&lt;ul&gt;
+&lt;li&gt;While some of this can be fixed it is unclear how to keep the query time for this constant.&lt;&#x2F;li&gt;
+&lt;li&gt;Take for example, storing the labels in an array with the order of the vertices being the index in the label.&lt;&#x2F;li&gt;
+&lt;li&gt;Getting from the an arbitrary node to the parent of the child takes probably the subtree encoding which is non constant in the optimal way.&lt;&#x2F;li&gt;
+&lt;li&gt;But I am not sure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proof-1&quot;&gt;Proof&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Jacobson Ordinal tree encoding:
+&lt;ul&gt;
+&lt;li&gt;Represent a node of degree $d$ by $1^d0$.&lt;&#x2F;li&gt;
+&lt;li&gt;Write them in a level order traversal for the entire treee.&lt;&#x2F;li&gt;
+&lt;li&gt;This needs rank and select to answer child queries.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Munro and Raman encoding:
+&lt;ul&gt;
+&lt;li&gt;Isomorphism with Ordinal tree (ordered trees). Use now a balanced parenthesis encoding.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This encoding: Write the unary degree encoding in DFS order.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;paper-4&quot;&gt;Paper 4&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;0705.0552&quot;&gt;Raman, Raman, Satti - Succinct Indexable Dictionaries with Applications to Encoding k-ary Trees, Prefix Sums and Multisets&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;paper-5&quot;&gt;Paper 5&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;people.unipmn.it&#x2F;manzini&#x2F;papers&#x2F;focs05.pdf&quot;&gt;Ferragina, Luccio, Manzini, Muthukrishnan-Structuring labeled trees for optimal succinctness and beyond&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;This should allowe trees with arbitrary labels and the operations you want with almost optimal encoding.&lt;&#x2F;li&gt;
+&lt;li&gt;They define the following transcoding:
+&lt;ul&gt;
+&lt;li&gt;Let $t=n+l$ where $n$ is the number of &lt;em&gt;internal&lt;&#x2F;em&gt; nodes and $l$ the size of the labels.&lt;&#x2F;li&gt;
+&lt;li&gt;Visit $T$ in pre-order and create for a vertex $u$: $(\text{last}(u), \alpha(u),\pi(u))$.
+&lt;ul&gt;
+&lt;li&gt;$\text{last}(u)$ is the binary flag if it is the last child of the parent.&lt;&#x2F;li&gt;
+&lt;li&gt;$\pi(u)$ is the string obtained by concatenating the symbols on the upward path to the root.&lt;&#x2F;li&gt;
+&lt;li&gt;$\alpha(u)$ is the label of $u$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Stable Sort this lexicographically according to $\pi(u)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let this array be called $S$ and let us call $S_\text{last}$ to call the projection to the first part of the tuple.&lt;&#x2F;li&gt;
+&lt;li&gt;$S_\text{last}$ has $n$ bits set to one.
+&lt;ul&gt;
+&lt;li&gt;I do not quite understand this. The upper bound is true but not every internal node is the last node of a parent.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The other bits are set to zero.&lt;&#x2F;li&gt;
+&lt;li&gt;$S_\alpha$ contains all the labels of the nodes.&lt;&#x2F;li&gt;
+&lt;li&gt;$S_\pi$ contains all the upward labelled paths of $T$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we can find the following structure which comes from the sorting:
+&lt;ul&gt;
+&lt;li&gt;The first tuple is the root.&lt;&#x2F;li&gt;
+&lt;li&gt;If $u,u&#x27;$ are two nodes with $\pi(u)=\pi(u&#x27;)$. Then they have the same depth and $u$ is to the left of $u&#x27;$ if it preceeds it.&lt;&#x2F;li&gt;
+&lt;li&gt;The children of a node $u_1,\dots,u_c$ lie continuously in the array and the last one has the bit set to one.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $u,u&#x27;$ be two nodes in $T$. If they preceed in the array they preceeded in the tree.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;For navigation we need rank and select.
+&lt;ul&gt;
+&lt;li&gt;Rank$_c(1,q)$ is the number of times c appears in $S[1..q]$.&lt;&#x2F;li&gt;
+&lt;li&gt;select$_c(S,q)$ is the position of the $q$th occurence of $c$ in $S$.&lt;&#x2F;li&gt;
+&lt;li&gt;These queries can be done with constant time using $\log \binom{|S|}{m} + o(m) + O(\log \log s)$ where $m$ is the number of ones.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Navigation on this array.
+&lt;ul&gt;
+&lt;li&gt;GetChildren(i)
+&lt;ul&gt;
+&lt;li&gt;Get the label of the current node.&lt;&#x2F;li&gt;
+&lt;li&gt;Find the first occurrence of this label (this is now the first child).&lt;&#x2F;li&gt;
+&lt;li&gt;Find where the one is for this block of children.&lt;&#x2F;li&gt;
+&lt;li&gt;The in between are now all the children of $i$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;GetParent(i)
+&lt;ul&gt;
+&lt;li&gt;Find the symbol of the parent.&lt;&#x2F;li&gt;
+&lt;li&gt;Compute the offset.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;paper-6&quot;&gt;Paper 6&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;link.springer.com&#x2F;content&#x2F;pdf&#x2F;10.1007&#x2F;3-540-48447-7_34.pdf&quot;&gt;Brodal, Faderberg - Dynamic Representations of Sparse Graphs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Arboricity of a graph is given as $\max_J \frac{\lvert E(J)\rvert}{\lvert V(J)-1\rvert}$ for any subgraph $J$ with $\lvert V(J)\rvert\geq 2$.&lt;&#x2F;li&gt;
+&lt;li&gt;This contains graph of bounded treewidth, planar and bounded genus.&lt;&#x2F;li&gt;
+&lt;li&gt;Operations on the data structure:
+&lt;ul&gt;
+&lt;li&gt;Adjacent(u,v) =&amp;gt; true if $(u,v)\in E$&lt;&#x2F;li&gt;
+&lt;li&gt;Insert(u,v) =&amp;gt; $E= (u,v)\cup E$&lt;&#x2F;li&gt;
+&lt;li&gt;Delete(u,v) =&amp;gt; $E = E\setminus (u,v)$&lt;&#x2F;li&gt;
+&lt;li&gt;Build(G) =&amp;gt; Construct the data structure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Data structure uses $O(m+n)$ space and supports queries in adjacent in worst case $O(c)$, Insert in armortized $O(1)$ and Delete in armortized $O(c+\log n)$ where c is the arboricity of the graph.&lt;&#x2F;li&gt;
+&lt;li&gt;Arboricity needs to be known.&lt;&#x2F;li&gt;
+&lt;li&gt;The data structure is a simple adjacency list where we assign an orientation to every edge such that every vertex has outdegree $O(c)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;paper-7&quot;&gt;Paper 7&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;(Raman, Raman, Rao - Succinct Dynamic Data Structures)[https:&#x2F;&#x2F;www.imsc.res.in&#x2F;~vraman&#x2F;pub&#x2F;wads_01.pdf]&lt;&#x2F;li&gt;
+&lt;li&gt;Solving Dynamic Data Structures for Partial Sums and Arrays&lt;&#x2F;li&gt;
+&lt;li&gt;Partial sums solved with $kn+o(n)$ space and time $O(\log n&#x2F;\log \log n)$ with $k$ being the logarithm of the size of the entries.&lt;&#x2F;li&gt;
+&lt;li&gt;Array uses $o(n)$ extra space with $O(\log n&#x2F;\log \log n)$ operation time.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;paper-8&quot;&gt;Paper 8&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;(Chung, Larsen - Stronger 3SUM Indexing Lower bounds)[http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2203.09334v1]&lt;&#x2F;li&gt;
+&lt;li&gt;3SUM:
+&lt;ul&gt;
+&lt;li&gt;Given an abelian group $G$ and and two subsets of group elements $A_1,A_2$ does there for a given $z$ exists $a_1 +a_2=z$ with $a_1\in A_1, a_2\in A_2$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;There exists various hardness conjectures for this problem.&lt;&#x2F;li&gt;
+&lt;li&gt;Old Theorem:
+&lt;ul&gt;
+&lt;li&gt;Any non-adaptive data structure for 3SUM using $S$ words of size $w$ must have query time $T=\Omega(\lg n&#x2F;\lg (Sw&#x2F;n))$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The make this theorem work for adaptive data structures.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof by reduction to butterfly graphs.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proof-2&quot;&gt;Proof&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Butterfly graph:
+&lt;ul&gt;
+&lt;li&gt;$d+1$ layers each having $B^d$ nodes.&lt;&#x2F;li&gt;
+&lt;li&gt;We look at a layer as a $d$ digit number in base $B$.&lt;&#x2F;li&gt;
+&lt;li&gt;Every vertex has the label of its number in $B$-ary representation.&lt;&#x2F;li&gt;
+&lt;li&gt;There is an edge from $i$ to $j$ if $i$ and $j$ differ only on the $k$th digit.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;For any source sink pair there exists a unique path.
+&lt;ul&gt;
+&lt;li&gt;This is easy to see. Otherwise, we would have two paths which flip different bits which can never be unflipped.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Butter fly graph reachability has the following lower bound
+&lt;ul&gt;
+&lt;li&gt;$T=\Omega(d)$, then $B=\Omega(w^2)$ and $\lg(B) =\Omega(\lg (Sd&#x2F;dB^d)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Construction of 3SUM reduction, i.e., given a butterfly graph, construct a 3SUM query:
+&lt;ul&gt;
+&lt;li&gt;$A_1$:
+&lt;ul&gt;
+&lt;li&gt;The digits will be broken into 5 blocks.&lt;&#x2F;li&gt;
+&lt;li&gt;First block encodes the layer the edge is from.&lt;&#x2F;li&gt;
+&lt;li&gt;Second block encodes the presence of the edge $e(i,j)$ in layer $k$.&lt;&#x2F;li&gt;
+&lt;li&gt;Third block encodes the $d-k$ most significant bits of $i$ followed by $k$ zeroes.&lt;&#x2F;li&gt;
+&lt;li&gt;Fourth block encodes the $d-k-1$ zeroes followed by $k+1$ least significant digits of $j$.&lt;&#x2F;li&gt;
+&lt;li&gt;Fifth block holds 2 zeroes.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$A_2$:
+&lt;ul&gt;
+&lt;li&gt;First block holds some value $-k$.&lt;&#x2F;li&gt;
+&lt;li&gt;Second block is zero.&lt;&#x2F;li&gt;
+&lt;li&gt;Third block is $d-k$ zeroes followed by any possible $k$ digit value.&lt;&#x2F;li&gt;
+&lt;li&gt;Fourth block holds any possible $d-k-1$ digit value followed by $k+1$ zeroes.&lt;&#x2F;li&gt;
+&lt;li&gt;Fifth block holds any possible digit from $[0,B-1]$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Translting Reachability Query:
+&lt;ul&gt;
+&lt;li&gt;First notice that carries do not matter here.
+&lt;ul&gt;
+&lt;li&gt;A lot of the construction needs to make sure and that is why there are certain zeroes.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;If there does not exist a path then there is an edge missing.&lt;&#x2F;li&gt;
+&lt;li&gt;Then there is just all the parts fit together.&lt;&#x2F;li&gt;
+&lt;li&gt;If there does exist a path and all have 1 at the second place.&lt;&#x2F;li&gt;
+&lt;li&gt;This can never be made into a value zero at the second place.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;non-adaptive-bit-probe-3sum-lower-bound&quot;&gt;Non Adaptive Bit Probe 3SUM Lower Bound&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lower bound of $\Omega(\min { \lg |G|, \lg (Sw&#x2F;n), n&#x2F;w})$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $\Delta = n&#x2F;2w$.&lt;&#x2F;li&gt;
+&lt;li&gt;By an averaging counting argument there is a set of cells answering at least $|G| \binom{S-T}{\Delta-T}&#x2F; \binom{S}{\Delta}$ queries.&lt;&#x2F;li&gt;
+&lt;li&gt;Now assume $T\leq \Delta&#x2F;2$ as otherwise we are done.&lt;&#x2F;li&gt;
+&lt;li&gt;This is at least $|G|^{1-o(1)} &amp;gt; n$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we will prove that the queries cannot be answered from such few cells for a given distribution over $A_1,A_2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Lemma: There exists an input distribution for which the event of any element in a subset $Q$ being included in the sum $A_1 +A_2$ is fully independent.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us an entropy of $n$.&lt;&#x2F;li&gt;
+&lt;li&gt;But these cells chosen above have are $n&#x2F;2w$ having $n&#x2F;2$ bits.&lt;&#x2F;li&gt;
+&lt;li&gt;As their addresses are fixed this gives us a contradiction.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>List Colouring Trees in Logarithmic Space</title>
+        <published>2022-10-05T01:00:00+00:30</published>
+        <updated>2022-10-05T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/coloring-trees/"/>
+        <id>https://narfinger.github.io/posts/2022/coloring-trees/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/coloring-trees/">&lt;h1 id=&quot;the-compositon-complexity-of-majority&quot;&gt;The Compositon complexity of majority&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2206.09750v1&quot;&gt;BGJ - List Colouring Trees in Logarithmic Space&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;result&quot;&gt;Result&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;List colouring can be solved on $n$ vertex trees by a deterministic machine using $O(\log n)$ work tape.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a graph and a list of possible colors $L(v)$ for all $v$, is there a coloring such that $c(v)\in L(v)$ for all $v$ with $c(v_1)\neq c(v_2)$ if $(u,v)\in T$.&lt;&#x2F;li&gt;
+&lt;li&gt;List colouring is hard on planar bipartite graphs even if all lists are of size at most 3.&lt;&#x2F;li&gt;
+&lt;li&gt;$W[1]$ hard if parameterized by treewidth.&lt;&#x2F;li&gt;
+&lt;li&gt;Can be solved with linear space and linear time on trees with hashing.&lt;&#x2F;li&gt;
+&lt;li&gt;The description of the tree and the colors are on a read only tape which does not count for the space complexity.&lt;&#x2F;li&gt;
+&lt;li&gt;As trees have pathwidth $O(\log n)$, the problem can be solved non-deterministically in $O(\log^2 n)$ space.&lt;&#x2F;li&gt;
+&lt;li&gt;$T_v$ is the subtree rooted at $v$ and $T-v$ the forest resulting from deleting $v$.&lt;&#x2F;li&gt;
+&lt;li&gt;Traversing a tree can be done in $O(\log n)$ space. Same with count the number of vertices in a subtree, child with the maximum subtree size, enumerate children ordered by the subtree size.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;path-decompositions&quot;&gt;Path Decompositions.&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A path decomposition is a tree decomposition that is a path.&lt;&#x2F;li&gt;
+&lt;li&gt;A nice path decomposition has empty bags on the endpoints of the path, and two consecutive bags differ only by at most one vertex.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;warmup&quot;&gt;Warmup&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;List colouring can be solved non-deterministically using $O(\log n\log \Delta)$ space of trees with maximum degree $\Delta$.
+&lt;ul&gt;
+&lt;li&gt;This uses the following two lemmas&lt;&#x2F;li&gt;
+&lt;li&gt;List colouring can be solved non-deterministically in $O(k\log \Delta + \log n)$ space if we can compute deterministically a path decomposition for $G$ with width $k$ in $O(\log n)$ space.&lt;&#x2F;li&gt;
+&lt;li&gt;If $T$ is a tree, we can deterministically compute a path decomposition of width $O(\log n)$ using $O(\log n)$ space.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;We call a vertex heavy if its subtree has &lt;em&gt;more&lt;&#x2F;em&gt; vertices than any other of its siblings from the same parent.&lt;&#x2F;li&gt;
+&lt;li&gt;Now a way to do this would be Loop over possible colours of the root $v$ and then check if a colouring can be extended to all subtrees $T_v$ for $v$ being a child of the root while not giving the colour $c$ to the root.
+&lt;ul&gt;
+&lt;li&gt;Having for this a space bound of $S(n) = f(n)\log n$ gives us a recursive space of $S(n&#x2F;2) \leq S(n)-f(n)$.&lt;&#x2F;li&gt;
+&lt;li&gt;So when we recursive on a non-heavy child we are fine with some bits to spare.
+&lt;ul&gt;
+&lt;li&gt;Suppose now $v$ has non-heavy children $v_1,\dots,v_k$ and heavy child $u$.&lt;&#x2F;li&gt;
+&lt;li&gt;Suppose the parent of $v$ needs to be assigned colour $c&#x27;$. Then one of the following must be true:
+&lt;ul&gt;
+&lt;li&gt;There is no colouring of $T_v-T_u$ which avoids colour $c&#x27;$ for $v$. This implies reject as it contradicts the edge of $parent(v)$ and $v$&lt;&#x2F;li&gt;
+&lt;li&gt;There is a unique colour $c\neq c&#x27;$ that can be assigned to $v$ for a list colouring of $T_v-T_u$.&lt;&#x2F;li&gt;
+&lt;li&gt;There are two possible colours unequal to $c&#x27;$ which can be given to $T_v-T_u$ and it can be coloured for the heavy child $T_v$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;A deterministic algorithm using $O(\log^2 n)$ space and poly time.
+&lt;ul&gt;
+&lt;li&gt;Algorithm Solve(v,p) where $p$ denotes that $v$ cannot recieve the $p$th colour in $L(v)$ (0 mean no restriction):
+&lt;ul&gt;
+&lt;li&gt;Let the children of $v$ be $v_1,\dots,v_k$ and $u$ the heavy child.&lt;&#x2F;li&gt;
+&lt;li&gt;Recursively verify that $v_i$ can be coloured by using Solve($v_i$,0). Reject if any rejects.&lt;&#x2F;li&gt;
+&lt;li&gt;If $|L(v)| \geq k+2$ we free up our memory and verify that $T_u$ can be coloured by calling Solve($u$,0).&lt;&#x2F;li&gt;
+&lt;li&gt;Assume now $\lvert L(v)\rvert\leq k+1$. Check if there is some colour $p$ that we can colour and recursively ask if this is possible by using Solve($v_i$,$p$). This excludes the heavy child obviously. Reject if no such colour exists.&lt;&#x2F;li&gt;
+&lt;li&gt;Check if there is at least a second way to colour $T\setminus T_u$ and call this $p_2$.&lt;&#x2F;li&gt;
+&lt;li&gt;If yes, free up memory and recursively verify that $T_u$ can be coloured with Solve($u$,0).
+&lt;ul&gt;
+&lt;li&gt;Notice that we do not have to try $p_1$.&lt;&#x2F;li&gt;
+&lt;li&gt;This is because it is a tree and $u$ can take any colour it wants.&lt;&#x2F;li&gt;
+&lt;li&gt;If $u$ has colour $p_1$ we set $r$ to $p_2$ and $p_1$ otherwise.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;If not then we colour $r$ with $p_1$ and recursively verify with Solve($u$,$p&#x27;$) where $p&#x27;$ is the apropiate colour in $u$s list if it exists.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;final-proof&quot;&gt;Final Proof&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Two main ideas:
+&lt;ul&gt;
+&lt;li&gt;Storing the colour can be done by storing the index of the list and it can be recomputed.&lt;&#x2F;li&gt;
+&lt;li&gt;The space used for the colour will depend on the size of the sub-tree. A bracketing idea makes this easier. So the remaining is small.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Data Structure Lower Bounds Short Survey</title>
+        <published>2022-06-13T01:00:00+00:30</published>
+        <updated>2022-06-13T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/2022-06-13-datastructure-survey/overview/"/>
+        <id>https://narfinger.github.io/posts/2022/2022-06-13-datastructure-survey/overview/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/2022-06-13-datastructure-survey/overview/">&lt;p&gt;I wrote a survey on some recent results in data structure lower bounds. It can be found &lt;a href=&quot;https:&#x2F;&#x2F;narfinger.github.io&#x2F;posts&#x2F;2022&#x2F;2022-06-13-datastructure-survey&#x2F;overview&#x2F;here&quot;&gt;main.pdf&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Keep that card in mind</title>
+        <published>2021-11-11T01:00:00+00:30</published>
+        <updated>2021-11-11T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2021/dealer-guesser/"/>
+        <id>https://narfinger.github.io/posts/2021/dealer-guesser/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2021/dealer-guesser/">&lt;h1 id=&quot;2021-07-08-mn-keep-that-card-in-mind-card-guessing-with-limited-memory-pdf&quot;&gt;2021-07-08-MN-Keep That Card in Mind: Card Guessing with Limited Memory.pdf&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2021&#x2F;096&#x2F;&quot;&gt;paper&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A Dealer deals cards via some strategy from a set of cards labeled by $1,\dots,n$.&lt;&#x2F;li&gt;
+&lt;li&gt;Guesser has to guess which card is dealt.&lt;&#x2F;li&gt;
+&lt;li&gt;A guesser with perfect memory can guess $\ln n$ correct guesses.
+&lt;ul&gt;
+&lt;li&gt;The guesser remembers which cards are played and picks randomly from the remaining cards.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;With no memory, the guesser can guess only 1 in expectation.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;results-1&quot;&gt;Results&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Guesser with $O(\log^2 n)$ bits has a near optimal result (static or random shuffle).&lt;&#x2F;li&gt;
+&lt;li&gt;No Guesser with $m$ bits of memory can score better than $O(\sqrt{m})$ correct guesses.&lt;&#x2F;li&gt;
+&lt;li&gt;There exists an adaptive dealer for which no guesser with memory $m$ can make more than $\ln m + 2\ln \log n + O(1)$ correct guesses in expectation.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;overview-of-proofs&quot;&gt;Overview of Proofs&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Main result:
+&lt;ul&gt;
+&lt;li&gt;The guesser tracks from which cards were drawn from multiple subsets.&lt;&#x2F;li&gt;
+&lt;li&gt;Every subset card in the subset is &quot;tracked&quot; by at most $2\log n$ bits.&lt;&#x2F;li&gt;
+&lt;li&gt;Guesser can recover the last card that has not appeared in each subset and guesses it.&lt;&#x2F;li&gt;
+&lt;li&gt;Subsets are build incrementally such that the $i$th subset contains the $i+1$th.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Lower Bound:
+&lt;ul&gt;
+&lt;li&gt;The lower bound is proven by using correct guesses to encode an ordered set.&lt;&#x2F;li&gt;
+&lt;li&gt;The encoding simulates the game and the bottom is the ordered set we wish to encode.&lt;&#x2F;li&gt;
+&lt;li&gt;If sufficiently many correct guesses occur we store what is required to encode this game.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us the set.&lt;&#x2F;li&gt;
+&lt;li&gt;We store:
+&lt;ul&gt;
+&lt;li&gt;The memory state of the guesser&lt;&#x2F;li&gt;
+&lt;li&gt;The set of turns it predicted correctly&lt;&#x2F;li&gt;
+&lt;li&gt;The cards the dealer draws in the other turns with their order.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The memory saving is from turns predicted correctly + state of the guesser.&lt;&#x2F;li&gt;
+&lt;li&gt;We also fix the randomness of the guesser overall (not per set) to make this deterministic.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;simple-strategies&quot;&gt;Simple Strategies&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Subset Guessing:
+&lt;ul&gt;
+&lt;li&gt;Chose a random or predetermined subset of cards $A\in \binom{[n]}{m}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Every turn the guesser guesses one card in $A$ that not yet has occured.&lt;&#x2F;li&gt;
+&lt;li&gt;This requires $m$ bits to store.&lt;&#x2F;li&gt;
+&lt;li&gt;Counting the turns in which the dealer draws cards from $A$ we get that the guesser makes $\ln m$ correct guesses.&lt;&#x2F;li&gt;
+&lt;li&gt;$1&#x2F;n + 1&#x2F;(n-1) + 1&#x2F;(n-2) + \dots + 1&#x2F;2 + 1$.&lt;&#x2F;li&gt;
+&lt;li&gt;This works against any dealer as these cards have to be drawn at some point in the game.&lt;&#x2F;li&gt;
+&lt;li&gt;Because we can predetermine the set and the above fact we do not need to store a description of the set.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Remembering last $k$ cards:
+&lt;ul&gt;
+&lt;li&gt;Guess the last card by storing the sum $\sum_{i=1}^n i$ and subtract the card shown.&lt;&#x2F;li&gt;
+&lt;li&gt;This generalizes via chinese remainder to $k$ cards.&lt;&#x2F;li&gt;
+&lt;li&gt;Store $\sum_{i=1}^n i^p \mod n$ for $p=1,\dots, k$ and remove $d^p$ for the shown card $d$.&lt;&#x2F;li&gt;
+&lt;li&gt;This requires $k\log n$ bits.&lt;&#x2F;li&gt;
+&lt;li&gt;As the set of the last cards is now know, we make $\ln k$ correct guesses.&lt;&#x2F;li&gt;
+&lt;li&gt;This works against any dealer.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;less-simple-strategy&quot;&gt;Less Simple Strategy&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;For certain subsets $S_1,\dots,$ store the number of cards seen from this subset and the number as in the remembering last $k$ cards.&lt;&#x2F;li&gt;
+&lt;li&gt;The sets will be $[1,2], [1,2,3,4], \dots, [1,\dots,n]$.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;Call a set $S_i = [1,\dots,w]$ useful if the last card that appears in it does not appear in the next subset $S_{i+1}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Every subset will contribute a correct guess but it could be that the same guess comes from multiple subsets.&lt;&#x2F;li&gt;
+&lt;li&gt;Not so if the subset is useful.&lt;&#x2F;li&gt;
+&lt;li&gt;The probability that a subset is useful is $(2w-w)&#x2F;2w$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, the expected number of useful sets is $\log n&#x2F;2$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;lower-bound-argument&quot;&gt;Lower Bound Argument&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Any Guesser using $m$ bits of memory can get at most $O(\min { \ln n, \sqrt{m}})$ correct guesses in expectation against random shuffle dealer.&lt;&#x2F;li&gt;
+&lt;li&gt;Compression Argument:
+&lt;ul&gt;
+&lt;li&gt;Encoding function for ordered set $B$:
+&lt;ul&gt;
+&lt;li&gt;Simulate the guesser on a deck of cards where the last $k$ cards are $B$ (including order).&lt;&#x2F;li&gt;
+&lt;li&gt;Record the memory of the guesser $m$ bits after the first $n-k$ cards.&lt;&#x2F;li&gt;
+&lt;li&gt;If the guesser gives $\ell$ correct guesses than we supply the remaining $k-\ell$ guesses (without position).&lt;&#x2F;li&gt;
+&lt;li&gt;We note the positions where the guesser was correct.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us a size of $m + \log \binom{k}{\ell} + \log (\prod_{i=0}^{k-\ell-1} n-i)$.&lt;&#x2F;li&gt;
+&lt;li&gt;The number of ordered sets is $\prod_{i=0}^{k-1} n-i$.&lt;&#x2F;li&gt;
+&lt;li&gt;The probability over the choices of $B$ for any correct guess beyond $\frac{m+1}{\beta \ln n}$ drops exponentially.
+&lt;ul&gt;
+&lt;li&gt;This comes from comparing the encoding size with the size of the ordered sets.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Now we can use the following Lemma (2.1.5) and prefix freeness of the constructed code.&lt;&#x2F;li&gt;
+&lt;li&gt;For every encoding function the probability that the encoding is $d$ bits less than its entropy is at most $2^{-d}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;other-results&quot;&gt;Other Results&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;For every $m$ there exists an adaptive dealer such that any guesser makes at most $\ln m + 2\ln \log n + O(1)$ correct guesses.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;questions&quot;&gt;Questions&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;All of them seem to have a low probability for some cards.&lt;&#x2F;li&gt;
+&lt;li&gt;So can we make a guesser that will have a non negligable probability on all dealers?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

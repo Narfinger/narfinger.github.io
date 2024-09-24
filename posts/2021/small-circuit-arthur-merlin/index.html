@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Small Circuits Imply Efficient Arthur-Merlin Protocols | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Small Circuits Imply Efficient Arthur-Merlin Protocols | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Small Circuits Imply Efficient Arthur-Merlin Protocols | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2021-11-25" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/">Small Circuits Imply Efficient Arthur-Merlin Protocols</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> November 25, 2021 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/boolean-circuit-complexity/">Boolean Circuit Complexity</a>]</span>
+
+    
+
+
+<h1 id="2021-08-30-dm-small-circuits-imply-efficient-arthur-merlin-protocols">2021-08-30-DM-Small Circuits Imply Efficient Arthur-Merlin Protocols</h1>
+<p><a rel="noopener" target="_blank" href="https://eccc.weizmann.ac.il/report/2021/127/">paper</a></p>
+<h1 id="result">Result</h1>
+<h2 id="setup">Setup</h2>
+<h3 id="small-boolean-circuits">Small Boolean Circuits</h3>
+<ul>
+<li>$&lt;x,y&gt; = \sum_i x_i y_i \mod 2$ is the inner product function.</li>
+<li>It can be easily computed by constant depth circuits with $\oplus$ gates (AC$^0_\oplus$).</li>
+<li>What if we only allow $\oplus$ gates only at the bottom?</li>
+<li>If we do not allow $\oplus$ gates than showing a lower bound is easy.</li>
+<li>DNF of parities has also an exponential lower bound.</li>
+<li>Depth 3 circuits only have a weak quadratic lower bound.</li>
+<li>For arbitrary depth (AC$^0_\oplus$) and the number of parity gates is linear, a lower bound is known.</li>
+</ul>
+<h3 id="communication-complexity">Communication Complexity</h3>
+<ul>
+<li>Arthur-Merlin protocol where there is an all powerful prover and a verifier.</li>
+<li>AM Data Streaming Model (AM[$k$])
+<ul>
+<li>Merlin sees the complete input.</li>
+<li>Verifier sees a stream and is space bounded.</li>
+<li>Phases:
+<ul>
+<li>First phase: Verifier engages in a $k$-message public coin protocol with the prover, resulting in a transcript $\tau$.</li>
+<li>Second phase: Verifier works deterministically on the input as a stream and is allowed to look at $\tau$.</li>
+<li>Third phase: Verifier accepts or rejects.</li>
+</ul>
+</li>
+<li>There exists a strategy for Merlin that convinces the verifier to accept true statements.</li>
+<li>No strategy makes the Verifier accept false statements.</li>
+</ul>
+</li>
+<li>This also can work as a communication complexity protocol with the same bounds.</li>
+</ul>
+<h2 id="result-1">Result</h2>
+<ul>
+<li>If there exists a DNF of parities of size $s$ that computes the inner product function on $5/6+\epsilon$ fraction of the inputs for some constant $\epsilon$. Then there exists a AM[$k$] with $\tilde O(d)\log s$ proof length, space complexity and randomness complexity for every polynomial over $GF(2)$.</li>
+</ul>
+<h1 id="proof">Proof</h1>
+<h2 id="holographic-ip">Holographic IP</h2>
+<ul>
+<li>Verifier instead of having the input is given an encoding of the input, similar to PCP.</li>
+<li>Construct a protocol that works for most inputs.
+<ul>
+<li>Prover picks sends an index to a satisfied clause. Verifier, verifies that this is correct.
+<ul>
+<li>The size bound is $\log s$.</li>
+</ul>
+</li>
+<li>However, large width DNF would be a problem.</li>
+<li>We can see DNF clauses as a system of linear equations. We now remove wide clauses but make sure that the rank of this system does not decrease.</li>
+<li>Notice that if the DNF is not fulfilled then there does not exist a single clause that is true. Hence the prover cannot prove this.</li>
+</ul>
+</li>
+<li>To make this protocol work for all most inputs we want to use the equation $&lt;x,y&gt; = &lt;x \oplus u,y\oplus v&gt; \oplus &lt;x\oplus u,v&gt; \oplus &lt;u,y\oplus v&gt; \oplus &lt;u,v&gt;$.
+<ul>
+<li>However, for this would need to verify zero cases too.</li>
+<li>A cheating prover cannot lie in the one cases but has to lie in the zero cases.</li>
+<li>We expect roughly equal amount of ones and zero cases of our equation.</li>
+<li>The Verifier will now ask for a couple of randomly chosen strings $u,v$, check the one claims and accepts the zero claims.</li>
+<li>Then it checks that the average value is close enough to the expected value.</li>
+</ul>
+</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2022/certifying-local/">&#8249; An Optimal Algorithm for Certifying Monotone Functions</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/symmetric-mod-bound/"> Smaller ACC0 Circuits for Symmetric Functions &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

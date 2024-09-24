@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Factoring vs Identity Testing | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2018/factoring-vs-identity-testing/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2018/factoring-vs-identity-testing/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2018/factoring-vs-identity-testing/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Factoring vs Identity Testing | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Factoring vs Identity Testing | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2018-08-14" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2018/factoring-vs-identity-testing/">Factoring vs Identity Testing</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> August 14, 2018 <span class="rpad"></span></span>
+
+    
+
+
+<hr />
+<h2 id="layout-pagetitle-overview-over-the-equivalence-between-polynomial-identity-testing-and-polynomial-factorizationauthor-christian-engelspublish-true">layout: page
+title: Overview over the Equivalence between Polynomial Identity Testing and Polynomial Factorization
+author: Christian Engels
+publish: true</h2>
+<h1 id="sources">Sources</h1>
+<ul>
+<li><a rel="noopener" target="_blank" href="http://www.cs.technion.ac.il/~shpilka/publications/ShpilkaVolkovich10.pdf">Shpilka, Volkovich - On the relation between polynomial identity testing and finding variable disjoint factors</a></li>
+<li><a rel="noopener" target="_blank" href="https://people.csail.mit.edu/madhu/FT98/lect9.ps">Sudan - Lecture Notes</a></li>
+<li><a rel="noopener" target="_blank" href="https://www.cs.tau.ac.il/~shpilka/publications/ForbesShpilka-SIGACT.pdf">Forbes, Shpilka</a></li>
+<li><a rel="noopener" target="_blank" href="https://www.cs.tau.ac.il/~shpilka/publications/KoppartySarafShpilka14.pdf">Kopparty, Saraf, Shpilka - Equivalence of Polynomial Identity Testing and Deterministic Multivariate Polynomial Factoring</a></li>
+</ul>
+<h1 id="basics">Basics</h1>
+<ul>
+<li>Everybody knows what factoring is over univariate polynomials.</li>
+<li>Multivariate polynomials.</li>
+<li>A polynomial is irreducible if it is not constant and cannot be factored into the product of two non-constant polynomials with coefficients in F.</li>
+<li>Multivariate polynomials might not have an explicit algebraic expression (rather we might have as zeroes of some equation system).</li>
+<li>Over a so called <code>Unique Factorization Domain</code>, every polynomial can be factored and the factor is unique.</li>
+<li>There exists randomized algorithms for factoring. (Kaltofen 89)</li>
+<li>Deterministic algorithms are unkown.</li>
+</ul>
+<h1 id="shpilka-volkovich">Shpilka, Volkovich</h1>
+<ul>
+<li>Multilinear Circuits</li>
+<li>Theorem: Assume we have a deterministic PIT for a circuit of the form $C_1 + C_2\times C_3$ where $C_i$ are $(n,s,d)$ circuits with running time $T(s,d)$. Then we have a deterministic factoring algoirhtms that outputs the factors (in circuit form) in time polynomial in $n,d, T(s,d)$. Additionally, the size of each factor is bounded by $s$.</li>
+</ul>
+<h2 id="preliminaries">Preliminaries</h2>
+<ul>
+<li>Polynomial sized circuits with polynomial degree on $n$ variables.</li>
+<li>PIT: Is such a circuit identically to the zero polynomial.</li>
+<li>PIT produce circuit lower bounds (boolean or algebraic) and the other way around.</li>
+<li>Depth of a circuit.</li>
+<li>If there is a deterministic algorithm that outputs "true" if a given circuit is decomposable, then there is a deterministic algorithm that decides PIT. (This is obvious, as $f+yz$ is not decomposable into factors if it is not zero for new variables $y,z$.)</li>
+<li>Note that it is enough to find out the index sets as we are multilinear.</li>
+<li>Assume the field is large enough.</li>
+<li>$f$ depends on $x_i$ when there exists $a,b$ such that $f(a)\neq f(a_1,\dots,a_{i-1},b,a_{i+1},\dots, a_n)$.</li>
+<li>$var(f) = { i \mid \text{f depends on $x_i$} }$.</li>
+<li>Variable Partition: Let $I$ be a partition. Then a variable partition of $f$ is such that $f=h_1(X_{I_1})\cdots h_k(X_{I_k})$</li>
+</ul>
+<h2 id="justifying-assignments">Justifying Assignments</h2>
+<ul>
+<li>Justifying assignment: We say an assignment $a$ is justifying iff for all index sets $I$, $var(f\vert_{x_I \leftarrow a_I}) = var(f)\setminus I$. In essence, replacing the variables with assignments does not kill anything but the assigned variables.</li>
+<li>Let there be a deterministic PIT algorithms for $(n,s,d)$ circuits. Then there exists an algorithm that returns a justifying assignment in time polynomial in $n,s, T(s,d)$ where $T(s,d)$ is the running time of the PIT algorithm.</li>
+</ul>
+<h3 id="proof">Proof</h3>
+<ul>
+<li>Prerequisites:
+<ul>
+<li>Let $f_{i,a} = f(a_1,\dots,a_{i-1},x_i,a_{i+1}, \dots, a_n)$.</li>
+<li>We define $f_{i,X}$ as above except that $a_j=x_j$ for all $j\neq i$.</li>
+<li>We will study $f_{i,X}(a_i) - f_{i,X}(0)$.</li>
+<li>We say $a$ is a witness for $x_i$ if $f_{i,X}(a) - f_{i,X}(0) \not\equiv  0$ or $i\not\in var(f)$.</li>
+<li>We say $a$ is a witness for $f$ if $a_i$ is a witness for $x_i$ for all $i$.</li>
+<li>Notice that a witness is not a justifying assignment, it just says that the line stays intact.</li>
+</ul>
+</li>
+<li>Lemma 2: $a$ is a justifying assignment if $a$ is a witness and for every $i\in var(f)$, $f_{i,a}(a_i)-f_{i,a}(0) \neq 0$.
+<ul>
+<li>Proof:
+<ul>
+<li>Hence, $f_{i,X}(x_i)$ is of the form $x_iP(a) + Q(a)$ where $P(a), Q(a)$ are non-zero.</li>
+<li>Hence, it is "justifying" for all sets of size $n-1$ and hence justifying for all sets.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lemma 3: Let $W\subseteq \mathbb{F}$ be a subset of size $d+1$ then $W^n$ contains a witness for $f$.
+<ul>
+<li>Proof:
+<ul>
+<li>Notice that $f_{i,w}(a) - f_{i,w}(0)$ is a univariate polynomial of degree $d$.</li>
+<li>Hence such a set needs to exist, as a univariate with degree $d$ has at most $d$ roots.</li>
+<li>Continue this argument for all $i\in [n]$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lemma 4: For all $i\neq j$, and $\alpha, \beta\in \mathbb{F}$, $(f_{i,X}(\alpha) - f_{i,X}(0))\vert_{x_j \leftarrow \beta} = f_{i,X}(\alpha)\vert_{x_j \leftarrow \beta} - f_{i,X}(0)\vert_{x_j \leftarrow \beta}$.
+<ul>
+<li>Proof:
+<ul>
+<li>Assume w.l.o.g. the left term has $x_j$ in it.</li>
+<li>Then we know that there exists $x_j$ in the final polynomial.</li>
+<li>Hence, replacing it earlier does not cancel it.</li>
+<li>Similarly in the other direction.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lemma 5: Given $f$ and a PIT for $\partial f$, we can find a witness for $f$ in time polynomially in $n,d,T(s,d)$.
+<ul>
+<li>Proof:
+<ul>
+<li>For every $i\in [n]$, check for every $c\in [d+1]$ if $f_{i,X}(c) - f_{i,X}(0)\not\equiv 0$.</li>
+<li>Lemma 3 says we will find such an assignment and with a similar argument as in the proof, we will find it in short time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Algorithm:
+<ul>
+<li>Find a witness $\alpha$ for $f$ as in Lemma 5.</li>
+<li>Set $g_i=f_{i,X}(\alpha_i) - f_{i,X}(0)$ for all $i$.</li>
+<li>For $j=1,\dots, n$ do
+<ul>
+<li>Find a value $c$ such that for every $k\neq j$, $g_k\not\equiv 0$ then $g_k\vert_{x_j \leftarrow c}\not\equiv 0$.</li>
+<li>Set $a_j \leftarrow c$.</li>
+<li>Set $g_k \leftarrow g_k\vert_{x_j \leftarrow c}$ for all $k\neq j$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Theorem 2.4: The algorithm finds a justifying assignment in the usual time bounds.
+<ul>
+<li>Proof:
+<ul>
+<li>There are two parts of the proof as the running time is obvious.
+<ul>
+<li>First:
+<ul>
+<li>Notice that $g_i$ has degree bounded by $d$ and there are at most $n-1$ many values.</li>
+<li>Hence at most $d(n-1)+1$ many values for $c$ have to be searched in every step.</li>
+</ul>
+</li>
+<li>Second:
+<ul>
+<li>If $g_i$ is non-zero in step $j$ than it is non-zero after step $j$ by construction.</li>
+<li>$g_i$ is initially non-zero as $\alpha$ is a witness.</li>
+<li>After all steps, we found an assignment such that for all $i$ it holds that $f_{i,a}(\alpha_i) - f_{i,a}(0)\neq 0$.</li>
+<li>Lemma 2 finishes the proof.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="decomposition">Decomposition</h2>
+<p>Algorithm (given a justifying assignment $a$):</p>
+<ol>
+<li>$\mathcal{I}=\emptyset$, $J=[n]$.</li>
+<li>Set $x_n=a_n$ and recursively compute the variable-partition of $C\vert_{x_n \leftarrow a_n}$ or return the singleton set ${ { 1} }$.</li>
+<li>Let $\mathcal{I}'$ be the resulting partition.</li>
+<li>For every $I\in \mathcal{I}'$ check if $C(a)\cdot C \equiv C_{x_n \leftarrow a_n} C_{x_{[n]\setminus I} \leftarrow a_{[n]\setminus I}}$.
+<ol>
+<li>If yes, add $I$ to $\mathcal{I}$ and set $J\leftarrow J\setminus I$.</li>
+<li>Otherwise move to the next $I$.</li>
+</ol>
+</li>
+<li>Add the remaining elements to $\mathcal{I}$ as a single set ($\mathcal{I}\cup { {J}}$).</li>
+</ol>
+<ul>
+<li>
+<p>Lemma 3.2: Let $a$ be a justifying assignment for $f$ then for all $I$ $f(a) \cdot f \equiv f_{x_I\leftarrow a_I} \cdot f_{x_{[n]\setminus I}\leftarrow a_{[n]\setminus I}}$ iff $I$ is a disjoint union of sets from the variable-partition of $f$.</p>
+<ul>
+<li>Meaning:
+<ul>
+<li>Notice, that this says it could be a really bad factoring algorithm (i.e., not factoring at all).</li>
+<li>Notice that in the first recursion step we have $n$ as a special variable. If some variable partition $I$ is not a valid partition by this lemma, then it means it has to be in a set with $n$.</li>
+</ul>
+</li>
+<li>Proof:
+<ul>
+<li>$\Rightarrow$ (Assume equality holds)
+<ul>
+<li>As $a$ is a justifying assignment $f\vert_{x_I\leftarrow a_I}$ and $f\vert_{x_{[n]\setminus I} \leftarrow a_{[n]\setminus I}}$ are not equivalent to the zero polynomial.</li>
+<li>Hence, $f(a)$ is not equal to zero (by equality).</li>
+<li>Hence, $f(x) = f_{x_{[n]\setminus I}\leftarrow a_{[n]\setminus I}} \cdot f\vert_{x_I \leftarrow a_I}/f(a)$.</li>
+<li>Then the results follows by uniqueness of decomposition.</li>
+<li>Notice that this just says, we found a factorization (a unique factorization but not the smallest).</li>
+</ul>
+</li>
+<li>$\Leftarrow$ (decomposition to equality)
+<ul>
+<li>We have the decomposition $f(x)=h(X_I)g(X_{[n]\setminus I})$.</li>
+<li>Now plugging in our justifying assignment results in $f\vert_{x_I\leftarrow a_I} = h(a) g(X_{[n]\setminus I})$ and $f\vert_{[n]\setminus I \leftarrow a_{[n]\setminus I}} = h(X_I) g(a)$.</li>
+<li>Hence, $f\vert_{x_I\leftarrow a_I} f\vert_{[n]\setminus I \leftarrow a_{[n]\setminus I}} = h(a) g(X_{[n]\setminus I}) \cdot  h(X_I) g(a)$.</li>
+<li>And this is equal to $f(a)f(x)$. by associativity.</li>
+<li>Notice, that we used here again the multilinearity.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Lemma 3.1: The algorithm outputs a variable partition for the polynomial computed by C</p>
+<ul>
+<li>Proof:
+<ul>
+<li>Proof by induction.</li>
+<li>The base case is clear as a univariate <em>multilinear</em> polynomial does not have factors.</li>
+<li>Let $C=h_1(X_{I_1}) \cdots h_k(X_{I_k})$. where $\mathcal{I}={ I_1,\dots, I_k}$ the correct partition.</li>
+<li>Assume w.l.o.g. that $n\in I_k$.</li>
+<li>Now $C_{x_n\leftarrow a_n} = h_1\cdots h_{k-1} h_k\vert_{x_n\leftarrow a_n}$ by justifying.</li>
+<li>Now we can use our induction hypothesis on $C_{x_n\leftarrow a_n}$.
+<ul>
+<li>Notice that this could have factors $h_k\vert_{x_n\leftarrow a_n} = g_1\cdots g_l$</li>
+<li>However, we will use the induction hypothesis on $C_{x_n\leftarrow a_n}$.</li>
+</ul>
+</li>
+<li>This gives us then a partition (not variable partition) $I_1,\dots, I_{k-1}, I_{k,1},\dots, I_{k,l}$.</li>
+<li>By Lemma 3.2 $I_1,\dots,I_{k-1}$ will be added, however $I_{k,1},\dots,I_{k,l}$ will not be added (as $\mathcal{I}$ was already the partition).</li>
+<li>The runtime if obvious from the algorithm.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Proof of the Theorem</p>
+<ul>
+<li>The proof is now simple.</li>
+<li>By Theorem 2.4 we can compute a justifying assignment (notice that he PIT also works for the derivative) and the number of variables.</li>
+<li>Lemma 3.1 gives us the variable partition.</li>
+<li>Hence, for every $I$ we see $\alpha y^m h_I = C\vert_{x_{[n]\setminus I} \leftarrow a_{[n]\setminus I}}$ for some $m$.</li>
+<li>A simple interpolation gives us $h_I$.</li>
+</ul>
+</li>
+</ul>
+<h1 id="kopparty-saraf-shpilka">Kopparty, Saraf, Shpilka</h1>
+<h2 id="rough-overview-of-the-kaltofen-factorization-algorithm-reducing-multivariate-factorization-to-univariate-factorization">Rough Overview of the Kaltofen Factorization Algorithm (reducing multivariate factorization to univariate factorization)</h2>
+<ul>
+<li>Initialization:
+<ul>
+<li>Assume $f(x,y)$.</li>
+<li>Assume $f$ is monic, i.e., highest degree coefficient is one.</li>
+<li>Assume $f(x,0)$ is square free.</li>
+</ul>
+</li>
+<li>Univariate Factoring:
+<ul>
+<li>Factor $f(x,0)$ as a univariate polynomial into $g(x,0)\cdot h(x,0)$.</li>
+<li>Various algorithms such as LLL and others.</li>
+</ul>
+</li>
+<li>Lifting:
+<ul>
+<li>Lift the factors by the following theorem:</li>
+<li>Let $R=\mathbb{F}(x)[y]$ and $I=y^{2^i}R$ and let $f=g\cdot h\mod I$ and $a,b\in R$ such that $ag+bh=1\mod I$. Then we can efficiently compute $g',h'$ such that $f=g'h' \mod I^2$ and $g=g'\mod I$, $h=h'\mod I$.</li>
+<li>Now we use this to compute polynomials $g_i(x,y), h_i(x,y)$ such that $f(x,y) = g_i(x,y)h_i(x,y) \mod y^{2^i}$.</li>
+<li>Notice that we essentially started with the factors $f(x,y)=g(x,y)h(x,y)\mod y$.</li>
+</ul>
+</li>
+<li>Reducing the degree:
+<ul>
+<li>We continue until we are at $y^{4d^2}$.</li>
+<li>Now $g_k$ divides(modulo $y^{4d^2}$) another low degree polynomial that has a common factor with $f$.</li>
+<li>Compute $g'$ such that $g'=g_k r \mod y^{4d^2}$ such that $\deg_x(g') &lt; \deg_x(f)$ and $\deg_y(g')\leq \deg_y(f)$.</li>
+<li>Do this by solving linear equation system.</li>
+<li>This system is solvable as $g=g_k r_k \mod y^{4d^2}$.</li>
+</ul>
+</li>
+<li>Computing a non-trivial factor:
+<ul>
+<li>Compute $\gcd(f,g')$.</li>
+<li>One can show (with the resultant) that this has always a non-trivial gcd.</li>
+<li>Continue now by induction on the factors.</li>
+</ul>
+</li>
+<li>Extending this to multivariate case:
+<ul>
+<li>Take $f(x,y_1,\dots,y_n)$ and take it as $f(x,\alpha_1 + \beta_1 t,\dots, \alpha_n t+\beta_n)$ in $\mathbb{F}(\alpha_1,\dots,\alpha_n)[x,t]$ for some random subspace.</li>
+<li>Effective Hilbert Theorem: $\Pr_{\alpha,\beta}[f(x,\alpha_1t+\beta_1,\dots,\alpha_nt+\beta_n) \text{ is not irreducible}] \leq O(\frac{d^5}{\lvert S\rvert})$.</li>
+<li>Effective and efficient Hilber Theorem: We can even compute a polynomial $h(z_1,\dots,z_n,y_1,\dots,y_n)$ such that $h(\alpha,\beta)\neq 0$ iff $f$ is irreducible (follows form the proof of the effective hilbert theorem).
+<ul>
+<li>This is were we use our blackbox/hitting set for, i.e., one of our elements in the hitting set will be enough without needing to compute $h$.</li>
+</ul>
+</li>
+<li>With high probability this restriction is enough (Effective Hilbert irreducibility).</li>
+</ul>
+</li>
+</ul>
+<h2 id="theorem">Theorem</h2>
+<ul>
+<li>Polynomial sized circuits with polynomial degree on $n$ variables.</li>
+<li>PIT: Is such a circuit identically to the zero polynomial.</li>
+<li>PIT produce circuit lower bounds (boolean or algebraic) and the other way around.</li>
+<li>Factoring: Compute irreducible factors of $f$.</li>
+<li>Depth of a circuit.</li>
+<li>$(n,s,d)$ circuit with $n$ variables, size $s$ and degree $d$.</li>
+<li>Degree of multivariate polynomial is the total degree.</li>
+<li>Theorem: Let $\mathbb{F}$ be a finite field or the rationals $\mathbb{Q}$. Suppose polynomial identity testing for $(n,s,d)$ circuits over $\mathbb{F}$ can be solved deterministically in time $\poly(n,s,d)$. Let the factors be given by $f=\prod_{i=1}^k g_i^{p^{e_i} j_i}$. Then we can compute an arithmetic circuit for the factor $g_i^{p^{e_i}}$ in deterministic time polynomial in $n,s,d,t$. Where $t=l\cdot p$ if the field has characteristic $p$ and $t$ the maximum bit complexity of the constants used in the circuit if $\mathbb{F}$ is the rations.</li>
+</ul>
+<h2 id="explanation-of-the-theorem">Explanation of the theorem</h2>
+<ul>
+<li>Bit complexity is needed.</li>
+<li>The details in the theorem change if we use black-box or white-box algorithms for PIT.</li>
+<li>Black-box can extract $g_i$ while whitebox only $g_i^{p^{e_i}}$.</li>
+<li>We want to replace the last.
+<ul>
+<li>We know that given a circuit $C$ of size $s$ the factors can be computed by a circuit of size $\poly(s)$.</li>
+<li>There exists a polynomial (in the size of $g$) circuit $h$ such that if this $h(\alpha,\beta)\not\equiv 0$, then such a $g$ restricted to a 2 dimensional subspace given by $\alpha,\beta$ is irreducible.</li>
+<li>These two facts are enough for the black-box algorithm.
+<ul>
+<li>Remember that a deterministic PIT is a polynomial size hitting set.</li>
+<li>Hence, a set where not all circuits of some size $s$ evalue to zero on all the elements in the hitting set.</li>
+<li>Hence, just doing the factoring on all the hitting set points is enough.</li>
+</ul>
+</li>
+<li>This is the problem for whitebox is that we do not have such a hitting set!</li>
+</ul>
+</li>
+<li>For whitebox, that we work over the field $f(x,ta_1,\dots,ta_n)\in \mathbb{F}(a_1,\dots,a_n)[x,t]$
+<ul>
+<li>This field is to complicated for</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-whitebox-case">The whitebox case</h2>
+<h3 id="overview">Overview</h3>
+<ul>
+<li>Sadly the factors have small circuits proof uses hilbert's theorem.</li>
+<li>Idea:
+<ul>
+<li>Reduce $f(x_1,\dots,x_n)$ to $f(x_1,tx_2,\dots,tx_n)$ as a polynomial in $K[x_2,\dots,x_n][x_1,t]$.</li>
+<li>Factor over this field and use the rest of Kaltofen's algorithm.</li>
+<li>Factoring over this field could still be hard but whitebox PIT will help us.</li>
+</ul>
+</li>
+<li>Algorithm:
+<ol>
+<li>Reduce to bivariate factoring over a large field.
+<ul>
+<li>Define $f'(x,t) = f(x,ta_1,\dots,ta_n)$ and show that the factors correspond to the original polynoimals.</li>
+<li>Notice that in all this, we just look at our polynomial as a polynomial in $\mathbb{F}[a_1,\dots,a_n][x,t]$.</li>
+</ul>
+</li>
+<li>Univariate factorization
+<ul>
+<li>Find an irreducible factor for $f'(x,0)$.</li>
+<li>Write $f'(x,t)=g'(x,t,a_1,\dots,a_n) h'(x,t,a_1,\dots,a_n) \mod T$ and view this as an equation in $T$.</li>
+</ul>
+</li>
+<li>Hensel Lifting
+<ul>
+<li>Lift to $g'(x,t,a_1,\dots,a_n) h'(x,t,a_1,\dots,a_n) \mod T^{2^k}$.
+<ul>
+<li>The following lemma (3.6) does not need PIT: There exists a single arithmetic circuit with inputs $a_1,\dots,a_n$ and computes the coefficients of of $g',h'$ for the monomial $x^i t^j$ for all $i,j$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Solve linear equation
+<ul>
+<li>Suppose $g=\sum_{i\leq d, j\leq D} c_{i,j}(a_1,\dots,a_n)x^i t^j$</li>
+<li>We know $\sum_{i\leq d, j\leq d} r_{i,j}x^i t^j = \left(\sum_{i\leq D, j\leq D} c_{i,j}x^i t^j\right) \left(\sum_{i\leq D, j\leq D} s_{i,j}x^i t^j\right) \mod T^{2^k}$.</li>
+<li>Solve this to get a non-trivial solution.
+<ul>
+<li>This step needs PIT!</li>
+</ul>
+</li>
+<li>If there is no solution, $f'$ is irreducible, otherwise find GCD.
+<ul>
+<li>Proof: The proof works with using the Hensel Lifting THeoreym.</li>
+</ul>
+</li>
+<li>Solving linear equations is possible with PIT, main idea:
+<ul>
+<li>We want to find a $jxj$ minor that has full rank in the matrix (if $j=n$ then we only have the 0 vector as a solution).</li>
+<li>Get a $1\times 1$ minor by trying all elements in a row.</li>
+<li>Check all extensions of a $j\times j$ minor to a $(j+1)\times (j+1)$ minor by checking if the determinant is non-zero.</li>
+<li>Kramer's formula tells us the following:
+<ul>
+<li>Let $M_j^{(i)}$ be $M_j$ with the $i$th column replaced by $(M_{1,j+1},\dots,M_{j,j+1})$.</li>
+<li>Then our solution is: $(\det(M_j^{(1)}),\dots,\det(M_j^{(j)}), -\det(M_j),0,\dots,0)$.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Compute GCD
+<ul>
+<li>To get a non-trivial factor of $f$, i.e., $h(x,y_1,\dots,y_n)$ divides $f(x,y_1,\dots,y_n)$.</li>
+</ul>
+</li>
+<li>Continue the recursion by factoring $f/h$ where $h$ is the resulting factor.
+<ul>
+<li>PIT is needed here to check if $f/h=f$ in a recursion step.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="some-more-details">Some more Details</h3>
+<ol>
+<li>Let $h'$ be a factor of $f'$. Then there exists $h$ such that $h'(x,t,a_1,\dots,a_n)=h(x,ta_1,\dots,ta_n)$ and $h$ divides $f$.
+<ul>
+<li>Proof:
+<ul>
+<li>Let $h'(x,t,a_1,\dots,a_n) = \sum_{i,j} x^i t^j h'_{i,j(a_1,\dots,a_n)$.</li>
+<li>$h'_{i,j}$ is homogeneous by the following argument:
+<ul>
+<li>Let $f'=h'\cdot g'$.</li>
+<li>$h'$ and $g'$ are relatively prime (squaredfreeness and monicness).</li>
+<li>Note that $f'(x,zt,a_1,\dots,a_n) = f'(x,t,za_1,\dots,za_n)$.</li>
+<li>Hence $h'(x,zt, a_1,\dots,a_n) g'(x,zt,a_1,\dots,a_n) = h'(x,t,za_1,\dots,za_n) g'(x,t,za_1,\dots,za_n)$.</li>
+<li>Hence by substituting $z=1$, i.e., calculate $\mod Z-1$.</li>
+<li>Applying Hensel Lifting, we get that $h'(x,zt,a_1,\dots,a_n) = h'(x,t,za_1,\dots,za_n)$.</li>
+<li>This implies $h'_{i,j}$ is a homogeneous polynoimal of degree $j$.</li>
+</ul>
+</li>
+<li>Define $h(x,y_1,\dots,y_n) = h'(x,1,y_1,\dots,y_n)$.</li>
+<li>$h$ has now the required properties.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use normal univariate factoring</li>
+<li>Ignore a bunch of other stuff.
+<ul>
+<li>The polynomials $g_k,h_k$ (remember that $g_k(x,t) h_k(x,t) = f'(x,t) \mod T^{2^k}$) have small circuits in the following sense: There exists a circuit $C$ of size $size(f)+poly(n,k,d)$ such that $C$ computes all the coefficients of $g_k$ and $h_k$ in of the monomials $X^jt^{j'}$.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>If $f'$ is reducible in $\mathbb{F}(a_1,\dots,a_n)[x,t]$ then the linear equation system from 4. has a non-trivial solution.</li>
+<li>Consider the polynomial $S$ (with $s_{i,j}$ coefficients) and $R$ (with $r_{i,j}$ coefficients). Then $R$ and $f'$ have non-trivial GCD in the ring $\mathbb{F}(t,a_1,\dots,a_n)[x]$.</li>
+</ul>
+</li>
+<li>Let $h$ be the gcd of $f'$ and $R$
+<ul>
+<li>Lemma 2.1: Homogeneous component extraction.</li>
+<li>Lemma 2.9: Computing gcd with PIT is easy.</li>
+<li>Lemma 2.3: If $f$ is monic and $g$ is monic and a factor in $\mathbb{F}(y_1,\dots,y_n)[x]$ then it is in $\mathbb{F}[x,y_1,\dots,y_n]$.</li>
+<li>Lemma 3.1: Let $h'(x,t,a_1,\dots,a_n)$ be a factor of $f'(x,t,a_1,\dots,a_n)$. Then there exist $h(x,y_1,\dots,y_n)$ such that $h'(x,t,a_1,\dots,a_n)= h(x,ta_1,\dots,ta_n)$.
+<ul>
+<li>See $h'=\sum_{i,j} x^i t^j h'_{i,j}(a_1,\dots,a_n)$.</li>
+<li>$h'_{i,j}$ is a homogeneous polynomial in $a_1,\dots,a_n$ of degree $j$. This is obvious by our construction.</li>
+</ul>
+</li>
+<li>Corollary 3.2: Let $h'(x,t,a_1,\dots,a_n)$ be a factor of $f'(x,t,a_1,\dots,a_n)$. Then there exists $h(x,y_1,\dots,y_n)$ such that $h'(x,t,a_1,\dots,a_n)=h(x,ta_1,\dots,ta_n)$ and $h(x,y_1,\dots,y_n)=h'(x,1,y_1,\dots,y_n)$.</li>
+<li>With this we can do the following after getting the gcd of $f'$.
+<ul>
+<li>Compute a small circuit for $h'$ for every coefficient of $x^i$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We have a circuit for $f,h$ and can compute one for $f/h$. Try to factor $f/h$ and test if $f=h$ to stop, i.e., we found a trivial factor.</li>
+</ol>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2018/monotone-vp-vs-monotone-vnp/">&#8249; Monotone VP vs monotone VNP</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2018/abp-general-lowerbound-overview/"> ABP general lowerbound &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

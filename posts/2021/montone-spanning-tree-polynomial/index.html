@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Montone Complexity of Spanning Tree Polynomial Re-visited | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Montone Complexity of Spanning Tree Polynomial Re-visited | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Montone Complexity of Spanning Tree Polynomial Re-visited | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2021-11-10" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/">Montone Complexity of Spanning Tree Polynomial Re-visited</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> November 10, 2021 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/arithmetic-circuits/">Arithmetic Circuits</a>]</span>
+
+    
+
+
+<h1 id="2021-09-14-cdgm-monotone-complexity-of-spanning-tree-polynomial-re-visited">2021-09-14-CDGM-Monotone Complexity of Spanning Tree Polynomial Re-visited</h1>
+<p><a rel="noopener" target="_blank" href="https://arxiv.org/abs/2109.06941v1">paper</a></p>
+<h1 id="results">Results</h1>
+<ul>
+<li>Spanning Tree polynomial is in VP</li>
+<li>Has monotone circuit complexity $2^{\Omega(n)}$.</li>
+<li>There are some other results in this paper.</li>
+</ul>
+<h1 id="details">Details</h1>
+<ul>
+<li>Spanning Tree polynomial is sum over edges of spanning tree.</li>
+<li>$ST(G') = \sum_{t\in T} \prod_{(u,v)\in t, u,v\neq r} x_{u,v}$.</li>
+<li>$G'$ is directed version of an undirected graph (i.e., both edges included).</li>
+<li>Here $r$ is the root, i.e., the root is not in the polynomial and assumed to be 1.</li>
+<li>The polynomial is given as ordered over $u$ in the paper.</li>
+<li>$ST(G)$ can be computed by an ABP via determinant.</li>
+<li>Let $G$ be a $d$-regular expander, then every monotone circuit for $ST(G)$ has size at least $2^{\Omega(n)}$.</li>
+</ul>
+<h1 id="proof">Proof</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Expander Mixing Lemma: Let $G$ be an undirected $d$ regular graph such that $\gamma_2$, the second largest eigenvalue of the adjacency matrix. Then for every set $S,T$ $| |E(S,T)| -\frac{d}{n} |S| |T| | \leq \gamma_2 \sqrt{|S| |T|}$.
+<ul>
+<li>$E(S,T)$ is the edges in the cut of $S,T$.</li>
+</ul>
+</li>
+<li>Matrix Tree Theorem: Let $G$ be an undirected graph and $0,\mu_1,\dots,\mu_{n-1}$ be the eigenvalues of the Laplacian of $G$. Then the number of spanning trees is $1/n \mu_1 \cdots \mu_{n-1}$.</li>
+<li>Theorem 2.1 (Yeh19): Let $p$ be a monotone polynomial. Then we can write $p=\sum_{t=1}^s a_t b_t$ with $n/3\leq \supp(a_t) \leq 2n/3$ and $\supp(b_t) = [n]\setminus \supp(a_t)$.
+<ul>
+<li>Here, supp is the variables occurring in the polynomial.</li>
+<li>Moreover, the coefficients of any monomial in $a_t b_t$ is bounded by the coefficient of the same monomial in $p$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="proof-1">Proof</h2>
+<ul>
+<li>We can look at the sum $\sum_{i=1}^s a_i b_i$ into buckets.</li>
+<li>Let $X_t={x_{t,i} \mid x_{t,i}\in \supp(a_i)\cup \supp(b_i)}$.</li>
+<li>Our buckets now make the computation look like this $\sum_{i=1}^{s/(n-1)} \sum_{t=2}^n a'_i b'_i$.</li>
+<li>Let us study one of the buckets, by fixing $s$ arbitrarily.</li>
+<li>We want to have an upper bound of $\sum_{t=2}^n |X_t|$.
+<ul>
+<li>This will give us a lower bound on the size, as we will count the monomials for this fixed $s$.</li>
+<li>If $x_{i,i'}\in \supp(a_s)$ and $x_{j,j'}\in \supp(b_s)$ then not $x_{i,j}$ and $x_{j,i}$ can be in $\cup_{t=2}^n X_t$.
+<ul>
+<li>Otherwise, $x_{i,j}\in \supp(a_s)$ and $x_{j,i}\in \supp(b_s)$.</li>
+<li>Otherwise $x_{i,j}x_{j,i}$ would be contained in a monomial of $a_s b_s$.</li>
+<li>This is a cycle and hence not allowed in a spanning tree.</li>
+<li>Notice that $x_{i,j}$ and $x_{j,i}$ are in $X_i,X_j$ respectively.</li>
+</ul>
+</li>
+<li>This means that at least one of the two directed edges must be absent in $\cup_{t=2}^n X_t$.</li>
+<li>Hence, $\sum_{t=2}^n |X_t| \geq dn - E(a_s,b_s)$ where $E(a_s,b_s)$ is the set of undirected edges.
+<ul>
+<li>The number of monomials is given by $dn$ for the whole graph.</li>
+<li>Except we have $E(a_s,b_s)$ removed from this because one edge is missing from this for every undirected edge this has.</li>
+</ul>
+</li>
+<li>Setting $|a_s|,|b_s| \geq n/3$ and $|a_s|+|b_s| =n$ and the expander Lemma we get</li>
+<li>$|E(a_s,b_s)| \geq d/n n^2/9 - \lambda_2 n/2 = n(d/9 - \lambda_2/2)$.</li>
+<li>This gives us the number of monomials for one fixed $s$, namely $\leq 1.01d(1-\alpha)^{n-1}$ for a constant $\alpha$.</li>
+<li>As the number of monomials in a spanning tree is (in our case) $1/n(d-\lambda_2)^{n-1}$.</li>
+<li>Our bound is now $(1/n (d-\lambda_2)^{n-1})/ 1.01(1-\alpha)^{n-1}$ which is exponential.</li>
+</ul>
+</li>
+</ul>
+<h1 id="interesting-open-problems">Interesting Open Problems</h1>
+<ul>
+<li>Is there an explicit polynomial computable by a formula that has exponential monotone circuits?</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/dealer-guesser/">&#8249; Keep that card in mind</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/space-complexity-of-sampling/"> The Space Complexity of Sampling &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

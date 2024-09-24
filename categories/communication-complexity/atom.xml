@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Communication Complexity</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/communication-complexity/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-04-27T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/communication-complexity/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Reading March</title>
+        <published>2023-04-27T01:00:00+00:30</published>
+        <updated>2023-04-27T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2023/readingv2/"/>
+        <id>https://narfinger.github.io/posts/2023/readingv2/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2023/readingv2/">&lt;h1 id=&quot;paper-1&quot;&gt;Paper 1&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2021&#x2F;100&#x2F;&quot;&gt;Ikenmeyer, Komarath, Saurabh - Karchmer-Wigderson Games for Hazard Free Circuits&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$u$ defines the unknown state.&lt;&#x2F;li&gt;
+&lt;li&gt;A resolution of a string in ${0,1,u}^*$ is a setting of the undefined values to an arbitrary value in ${0,1}$.&lt;&#x2F;li&gt;
+&lt;li&gt;We can define $\bar f(\alpha)$ to be $0$ or $1$ if the value for all resolutions is zero or one. Otherwise it is defined as $u$.&lt;&#x2F;li&gt;
+&lt;li&gt;A circuit is called hazard free if $C(\alpha)=\bar f(\alpha)$ for all $\alpha \in {0,1,u}^n$.&lt;&#x2F;li&gt;
+&lt;li&gt;Define $MUX_n(s_1,\dots,s_n, x_{0,0,...,0},\dots, x_{1,...,1})=x_{s_1,\dots,s_n}$.&lt;&#x2F;li&gt;
+&lt;li&gt;They give an exact bound on the size of the hazard free circuit for MUX$_n$.&lt;&#x2F;li&gt;
+&lt;li&gt;$size(MUX_n)=23^n -1$.&lt;&#x2F;li&gt;
+&lt;li&gt;They use Karchmer Wigderson game on subcube intersection game for this.&lt;&#x2F;li&gt;
+&lt;li&gt;Define $d f(x;y)=1$ if and only if $\bar f(x\oplus u \cdot y)=u$, meaning there is a resolution to one and one to zero.&lt;&#x2F;li&gt;
+&lt;li&gt;For any hazard free circuit and any boolean string $a$, we can construct a monotone circuit for $df(a;y)$. Hence, this gives us lower bounds.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;karchmer-widgerson-relationships&quot;&gt;Karchmer Widgerson Relationships&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Alice has $a$ with $f(a)=1$ and Bob has $b$ with $f(b)=0$. Find a coordinate such that $a_i\neq b_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Their extension: Alice gets $\alpha$, Bob $\beta$ with $\bar f(\alpha)=1$, $\bar f(\beta)=0$. Determine a coordinate such that $\alpha_i\neq \beta_i$ &lt;em&gt;and&lt;&#x2F;em&gt; $\alpha_i\neq u$, $\beta_i\neq u$.&lt;&#x2F;li&gt;
+&lt;li&gt;A prime implicant is an $\alpha \in f^{-1}(1)$ such that no value from ${0,1}$ can be replaced by an $u$.&lt;&#x2F;li&gt;
+&lt;li&gt;Elements in $f^{-1}(0)$ are called implicates.&lt;&#x2F;li&gt;
+&lt;li&gt;It is enough to look at the implicants and implicates as inputs to the game.
+&lt;ul&gt;
+&lt;li&gt;By flipping stable bits, we get the opposite, hence, it is enough for Alice and Bob.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;For a monotone function, the complexity between the extension game and the monotone game are the same.
+&lt;ul&gt;
+&lt;li&gt;This is easy to see. Alice flips $u$s up (to 1) and Bob down. Because of monotonicity the value is the still the same.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The Multiplexer function is now an obvious candidate.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>The strength of equality oracles in communication</title>
+        <published>2022-11-21T01:00:00+00:30</published>
+        <updated>2022-11-21T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/strength-of-equality-oracles/"/>
+        <id>https://narfinger.github.io/posts/2022/strength-of-equality-oracles/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/strength-of-equality-oracles/">&lt;h1 id=&quot;the-strength-of-equality-oracles-in-communiucation&quot;&gt;The Strength of Equality Oracles in communiucation&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2022&#x2F;152&#x2F;&quot;&gt;Pitassi, Shirley, Shraibman - The Strength of Equality Oracles in Communication&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;It is known that equality in communication complexity is the &quot;hardest&quot; function, i.e., needing $\Omega(n)$ bits of communication.&lt;&#x2F;li&gt;
+&lt;li&gt;However, for randomized communication, we need only $O(1)$ many bits.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives rise to the question: &lt;em&gt;What total function can be efficiently computed in a communication model with oracle access to Equality?&lt;&#x2F;em&gt;
+&lt;ul&gt;
+&lt;li&gt;Notice that only function with asymptotic less than $O(n)$ are interesting.&lt;&#x2F;li&gt;
+&lt;li&gt;In some sense, we allow algorithms to use randomness but only in the restricted sense that we can solve equality.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Some functions can be solved with equality such as greater-than.&lt;&#x2F;li&gt;
+&lt;li&gt;But equality cannot simulate all randomized protocols &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2018&#x2F;206&#x2F;&quot;&gt;Chattopadhyay, Lovett, Vinyals - Equality alone does not simulate randomness&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, Equality is not just all of randomized communication complexity in a complexity class sense.&lt;&#x2F;li&gt;
+&lt;li&gt;Questions:
+&lt;ul&gt;
+&lt;li&gt;What models can be computed if we give stronger communication model (than randomized) as the base with equality oracle access.&lt;&#x2F;li&gt;
+&lt;li&gt;What happens if we restrict the reductions in (CLV) to be many-one reductions?&lt;&#x2F;li&gt;
+&lt;li&gt;Non-deterministic communication for which no linear bounds are known.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;definitions&quot;&gt;Definitions&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;A blocky matrix is essentially a blowup of an identity matrix with some rows and columns deleted, duplicated or permuted or with zero rows added.&lt;&#x2F;li&gt;
+&lt;li&gt;Blocky number is the minimum number of blocky matrices needed to cover a matrix.&lt;&#x2F;li&gt;
+&lt;li&gt;Similar with blocky partition number.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;We will omit the cc to denote communication complexity, as we will only talk about communication complexity in this.&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;UP is the unambigious nondeterministic model where a prover sends player a witness string after which the players proceed deterministically.&lt;&#x2F;li&gt;
+&lt;li&gt;NP^EQ are $2^m$ many P^EQ protocols and the result is the OR of all these executions with EQ oracle access.&lt;&#x2F;li&gt;
+&lt;li&gt;$\gamma_2(A) = \min_{X,Y XY^T =A} r(X)r(Y)$ where $r$ is the maximum $l_2$ norm of any row.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;UP^Eq $\leq \log \chi_1(A) \leq O($UP^Eq$ \log n)$ where $\chi_1$ is the minimal $r$ such that $A$ can be expressed as the sum of blocky matrices.&lt;&#x2F;li&gt;
+&lt;li&gt;NP^Eq $\leq \log C_1(A) \leq O($NP^Eq$ \log n)$ where $C_1$ is the minium number of blocky matrices such that $A$ is the entry wise OR of these matrices.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error</title>
+        <published>2021-11-16T01:00:00+00:30</published>
+        <updated>2021-11-16T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2021/randomized-computation/"/>
+        <id>https://narfinger.github.io/posts/2021/randomized-computation/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2021/randomized-computation/">&lt;h1 id=&quot;2021-07-25-md-tight-bounds-for-the-randomized-and-quantum-communication-complexities-of-equality-with-small-error&quot;&gt;2021-07-25-MD-Tight Bounds for the Randomized and Quantum Communication Complexities of Equality with Small Error&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2021&#x2F;113&#x2F;&quot;&gt;paper&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;I am only going to cover the convertion between public coin protocols to private coin protocols.&lt;&#x2F;li&gt;
+&lt;li&gt;This is an improvement over the original Newman&#x27;s Theorem.&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem (Neumann): $R_{\epsilon +\delta}^{priv}(F) \leq R_\epsilon^{pub}(F) + \log n&#x2F;\delta^2 + O(1)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Result: $\forall \epsilon,\delta$ in sufficient ranges $R_{\epsilon (1 +\delta)}^{priv}(F) \leq R_\epsilon^{pub}(F) + \log n&#x2F;\epsilon + \log 6&#x2F;\delta^2$.
+&lt;ul&gt;
+&lt;li&gt;This follows similar to Neumann but uses a multiplicative Chernoff bound instead of an additive one.&lt;&#x2F;li&gt;
+&lt;li&gt;This seems like a good way to get familiar with this proof.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof&quot;&gt;Proof&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Let $\Pi$ be a protocol that computes $F$ with error $\epsilon$.&lt;&#x2F;li&gt;
+&lt;li&gt;Set $B=6n&#x2F;\delta^2\epsilon$.&lt;&#x2F;li&gt;
+&lt;li&gt;Independently choose random strings $r_1,\dots,r_B$ according to the distribution used by $\Pi$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $I_{j,x,y}$ denote the indicator that $r_j$ is a bad random string for $x,y$.&lt;&#x2F;li&gt;
+&lt;li&gt;Fix two arbitrary inputs $x,y$. The error probability implies that $\Pr_{r_1,\dots,r_B}[I_{j,x,y}=1] \leq \epsilon$.&lt;&#x2F;li&gt;
+&lt;li&gt;Linearity of expecation now gives $E_{r_1,\dots,r_B}[\sum_{j\in B}I_{j,x,y}]\leq B\epsilon =6n&#x2F;\delta^2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we give an upper bound on $\Pr_{r_1,\dots,r_B}[\sum_{j\in B}I_{j,x,y} \geq B\epsilon(1+\delta)]$.&lt;&#x2F;li&gt;
+&lt;li&gt;This can be bounded by Chernoff with $\leq \exp(-\delta^2 6n&#x2F;3\delta^2)=\exp(-2n) &amp;lt; 2^{-2n}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we union bound over all $x,y$ giving us $Pr[\text{the sum is above B\epsilon(1+\delta) for some x,y}]\leq \sum_{x,y} Pr[...]$&lt;&#x2F;li&gt;
+&lt;li&gt;This is bounded by $2^{2n} 2^{-2n}=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, there exists a choice of $r_1,\dots,r_B$ that gives the protocol random private coin bits.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Short Overview of Communication Complexity for Algorithms Designers (Reading Group)</title>
+        <published>2020-04-01T16:32:00+00:30</published>
+        <updated>2020-04-01T16:32:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2020/communication-complexity-reading-group/"/>
+        <id>https://narfinger.github.io/posts/2020/communication-complexity-reading-group/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2020/communication-complexity-reading-group/">&lt;h1 id=&quot;communication-complexity&quot;&gt;Communication Complexity&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1509.06257&quot;&gt;Communication Complexity for Algorithm Designers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;communication-complexity-basics-based-on-chapter-4&quot;&gt;Communication Complexity Basics (Based on Chapter 4)&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Alice and Bob, have $x\in {0,1}^a$ and $y\in {0,1}^b$ both as private information.&lt;&#x2F;li&gt;
+&lt;li&gt;Both want to communicate to figure out a function $f:{0,1}^{a+b}\rightarrow {0,1}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;one-way-communication-protocol&quot;&gt;One Way Communication Protocol&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Alice computes $A(x)$ and sends it to Bob for a function $A:{0,1}^a\rightarrow {0,1}^m$.&lt;&#x2F;li&gt;
+&lt;li&gt;Bob then decides by computing $B(y,A(x))$.&lt;&#x2F;li&gt;
+&lt;li&gt;Alice and Bob do not have a computation bound.&lt;&#x2F;li&gt;
+&lt;li&gt;The one way complexity of a function is the minimum over all protocols, worst case number of bits used by any one-way protocol that decides $f$ (remember, $A$, $B$ can be randomized).&lt;&#x2F;li&gt;
+&lt;li&gt;I.e., $\min_{ P\text{ protocol}} \max_{x\in {0,1}^a, y\in {0,1}^b} \lvert A(x)\rvert$ for all correct protocols $A(x)$. Similar definition for two-way communication.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;disjointness-problem&quot;&gt;Disjointness Problem&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Let the Universe be $[n]$ and Alice, Bob having vectors $x,y$ being characteristic vectors of sets of size $k$.&lt;&#x2F;li&gt;
+&lt;li&gt;I.e., $[1,0,0,1]= {x_1,x_4}$ vs $[1,1,1,0] = { x_1, x_2, x_3}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Accept if $S_x\cap S_y=\emptyset$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;deterministic-one-way-communication-complexity-for-disjointness&quot;&gt;Deterministic One-way Communication Complexity for Disjointness&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Every deterministic one-way protocol for disjointness has $n$ has worst-case communication complexity.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;Consider Alice only sending $n-1$ bits.&lt;&#x2F;li&gt;
+&lt;li&gt;Now let us look at the set $S={ y\mid y=A(x) \text{ for any } x}$&lt;&#x2F;li&gt;
+&lt;li&gt;The size of this is obviously $2^{n-1}$.&lt;&#x2F;li&gt;
+&lt;li&gt;By pigeonhole principle, there are two distinct inputs where Alice sends the same message.&lt;&#x2F;li&gt;
+&lt;li&gt;As $x_1,x_2$ differ in at least one bit, Bob can have a set that is compatible with $x_1$ but not $x_2$ violating the correctness of the protocol.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;probabilistic-one-way-communication-complexity-for-disjointness&quot;&gt;Probabilistic One-way Communication Complexity for Disjointness&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Public coins are both visible by Alice and Bob at the same time and don&#x27;t contribute to the communication.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Private coins where Alice and Bob have a private pool.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Public coins are strictly more powerful.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Public coin protocols are equivalent to distributions over deterministic protocols.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Error constants and one vs two-sided errors follow with similar definitions as from normal complexity theory.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Every randomized protocol that decides disjointness with probability $2&#x2F;3$ correctly uses $\Omega(n)$ communication.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Proof:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;[Yao Lemma]: Let $D$ be a distribution over the space of inputs $(x,y)$. Suppose that every deterministic one-way protocol cost at least $k$  with $\Pr[P\text{ is wrong on } (x,y)]\leq \varepsilon$. Then every public coin randomized protocol with error $\varepsilon$ has communication cost at least $k$.&lt;&#x2F;li&gt;
+&lt;li&gt;Proving the lemma:
+&lt;ul&gt;
+&lt;li&gt;Let $R$ be a randomized protocol that uses less than $k$ communication cost.&lt;&#x2F;li&gt;
+&lt;li&gt;Then $R$ is a distribution of deterministic protocols $P_1,\dots, P_s$, each with communication cost less than $k$ and some error probability.&lt;&#x2F;li&gt;
+&lt;li&gt;Assume every $P_i$ has error larger than $\varepsilon$, then no matter the distribution, $R$ would have error probability higher than $\varepsilon$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence there exists an $i$ such that $P_i$ has error probability less than $\varepsilon$ and it uses less than $k$ communication.&lt;&#x2F;li&gt;
+&lt;li&gt;This is a contradiction to the assumption.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;normal-communication&quot;&gt;Normal Communication&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Matrix view of input&#x2F;output behavior $M(f)$.
+&lt;ul&gt;
+&lt;li&gt;Let us look in the following at Disjointness with the rows and columns being $\emptyset, { x_1}, {x_2}, {x_1, x_2}$ for $X$ and $Y$ respectively.&lt;&#x2F;li&gt;
+&lt;li&gt;$\begin{pmatrix} 1&amp;amp; 1&amp;amp; 1&amp;amp; 1\ 1&amp;amp; 0&amp;amp; 1&amp;amp; 0\ 1&amp;amp; 1&amp;amp; 0&amp;amp; 0\ 1&amp;amp; 0&amp;amp; 0&amp;amp; 0&amp;amp;\end{pmatrix}$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Rectangles, i.e., take $X,Y$, chose subsets $A\subseteq X$ of rows and $B\subseteq Y$ of columns such that all $(x,y)\in A\times B$ have the same value (monochromatic).&lt;&#x2F;li&gt;
+&lt;li&gt;These Rectangles do not need to be continuous!&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem: Let $f$ be a function such that every partition into monochromatic rectangles requires at least $t$ rectangles. Then the deterministic communication complexity is at least $\log t$.
+&lt;ul&gt;
+&lt;li&gt;Proof: A deterministic protocol of complexity $\log t$ can only have $t$ many different transcripts.&lt;&#x2F;li&gt;
+&lt;li&gt;It has to partition the sets into rectangles, as otherwise there would be a non-monochromatic rectangle where the protocol would make a mistake.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Corollary: Every covering of $M(f)$ by monochromatic rectangles requires at least $t$ rectangles, then the deterministic communication complexity is at least $\log t$.&lt;&#x2F;li&gt;
+&lt;li&gt;Note, $\log r$ where $r$ is the rank is a lower bound for the communication complexity but unknown if it is an upper bound for the complexity.&lt;&#x2F;li&gt;
+&lt;li&gt;Examples:
+&lt;ul&gt;
+&lt;li&gt;Equality is the identity matrix.&lt;&#x2F;li&gt;
+&lt;li&gt;$\begin{pmatrix} 1&amp;amp; 0&amp;amp; 0&amp;amp; 0&amp;amp;\ 0&amp;amp; 1&amp;amp; 0&amp;amp; 0\ 0&amp;amp; 0&amp;amp; 1&amp;amp; 0\ 0&amp;amp; 0&amp;amp; 0&amp;amp; 1\end{pmatrix}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Disjointness has $\log \binom n k = k\log n&#x2F;k$ as there are $\binom n k$ sets for a universe of size $n$ and subsets of size $k$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;randomized-disjointness&quot;&gt;Randomized Disjointness&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Theorem: There exists a distribution such that Disjointness has communication complexity at least $\Omega(k)$$.&lt;&#x2F;li&gt;
+&lt;li&gt;What is the distribution?
+&lt;ul&gt;
+&lt;li&gt;Take uniform distribution, the chance that $f(x,y)=1$ is $(3&#x2F;4)^n$, hence, a algorithm that outputs the constant 1 has high success probability. Hence, accept and reject cases need constant probabilities.&lt;&#x2F;li&gt;
+&lt;li&gt;The inputs need to be distributed to not have significantly less than $\log n$ information content per input as otherwise the input can be send.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Distribution:
+&lt;ul&gt;
+&lt;li&gt;With probability $3&#x2F;4$: $(x,y)$ is chosen uniformly at random subject to: $x,y$ have exactly $n&#x2F;4$ ones and there &lt;em&gt;is no&lt;&#x2F;em&gt; index such that $x_i=y_i=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;With probability $1&#x2F;4$: $(x,y)$ is chosen uniformly at random subject to: $x,y$ have exactly $n&#x2F;4$ ones and there &lt;em&gt;is&lt;&#x2F;em&gt; an index such that $x_i=y_i=1$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Almost monochromatic 1 rectangles $R$ with respect to distribution $D$:
+&lt;ul&gt;
+&lt;li&gt;$\Pr[(x,y)\in R\text{ and } f(x,y)=0] \leq 8\varepsilon \Pr[(x,y)\in R\text{ and } f(x,y)=1]$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Show that an almost chromatic rectangle contains at most $2^{-c}$ mass of the distribution where $c$ is as large as possible.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof not given.&lt;&#x2F;li&gt;
+&lt;li&gt;There is also a protocol that achieves this:
+&lt;ul&gt;
+&lt;li&gt;$Z_1,\dots$ uniform random subsets.&lt;&#x2F;li&gt;
+&lt;li&gt;Send: smallest index such that $X\subseteq Z_i$ for both.&lt;&#x2F;li&gt;
+&lt;li&gt;Discard elements that are not in the $Z_i$ you got.&lt;&#x2F;li&gt;
+&lt;li&gt;Repeat until empty set.&lt;&#x2F;li&gt;
+&lt;li&gt;Cut off communication at some probability related point.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;communication-complexity-datastructures-chapter-6&quot;&gt;Communication Complexity Datastructures (Chapter 6)&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;The main point of this section will be to show Datastructure Lower Bounds for $\varepsilon$-Gap Hamming in the Cell Probe Model.&lt;&#x2F;li&gt;
+&lt;li&gt;Nearest Neighbor:
+&lt;ul&gt;
+&lt;li&gt;Given points $S={x_1,\dots,x_n}$ in the hamming cube $H^d={0,1}^d$ ($d$ roughly $\Omega(\sqrt{n})$).&lt;&#x2F;li&gt;
+&lt;li&gt;Build a structure $D$ such that: Given a point $x\in H^d$ find the closest point in $S$ to $x$ using $D$.&lt;&#x2F;li&gt;
+&lt;li&gt;This problem can be transferred to other metric spaces.&lt;&#x2F;li&gt;
+&lt;li&gt;Approximation problem where the distance between the real point and the point returned is $l(q,p)\leq (1+\varepsilon)l(q,p)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;varepsilon-gap-hamming&quot;&gt;$\varepsilon$-Gap Hamming&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Specialization of Nearest Neighbor.&lt;&#x2F;li&gt;
+&lt;li&gt;$\varepsilon$-Gap Hamming: Decide if the hamming distance $l(x,y)$ is at most $L$ or at least $(1+\varepsilon)L$ for some input $L$.&lt;&#x2F;li&gt;
+&lt;li&gt;A communication protocol for this problem:
+&lt;ul&gt;
+&lt;li&gt;Sample a random string $r_1,\dots,r_s$, $r_i\in { 0,1}^d$ where $r_{i,j}=1$ with probability $\frac{1}{2L}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Alice sends $h=&amp;lt; x,r_1&amp;gt;\mod 2, \dots, &amp;lt;x,r_s&amp;gt;\mod 2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Bob compares $h=&amp;lt;y,r_1&amp;gt;\mod 2,\dots, &amp;lt;y,r_s&amp;gt;\mod 2$ and accepts if it differs only in a small number of coordinates.&lt;&#x2F;li&gt;
+&lt;li&gt;Intuitively this is close to testing equality, except with a bias for the testing string to be zero, i.e., ignore certain errors.
+&lt;ul&gt;
+&lt;li&gt;If $x,y$ differ in only a single bit, the probability for uniformly $r$ would be $1&#x2F;2$ to reject.&lt;&#x2F;li&gt;
+&lt;li&gt;With every choice being $\frac{1}{2L}$, we are much more likely to produce zeroes where and hence, not recognize this.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The protocol has two-sided error (because of the &quot;at most $L$&quot;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;See the random process in a different light.&lt;&#x2F;li&gt;
+&lt;li&gt;Select relevant coordinate with probability $1&#x2F;L$ and for relevant coordinates choose uniformly at random between $0$ and $1$.&lt;&#x2F;li&gt;
+&lt;li&gt;If $l(x,y)=\Delta$, then:&lt;&#x2F;li&gt;
+&lt;li&gt;$\Pr_j[\langle r_j,x\rangle \mod 2 \not\equiv \langle r_j,y\rangle\mod 2] = 1&#x2F;2 \cdot \left(1- \left(1-\frac{1}{L}\right)^\Delta\right)$.&lt;&#x2F;li&gt;
+&lt;li&gt;i.e., at least one of the $\Delta$ coordinates is chosen (it is not true that all are not chosen) and then $r_i$ is chosen such that it recognizes the difference with probability $1&#x2F;2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now what is the difference if $\Delta \geq (1+\varepsilon)L$?&lt;&#x2F;li&gt;
+&lt;li&gt;$\Pr_j [\langle r_j,x\rangle \mod 2 \not\equiv \langle r_j,y \rangle \mod 2] = 1&#x2F;2 \left( 1-\frac{1}{L}\right)^L\left(1- \left(1-\frac{1}{L}\right)^{\varepsilon L}\right)$ by plugging $\Delta=(1+\varepsilon)L$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now by $1-x\in [e^{-2x}, e^x]$ for $x\in [0,1]$ we can bound this by&lt;&#x2F;li&gt;
+&lt;li&gt;$\geq 1&#x2F;2 \cdot e^{\frac{-2L}{L}} \cdot \left(1- e^{\frac{\varepsilon  L}{L}}\right)$.&lt;&#x2F;li&gt;
+&lt;li&gt;$\geq \frac{1}{2e^2}(1-e^{-\varepsilon})$.&lt;&#x2F;li&gt;
+&lt;li&gt;This is now constant.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $t$ be the probability that $\langle r_i,x\rangle \mod 2 \not\equiv \langle r_i,y\rangle \mod 2$.&lt;&#x2F;li&gt;
+&lt;li&gt;So if $l(x,y)\leq \Delta$, we expect $ts$ many random inner products to be different while if $l(x,y)\geq (1+\varepsilon)\Delta$ then at least $(t+O(\varepsilon))s$ to be different.&lt;&#x2F;li&gt;
+&lt;li&gt;Chernoff now implies the following:&lt;&#x2F;li&gt;
+&lt;li&gt;If the distance is less than $L$ between $x,y$ then the distance of the resulting vectors is at most $(t+1&#x2F;2 \cdot h(\varepsilon))s$&lt;&#x2F;li&gt;
+&lt;li&gt;If the distance is greater than $(1+\varepsilon)L$ between $x,y$ then the distance of the resulting vectors is at least $(t+1&#x2F;2 \cdot h(\varepsilon))s$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;lower-bounds-via-asymmetric-communication-complexity&quot;&gt;Lower Bounds via Asymmetric Communication Complexity&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Cell Probe model:
+&lt;ul&gt;
+&lt;li&gt;Computation Model, so we can prove lower bounds against this model for some problems.&lt;&#x2F;li&gt;
+&lt;li&gt;$D:{0,1}^n \times {0,1}^* \rightarrow {0,1}^{s w}$&lt;&#x2F;li&gt;
+&lt;li&gt;Store a database $D$ to answer a set of Queries $Q$ that is known up front. Store $D$ as $s$ cells of $w$ bits.&lt;&#x2F;li&gt;
+&lt;li&gt;Every query algorithm gets the content of cells he specifies.&lt;&#x2F;li&gt;
+&lt;li&gt;Answer every query in $Q$ correctly.&lt;&#x2F;li&gt;
+&lt;li&gt;Query Space (something like this): $\max_x \max_Q \log_w |D(x,Q)|$.&lt;&#x2F;li&gt;
+&lt;li&gt;Every query is if $q\in D$, hence $\log Q$ is the trivial upper bound.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Index Problem:
+&lt;ul&gt;
+&lt;li&gt;Alice has an $i\in [n]$ and Bob $y\in {0,1}^n$. The question is to compute $y_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Every randomized communication protocol for index has either Alice send at least $\delta \log n$ bits or Bob send at least $n^{1-2\delta}$ bits, both in the worst case.&lt;&#x2F;li&gt;
+&lt;li&gt;Miltersen Lemma: If $M(f)$ has at least $v$ columns that have at least $u$ 1-inputs and there is a deterministic protocol that computes $f$ and Alice, Bob send at most $a,b$ bits respectively. Then $M(f)$ has a 1-rectangle $A\times B$ with $\lvert A\rvert \geq u&#x2F;2^a$ and $\lvert B\rvert \geq v&#x2F;2^{a+b}$.&lt;&#x2F;li&gt;
+&lt;li&gt;A datastructure with query time $t$, space $s$, word size $w$ induces a communication protocol for INDEX in which Alice sends $t\log s$ bits and Bob sends at most $tw$ bits.
+&lt;ul&gt;
+&lt;li&gt;Bob builds the datastructure, Alice queries it.&lt;&#x2F;li&gt;
+&lt;li&gt;Alice makes $t$ queries with everything an cell in the database.&lt;&#x2F;li&gt;
+&lt;li&gt;Bob answers the $t$ queries with the content of the cells of size $w$.&lt;&#x2F;li&gt;
+&lt;li&gt;If Alice can afterwards decide INDEX, then the communication protocol worked.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$(k,l)$ Disjointness:
+&lt;ul&gt;
+&lt;li&gt;Alice has set of size $k$ and Bob of size $l$ from a common universe and they need to decide if the sets are disjoint.&lt;&#x2F;li&gt;
+&lt;li&gt;Solving $(1&#x2F;\varepsilon^2, n)$-Disjointness on a Universe of size $2n$ has either Alice send at least $\delta&#x2F;\varepsilon^2 \log n$ bits or Bob send at least $n^{1-2\delta}$ bits for large enough constant $\delta$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Finding hardness of Gap-Hamming in the Cell probe model via reduction to $(1&#x2F;\varepsilon,n)$-Disjointness.
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I.e., If we solve Gap-Hamming, we solve $(1&#x2F;\varepsilon,n)$-Disjointness.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Nearest Neighbor:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given points $S={x_1,\dots,x_n}$ in the hamming cube $H^d={0,1}^d$ ($d$ roughly $\Omega(\sqrt{n})$).&lt;&#x2F;li&gt;
+&lt;li&gt;Build a structure $D$ such that given a point $x\in H^d$ find the closest point in $S$ to $x$ using $D$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;$(1&#x2F;\varepsilon,n)$-Disjointness: Are sets disjoint with size $1&#x2F;\varepsilon$ and $n$.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Solve $(1&#x2F;\varepsilon,n)$-Disjointness with Gap Hamming&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Easy reduction:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Map to $2n$ dimensional hypercube ${0,1}^{2n}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Alice has a set of size $1&#x2F;\varepsilon$ from universe of dimension $2n$.&lt;&#x2F;li&gt;
+&lt;li&gt;Alice maps her input set $S$ to the characteristic vector in ${0,1}^{2n}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Bob maps his input set $T$ to the point set ${ e_i\mid i\in T}$  where $e_i$ is the characteristic vector of the singleton set.&lt;&#x2F;li&gt;
+&lt;li&gt;If $S,T$ are disjoint then the query has distance $1&#x2F;\varepsilon +1$ distance from every point.&lt;&#x2F;li&gt;
+&lt;li&gt;If they are not disjoint, there exists a point that has distance at most $1&#x2F;\varepsilon -1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Both are easy to see. Remember that $\lvert S\rvert = 1&#x2F;\varepsilon$, i.e., Alice has a vector of hamming weight $1&#x2F;\varepsilon$.&lt;&#x2F;li&gt;
+&lt;li&gt;Having overlap, means that there exists an $e_i$ where the corresponding value is also 1. Looking at the distance, we have $\sum_{i\in S} 1\leq \lvert S\rvert -1 = 1&#x2F;\varepsilon -1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Thus we reduce to Gap-Hamming with $1&#x2F;\varepsilon+1$ vs $1\geq 1&#x2F;\varepsilon-1$ (notice that this is the smallest increase, hence it holds for all reasonable gaps).&lt;&#x2F;li&gt;
+&lt;li&gt;If we could decide Gap-Hamming in Cell Probe model with these approximation with $w$ word size, $s$ space and $t$ queries then we would have a $t\log s + tw$ communication protocl.
+&lt;ul&gt;
+&lt;li&gt;This is just Alice queries Bob who has the datastructure $t$ times with cell described by $\log s$.&lt;&#x2F;li&gt;
+&lt;li&gt;Bob answers $t$ queries with the content of the cell of size $w$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;As $(1&#x2F;\varepsilon,n)$-Disjointness communication has lower bounds of $\delta&#x2F;\varepsilon \log n$ and $n^{1-2\delta}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, $t\log s\geq \delta&#x2F;\varepsilon \log n$ and $tw\geq n^{1-2\delta}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Hardness of high dimensional Gap-Hamming is not very interesting.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Lemma 6.6:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;There exists a randomized function $f$ from ${0,1}^{2n}\rightarrow {0,1}^d$ such that for every set $P$ of $n$ points and query $q$ produced by the reduction above, then with probability at least $1-1&#x2F;n$:&lt;&#x2F;li&gt;
+&lt;li&gt;If the nearest neighbor distance between $q$ and $P$ is $1&#x2F;\varepsilon +1$ then the nearest neighbor distance between $f(q)$ and $f(P)$ is at most $\alpha$.&lt;&#x2F;li&gt;
+&lt;li&gt;If the nearest neighbor distance between $q$ and $P$ is at most $1&#x2F;\varepsilon -1$ then the nearest neighbor distance between $f(q)$ and $f(P)$ is at most $\alpha(1+h(\varepsilon))$.&lt;&#x2F;li&gt;
+&lt;li&gt;This map takes $d=\Theta(\varepsilon^{-2}\log n)$ and random inner products with $2n$ bit vectors.&lt;&#x2F;li&gt;
+&lt;li&gt;In essence, this lemma allows us to reduce the dimension of the easy reduction with some probability.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Corollary: Every lower bound for $(1&#x2F;\varepsilon,n)$-Disjointness carries over to the Query-Database problem for the $(1+\varepsilon)$ approximate Nearest Neighbor problem in $d=\Omega(\varepsilon^{-2} \log n)$.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Corollary: Every datastructure for $(1+\varepsilon)$-approximate nearest neighbor with query time $t=\theta(1)$ and word size $O(n^{1-\delta})$ uses space $s=n^{\Omega(\varepsilon^{-1})}$.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Plugging this into our equations gives roughly:
+&lt;ul&gt;
+&lt;li&gt;$c\log s \geq c&#x27;&#x2F;\varepsilon \log n$ and $cn^{1-\delta}\geq n^{1-2\delta}$.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us a bound of $s\geq n^{c&#x27;&#x2F;\varepsilon}$, what the corollary says.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This can be refined to $s=n^{\Omega(\varepsilon^{-2})}$ with a slightly better reduction.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>The Composition Complexity of Majority | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2022/the-composition-complexity-of-majority/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2022/the-composition-complexity-of-majority/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2022/the-composition-complexity-of-majority/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="The Composition Complexity of Majority | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="The Composition Complexity of Majority | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2022-05-11" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2022/the-composition-complexity-of-majority/">The Composition Complexity of Majority</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> May 11, 2022 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/boolean-circuit-complexity/">Boolean Circuit Complexity</a>]</span>
+
+    
+
+
+<h1 id="the-compositon-complexity-of-majority">The Compositon complexity of majority</h1>
+<p><a rel="noopener" target="_blank" href="https://arxiv.org/abs/2205.02374">LRT - The Composition Complexity of Majority</a>
+<a rel="noopener" target="_blank" href="https://www.youtube.com/watch?v=C3_VCwPAh_0">Talk</a></p>
+<h1 id="result">Result</h1>
+<ul>
+<li>Can majority be given as $h(g_1,\dots,g_m)$ with $g_m$ a function that queries only $k&lt;&lt;n$ many bits and $h$ an arbitrary function.</li>
+<li>They prove an optimal $m\geq \Omega(n/k \log k)$ lower bound.</li>
+<li>The upper bound is easy to see.
+<ul>
+<li>Split the variables into $n/k$ disjoint set.</li>
+<li>Use $\log k$ of the functions per block to output the hamming weight.</li>
+<li>Use $h$ to compute the overall hamming weight and compute majority from this.</li>
+</ul>
+</li>
+<li>Also: This implies lower bounds for bounded with branching programs.</li>
+<li>Also: Lower bounds for small depth circuits.</li>
+</ul>
+<h1 id="proof">Proof</h1>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>Key Insight:
+<ul>
+<li>Suppose $x_i$ is queried by at most $q$ of the inner functions. Then $I[X_i \mid g_1(X),\dots, g_m(X)]\geq 2^{-O(q)}$.</li>
+<li>I.e., the information of $X_i$ under knowing $g_1,\dots,g_m$ is greater than the information from $q$ equally distributed bits.</li>
+</ul>
+</li>
+<li>They will prove show a lower bound for the hamming function $H:{0,1}^n \rightarrow {0,1}^{\log n}$ (Section 4),</li>
+</ul>
+<h2 id="preliminaries">Preliminaries</h2>
+<ul>
+<li>$x^{(i-&gt;b)} = (x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)$.</li>
+<li>$x^{\oplus i} = (x_1,\dots,x_{i-1},1\oplus x_i,x_{i+1},\dots,x_n)$.</li>
+<li>We call a function $k$-local if there exists a set $\lvert I\rvert=k$ such that $f(x)=f(x^{\oplus j})$ for all $x$, for all  $j\in [n]\setminus I$, i.e., it depends only on variables in $I$.</li>
+<li>$k$-composition complexity of a function is is the minimum integer such that there exists functions $g_1,\dots,g_m:{0,1}^n\rightarrow {0,1}$ and $h:{0,1}^m \rightarrow D$ with the properties that $h(g_1,\dots,g_m)=f$ and every $g_j$ is $k$-local. We denote this by $C_k(f)$.</li>
+<li>A function is self-containing if for any there is a sub function of $f_n$ on $I$ that computes $F_{\lvert I\rvert}$.
+<ul>
+<li>Majority and Hamming are self-containing.</li>
+</ul>
+</li>
+<li>If a function is self-containing and $C_k(f_n)\leq m$ then we can write it such that each $g_j$ is $k$-local and each variables is queried at most $mk/n$ times.
+<ul>
+<li>Proof:
+<ul>
+<li>Let $q=mk/2n$.</li>
+<li>On average each variable is queried at most $q$ times.</li>
+<li>By Markov Inequality at most half of the variables are queried more than $2q$ times.</li>
+<li>The probability distribution is over choice of variables.</li>
+<li>Now put the variables that are queried at most $2q$ times into a set $I$.</li>
+<li>As our function is self-containing this now computes $f_{n/2}$.</li>
+<li>This finishes the proof.</li>
+</ul>
+</li>
+<li>We need $g_j$ to be $k$-local as otherwise the function could use more than $k$ bits.</li>
+</ul>
+</li>
+<li>Now this can be used to prove a bound on $C_k(f)$ in the obvious contraposition.</li>
+<li>We denote by $H$ the entropy.</li>
+<li>Mutal information: $I[X\mid Y] = H[X]-H[X\mid Y]$.</li>
+</ul>
+<h2 id="proof-of-key-insight-lemma">Proof of Key Insight Lemma</h2>
+<ul>
+<li>Statement:
+<ul>
+<li>Let $f$ be the Hamming weight function and a variable $i$ be queried by at most $q$ inner functions. Then $H(X_i \mid g_1(X),\dots, g_m(X)) \leq 1+ \Pr[X^{\oplus 1}\not\in D] - 2^{-O(q)}$ where $D$ is the domain of the function $f$.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proof-for-q-1">Proof for $q=1$</h3>
+<ul>
+<li>Proposition 5.1
+<ul>
+<li>$H[X_i] - H[X_i \mid g_1(X),\dots,g_m(X)]=1$.</li>
+<li>I.e., the output of the inner functions determine $X_i$ completely.</li>
+<li>Proof:
+<ul>
+<li>Assume wlog that the only function querying $X_i$ is $g_1$.</li>
+<li>Now we want to recover $x_i$ from $g_1,\dots,g_m$.</li>
+<li>By our assumption $\lvert x\rvert=h(g_1,\dots,g_m)$.</li>
+<li>So $\lvert x\rvert$ is given either by $h(0,g_2,\dots,g_m)$ or $h(1,g_2,\dots,g_m)$.</li>
+<li>Now look at $x^{\oplus i}$. This does not change $g_2,\dots,g_m$ because we choose $q=1$.</li>
+<li>As this changes the hamming weight of the output, it means that $g_1$ flips when $x_i$ flips.</li>
+<li>Hence, as everything else is fixed (because the $g_i$ are local), this is the only bit of information.</li>
+<li>Notice that we have the computation of $g_1,\dots,g_m$ given.</li>
+<li>Now compare $h(g_1,\dots,g_m)$ vs the hamming weight of $x^{i-&gt;0}$ and $x^{i-&gt;1}$.</li>
+<li>One of them will fit with the computed hamming weight of $h$ and, hence, be the correct one.</li>
+<li>Hence, we completely recovered $X_i$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>General Case:
+<ul>
+<li>Let $J_i$ be the set of inner functions that depend on variable $i$.</li>
+<li>Now $H[X_i \mid g_1(X),\dots,g_m(X)]\leq H[X_i \mid { g_j(X) \mid j\in \bar J_i}, \lvert X\rvert]$, i.e., the all the functions that don't depend on $i$.
+<ul>
+<li>This is ok because $g_1,\dots,g_m$ determine $\lvert X\rvert$ completely.</li>
+<li>Hence, this is potentially only more information but not less we are given.</li>
+</ul>
+</li>
+<li>This is now by definition $E_{Y\sim D}[-\log \Pr[X_i=Y_i\mid (\forall j\in \bar J_i, g_j(X)=g_j(Y)) \land \lvert X\rvert = \lvert Y\rvert)]]$.</li>
+<li>This is equal to $E_{Y\sim D}[H_2(\Pr[X_i=Y_i\mid (\forall j\in \bar J_i, g_j(X)=g_j(Y)) \land \lvert X\rvert = \lvert Y\rvert)])]$ where this is the binary entropy function, i.e., $-p\log p - (1-p)\log (1-p)$.</li>
+<li>Now we need to bound this by $1+\Pr[X^{\oplus i}\not \in D] -2^{-O(q)}$.</li>
+<li>Now we prove this inequality.
+<ul>
+<li>Fix output values by $v\in {0,1}^{\bar J_i}$ of the inner functions that do not query variable $i$.</li>
+<li>Suppose these output values are achievable by some input $x\in D$.</li>
+<li>Define $S_v = { x \mid \forall j\in \bar J_i, g_j(x)=v_j }$ the set of inputs that produce the values for the inner functions.</li>
+<li>This $S_v$ partitions the distribution $D$.</li>
+<li>We call a $v$ good if $\Pr[X^{\plus i}\not\in D \mid X\in S_v]\leq 2\Pr[X^{\oplus i}\not\in D]$.</li>
+<li>By Markov, the sets $S_v$ with good $v$ account for at most probablity mass, i.e., $\sum_{v \text{is good}} \Pr[X\in S_v] \geq 1/2$.</li>
+<li>Now we show that our required equation holds for every good $v$.</li>
+<li>Let $W_v$ be the set of possible hamming weights with $x\in D\cap S_v$.</li>
+<li>It can only depend on the remaining $q$ input values $g_j(x)$ for $j\in J_i$.</li>
+<li>Now we want to have that there exists a Hamming Weight that occurs with significant probability within $S_v$ such that conditioned on this we can guess $X_i=1$ with better than random chance.</li>
+<li>To prove (1): $\Pr[\lvert X\rvert =w^* \mid x\in S_v]\geq 2^{-O(q)}$</li>
+<li>To Prove (2): $\Pr[X_i=1 \mid X\in S_v\cap \lvert X\rvert=w^*]\leq 1/2 - 2^{O(q)}$.</li>
+<li>This implies our equation by simple calculations which we skip.</li>
+<li>To find this $w^*$ we know:
+<ul>
+<li>If $x\in S_v$ then $x^{\oplus i}\in S_v$. This gives us a naive pairing of values in $S_v$.</li>
+<li>Now define $p_w = \Pr[X^{\oplus i}\in D, \lvert X^{i-&gt; 0}\rvert = w \mid X\in S_v]$.</li>
+<li>This has at most $2\lvert W_v\rvert$ non-zero elements.</li>
+<li>The total sum is at least $1-2^{-10q+1}$</li>
+<li>The maximum is at least $2^{-q-2}$.</li>
+<li>So there exists a weight $w*$ such that $p_{w^<em>} \geq p_{w^</em>-1} + 2^{-2q-3}$.</li>
+<li>This $w^*$ turns out to satisfy the equations.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Notice that the Lemma does not automatically say anything about if this is possible or not.
+<ul>
+<li>This only gives a contradiction if this lemma gives us more information via $I[X_i \mid g_1,\dots,g_m]$ then $I[g_1(X),\dots,g_m(X)]$.</li>
+<li>For majority, the Lemma gives $\Omega(n)$ information but $n&gt;&gt;m$ which is the information of the $g_i$.</li>
+<li>Looking at Parity, the</li>
+</ul>
+</li>
+</ul>
+<h1 id="observations">Observations</h1>
+<ul>
+<li>Notice that the lemma does not work for Parity and similar things.
+<ul>
+<li>The reason can be seen in the $q=1$ case.</li>
+<li>Here given $g_1,\dots,g_m$ we can still get $x_i \oplus 0$ and $x_i \oplus 1$.</li>
+<li>In the Hamming Weight case I can check if the Hamming weight goes up or down with the bit flip.</li>
+<li>With Parity it will always flip.</li>
+</ul>
+</li>
+</ul>
+<h1 id="questions">Questions</h1>
+<ul>
+<li>Can we improve this to not just be on hamming weight function, i.e., functions that are a bit different then what they say?</li>
+<li><strong>UNCHECKED</strong> Can we improve this to other functions?</li>
+<li><strong>UNCHECKED</strong> Does this work for monotone symmetric functions?
+<ul>
+<li>One thing I am not sure is if I can always reconstruct it.</li>
+<li>Can it happen that we do not get any response/difference?</li>
+<li>In the simple case not but the other case is more difficult.</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2022/token-sliding/">&#8249; On Reconfiguration Graph of Independent Sets under Token Sliding</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2022/certifying-local/"> An Optimal Algorithm for Certifying Monotone Functions &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

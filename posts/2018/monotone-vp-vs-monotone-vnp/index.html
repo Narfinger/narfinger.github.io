@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Monotone VP vs monotone VNP | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2018/monotone-vp-vs-monotone-vnp/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2018/monotone-vp-vs-monotone-vnp/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2018/monotone-vp-vs-monotone-vnp/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Monotone VP vs monotone VNP | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Monotone VP vs monotone VNP | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2018-08-31" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2018/monotone-vp-vs-monotone-vnp/">Monotone VP vs monotone VNP</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> August 31, 2018 <span class="rpad"></span></span>
+
+    
+
+
+<h1 id="sources">Sources</h1>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://eccc.weizmann.ac.il/report/2018/124/">Yehudayoff - Separating Monotone VP and VNP</a></li>
+<li>Notice that I changed the notation a bit for clarity.</li>
+</ul>
+<h1 id="basics">Basics</h1>
+<ul>
+<li>Computation is over non-negative real numbers.</li>
+<li><code>MVP</code> is monotone <code>VP</code> and <code>MNVP</code> is monotone <code>VNP</code>.</li>
+<li>Permanent has exponential size monotone circuits.</li>
+<li>Iterated Matrix Multiplication of $d$ matrices needs $n^{\Omega(d)}$ size.</li>
+</ul>
+<h1 id="theorem">Theorem</h1>
+<ul>
+<li>The following polynomial is in <code>MVNP</code> but not in <code>MVP</code>.</li>
+<li>$P_n = 2^{-n} \sum_{b\in {0,1}^n} \prod_{i=1}^n \sum_{j=1}^n b_j x_{i,j}$.</li>
+<li>$P_n$ is obviously in <code>MVNP</code>.</li>
+</ul>
+<h1 id="proof">Proof</h1>
+<h2 id="definitions">Definitions</h2>
+<ul>
+<li>$X={ x_{i,j} }$.</li>
+<li>We will for a polynomial $f$ and a monomial $m$ write that $m\in f$ if $m$ is a monomial with a non-zero coefficient of $f$.</li>
+<li>We look at monomials of the form $m_I = \prod_{i\in I} x_{i, \phi(i)}$ for an index set $I\subseteq [n]$ and $\phi:[n]\rightarrow [n]$ a partial function.</li>
+<li>We denote by $\alpha_m$ the coefficient of the monomial $m$ or alternatively $\alpha(f,m)$.</li>
+<li>We denote by $\alpha(m,f)$ the coefficient of $m$ in the polynomial $f$.</li>
+<li>We define $I(m_I) = I$ and $f(I(m_I)) = { \phi(i) \mid i\in I(m)}$, i.e., the "from" and "to" indices.</li>
+<li>For a polynomial $f$, $I(f) = \cup_{\text{$m$ is a monomial of $f$}} I(m)$, the union of all index sets of a polynomial.</li>
+<li>We call a polynomial $f$ <code>full</code> if for all $m\in f$, $I(m)=I(f)$. Notice, that this only means that all first indices are hit by every monomial. It does not say anything about the second index of the variables. In essence, we say that $\phi$ is a total function.</li>
+</ul>
+<p><span style="color:red">Try to redo the polynomial because with f is much better</span></p>
+<ul>
+<li>$P$ is full.
+<ul>
+<li><em>Proof</em>:</li>
+<li>$P=2^{-n} \sum_{b\in {0,1}^n} \prod_{i=1}^n \sum_{j=1}^n b_j x_{i,j}$</li>
+<li>This is equal to $P=2^{-n} \sum_{b\in {0,1}^n} \sum_{\phi:[n]\rightarrow [n]} \prod_{i=1}^n b_{\phi(i)} x_{i,\phi(i)}$
+<ul>
+<li>Notice that the first product basically says: Pick any set multiset of integers of $j$ and build the monomial out of it. The same can be constructed with picking a function $\phi$ from $[n]$ to $[n]$ and construct the monomial directly.</li>
+</ul>
+</li>
+<li>???</li>
+<li>????</li>
+</ul>
+</li>
+</ul>
+<h2 id="lemma-1">Lemma 1</h2>
+<ul>
+<li>Lemma 1: If $q$ is a full polynomial, we can write $q$ as $\sum_{i=1}^n a_i b_i$ where for all monomials $m$ $0\leq \alpha(a_i,m)\alpha(b_i,m) \leq \alpha(q,m)$ with $n/3\leq \lvert I(a_t)\rvert \leq 2n/3$ and $I(b_t)=[n]\setminus I(a_t)$.
+<ul>
+<li>We can interprete this lemma as that we have at most a sum of $s$ factorizable polynomials.</li>
+<li>This means, we can have an order on these monomials and have a roughly even split. Compare this with the multilinear decomposition lemmas.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proof-1">Proof</h3>
+<ul>
+<li>We assume that every gate is computed to the output gate and no gate computes the zero polynomial. As the circuit is monotone, we can easily remove such gates if they occur.</li>
+<li>For each gate $v$ let $a_v$ be the polynomial computed at $v$.</li>
+<li>Monotonicity implies that $a_v$ is full.
+<ul>
+<li>To see this, divide it into two cases.</li>
+<li>If we are at an addition $v=v_1+v_2$ gate then every monomial is either in $v_1$ or in $v_2$. By Induction Hypothesis both are full.</li>
+<li>If we are in the multiplication gate $v= v_1 \cdot v_2$ then by induction hypothesis, $v_1$ and $v_2$ are full, hence their sets $I_{v_1}$, $I_{v_2}$ are given by all monomials.</li>
+<li>Let us look at the monomial $m_1\in v_1$ and $m_2\in v_2$.</li>
+<li>Their index set is $I_{v_1}\cup I_{v_2}$. But as every monomial in $v_1$ has $I_{v_1}$ and the same for $v_2$, every monomial has the index set $I_{v_1}\cup I_{v_2}$.</li>
+</ul>
+</li>
+<li>Now we can go from output to input until we find a vertex $v$ where $n/3\leq \lvert I(v)\rvert \leq 2n/3$ (the order here is not important, so pick any order with respect to the size of $I(v)$).</li>
+<li>Let us look at one such $v$.</li>
+<li>It is part of $q$ in the following way by our index set bound, $q=p_v b_v + r_v$ where $b_v$ is computes at $v$ and non-zero and $r_v$ has a monotone circuit of size at most $s-1$. (Notice that $b_v$ is, of course, non-zero and hence the remainder $r_v$ has to be smaller.)</li>
+<li>By the above inductive argument $p_v$ and $b_v$ is ordered (use $a_v=p_v$ in the lemma).</li>
+<li>Now we can induct on $r_v$ as it has a smaller size.</li>
+</ul>
+<h2 id="measure">Measure</h2>
+<ul>
+<li>Defining the measure:
+<ul>
+<li>Let $a,b$ be polynomials with $0\leq \alpha(m,a)\alpha(m,b)\leq \alpha(m,p)$ for all $m$ and $n/3 \leq \lvert I(a)\rvert \leq 2n/3$ and $I(b)=[n]\setminus I(a)$.</li>
+<li>We can define the measure $\Delta$ as follows:
+<ul>
+<li>Number of monomials that survive under the projection $\pi$ (divided by $2^n$) where $\pi$ keeps all monomials $m$ such that $\lvert f(I(m))\rvert = k$ with $k = \lfloor \frac{n}{20 + \log n}\rfloor$.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lemma-2">Lemma 2</h2>
+<ul>
+<li>Lemma 2: Let $a,b$ be polynomials with $0\leq \alpha(m,a)\alpha(m,b)\leq \alpha(m,p)$ for all $m$ and $n/3 \leq \lvert I(a)\rvert \leq 2n/3$ and $I(b)=[n]\setminus I(a)$. Then $\Delta(ab)\leq \frac{\Delta(P)}{2^{\frac{cn}{\log n}}}$.</li>
+</ul>
+<h3 id="proof-2">Proof</h3>
+<h4 id="claim">Claim</h4>
+<ul>
+<li>Let $\delta = k/n$.</li>
+<li>$1/2(k)^n \leq F_{n,k} \leq k^n$ where $F_{n,k}$ is the number of surjective functions from $[n]$ to $[k]$ and $\delta\leq 1$.</li>
+<li>Proof:
+<ul>
+<li>The first inequality follows trivially. Every value $k$ can be mapped to at most $n$ many values.</li>
+<li>For the second: $(\delta n)^n - F_{n,\delta n} \leq \delta n (\delta n - 1)^n$ <span style="color:red">WHY?</span></li>
+<li>$\leq \delta n \left(\delta^n n^n\left(1 - \frac{1}{\delta n}\right)^n\right)\leq \delta^{n+1} n^{n+1} e^{-\frac{n}{\delta n}}$ as $1-x \leq e^{-x}$.</li>
+<li>By $\frac{1}{\delta}\geq 1+ \log n$: $\delta^{n+1} n^{n+1} e^{-\frac{n}{n} \cdot \left(1 + \log n\right)} = \frac{\delta}{e}\left(\delta n\right)^n$.</li>
+<li>Hence, the bound holds.</li>
+</ul>
+</li>
+</ul>
+<p><span style="color:red">FILL</span></p>
+<h2 id="theorem-1">Theorem</h2>
+<ul>
+<li>
+<p>The proof is now easy.</p>
+</li>
+<li>
+<p>We know $\Delta(P)\leq \sum_{t=1}^s \Delta(a_t b_t) \leq s \frac{\Delta(P)}{2^{\frac{cn}{\log n}}}$.</p>
+</li>
+<li>
+<p>Hence $\frac{\Delta(P)}{\Delta(P)} \leq \frac{s}{2^{\frac{cn}{\log n}}}$.</p>
+</li>
+<li>
+<p>Hence $s\geq 2^{\frac{cn}{\log n}}$.</p>
+</li>
+<li>
+<p><span style="color:red">Interesting question: Where does this contradict with vp=vnp in multilinear world</span></p>
+</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2019/border-complexity/">&#8249; Border Complexity</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2018/factoring-vs-identity-testing/"> Factoring vs Identity Testing &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

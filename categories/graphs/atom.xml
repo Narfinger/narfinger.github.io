@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Graphs</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/graphs/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-06-01T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/graphs/atom.xml</id>
+    <entry xml:lang="en">
+        <title>On Reconfiguration Graph of Independent Sets under Token Sliding</title>
+        <published>2022-06-01T01:00:00+00:30</published>
+        <updated>2022-06-01T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/token-sliding/"/>
+        <id>https://narfinger.github.io/posts/2022/token-sliding/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/token-sliding/">&lt;h1 id=&quot;paper&quot;&gt;Paper&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2203.16861&quot;&gt;Avis, Hoang - On Reconfiguration Graph of Independent Sets under Token Sliding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Put a token on one vertex of every independent set of a given graph $G$.&lt;&#x2F;li&gt;
+&lt;li&gt;Tokens can slide to neighbours that are not occupied.&lt;&#x2F;li&gt;
+&lt;li&gt;Construct a new graph $G&#x27;$ in the following way: Two vertices are adjacent if we can slide one token to one of its adjacent vertices.&lt;&#x2F;li&gt;
+&lt;li&gt;This is called TS or TS$_k$ if we restrict ourselves to independent sets of size $k$.&lt;&#x2F;li&gt;
+&lt;li&gt;Questions:
+&lt;ul&gt;
+&lt;li&gt;Does TS$_k(G)$ belong to some graph class?&lt;&#x2F;li&gt;
+&lt;li&gt;If $G$ satisfies some property, does $TS(G)$ also satisfy the property and vice versa?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;TS_k($\bar G$) is a subgraph of the graph whose nodes are size $k$ cliques and two nodes are adjacent if they have exactly $k-1$ vertices in common.&lt;&#x2F;li&gt;
+&lt;li&gt;If $H$ is an induced subgraph of $G$ then TS$_k(H)$ is an induced subgraph of TS$_k(G)$ (but not the reverse).&lt;&#x2F;li&gt;
+&lt;li&gt;TS$(P_n)$ is planar for every $n\leq 8$ but non-planar otherwise (where $P_n$ is a planar graph on $n$ vertices),&lt;&#x2F;li&gt;
+&lt;li&gt;More similar results.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

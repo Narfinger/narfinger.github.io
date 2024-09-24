@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Boolean Circuit Complexity</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/boolean-circuit-complexity/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-05-11T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/boolean-circuit-complexity/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The Composition Complexity of Majority</title>
+        <published>2022-05-11T01:00:00+00:30</published>
+        <updated>2022-05-11T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/the-composition-complexity-of-majority/"/>
+        <id>https://narfinger.github.io/posts/2022/the-composition-complexity-of-majority/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/the-composition-complexity-of-majority/">&lt;h1 id=&quot;the-compositon-complexity-of-majority&quot;&gt;The Compositon complexity of majority&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2205.02374&quot;&gt;LRT - The Composition Complexity of Majority&lt;&#x2F;a&gt;
+&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=C3_VCwPAh_0&quot;&gt;Talk&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;result&quot;&gt;Result&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Can majority be given as $h(g_1,\dots,g_m)$ with $g_m$ a function that queries only $k&amp;lt;&amp;lt;n$ many bits and $h$ an arbitrary function.&lt;&#x2F;li&gt;
+&lt;li&gt;They prove an optimal $m\geq \Omega(n&#x2F;k \log k)$ lower bound.&lt;&#x2F;li&gt;
+&lt;li&gt;The upper bound is easy to see.
+&lt;ul&gt;
+&lt;li&gt;Split the variables into $n&#x2F;k$ disjoint set.&lt;&#x2F;li&gt;
+&lt;li&gt;Use $\log k$ of the functions per block to output the hamming weight.&lt;&#x2F;li&gt;
+&lt;li&gt;Use $h$ to compute the overall hamming weight and compute majority from this.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Also: This implies lower bounds for bounded with branching programs.&lt;&#x2F;li&gt;
+&lt;li&gt;Also: Lower bounds for small depth circuits.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof&quot;&gt;Proof&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Key Insight:
+&lt;ul&gt;
+&lt;li&gt;Suppose $x_i$ is queried by at most $q$ of the inner functions. Then $I[X_i \mid g_1(X),\dots, g_m(X)]\geq 2^{-O(q)}$.&lt;&#x2F;li&gt;
+&lt;li&gt;I.e., the information of $X_i$ under knowing $g_1,\dots,g_m$ is greater than the information from $q$ equally distributed bits.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;They will prove show a lower bound for the hamming function $H:{0,1}^n \rightarrow {0,1}^{\log n}$ (Section 4),&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;preliminaries&quot;&gt;Preliminaries&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$x^{(i-&amp;gt;b)} = (x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)$.&lt;&#x2F;li&gt;
+&lt;li&gt;$x^{\oplus i} = (x_1,\dots,x_{i-1},1\oplus x_i,x_{i+1},\dots,x_n)$.&lt;&#x2F;li&gt;
+&lt;li&gt;We call a function $k$-local if there exists a set $\lvert I\rvert=k$ such that $f(x)=f(x^{\oplus j})$ for all $x$, for all  $j\in [n]\setminus I$, i.e., it depends only on variables in $I$.&lt;&#x2F;li&gt;
+&lt;li&gt;$k$-composition complexity of a function is is the minimum integer such that there exists functions $g_1,\dots,g_m:{0,1}^n\rightarrow {0,1}$ and $h:{0,1}^m \rightarrow D$ with the properties that $h(g_1,\dots,g_m)=f$ and every $g_j$ is $k$-local. We denote this by $C_k(f)$.&lt;&#x2F;li&gt;
+&lt;li&gt;A function is self-containing if for any there is a sub function of $f_n$ on $I$ that computes $F_{\lvert I\rvert}$.
+&lt;ul&gt;
+&lt;li&gt;Majority and Hamming are self-containing.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;If a function is self-containing and $C_k(f_n)\leq m$ then we can write it such that each $g_j$ is $k$-local and each variables is queried at most $mk&#x2F;n$ times.
+&lt;ul&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;Let $q=mk&#x2F;2n$.&lt;&#x2F;li&gt;
+&lt;li&gt;On average each variable is queried at most $q$ times.&lt;&#x2F;li&gt;
+&lt;li&gt;By Markov Inequality at most half of the variables are queried more than $2q$ times.&lt;&#x2F;li&gt;
+&lt;li&gt;The probability distribution is over choice of variables.&lt;&#x2F;li&gt;
+&lt;li&gt;Now put the variables that are queried at most $2q$ times into a set $I$.&lt;&#x2F;li&gt;
+&lt;li&gt;As our function is self-containing this now computes $f_{n&#x2F;2}$.&lt;&#x2F;li&gt;
+&lt;li&gt;This finishes the proof.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;We need $g_j$ to be $k$-local as otherwise the function could use more than $k$ bits.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Now this can be used to prove a bound on $C_k(f)$ in the obvious contraposition.&lt;&#x2F;li&gt;
+&lt;li&gt;We denote by $H$ the entropy.&lt;&#x2F;li&gt;
+&lt;li&gt;Mutal information: $I[X\mid Y] = H[X]-H[X\mid Y]$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proof-of-key-insight-lemma&quot;&gt;Proof of Key Insight Lemma&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Statement:
+&lt;ul&gt;
+&lt;li&gt;Let $f$ be the Hamming weight function and a variable $i$ be queried by at most $q$ inner functions. Then $H(X_i \mid g_1(X),\dots, g_m(X)) \leq 1+ \Pr[X^{\oplus 1}\not\in D] - 2^{-O(q)}$ where $D$ is the domain of the function $f$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;proof-for-q-1&quot;&gt;Proof for $q=1$&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Proposition 5.1
+&lt;ul&gt;
+&lt;li&gt;$H[X_i] - H[X_i \mid g_1(X),\dots,g_m(X)]=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;I.e., the output of the inner functions determine $X_i$ completely.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;Assume wlog that the only function querying $X_i$ is $g_1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we want to recover $x_i$ from $g_1,\dots,g_m$.&lt;&#x2F;li&gt;
+&lt;li&gt;By our assumption $\lvert x\rvert=h(g_1,\dots,g_m)$.&lt;&#x2F;li&gt;
+&lt;li&gt;So $\lvert x\rvert$ is given either by $h(0,g_2,\dots,g_m)$ or $h(1,g_2,\dots,g_m)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now look at $x^{\oplus i}$. This does not change $g_2,\dots,g_m$ because we choose $q=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;As this changes the hamming weight of the output, it means that $g_1$ flips when $x_i$ flips.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, as everything else is fixed (because the $g_i$ are local), this is the only bit of information.&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that we have the computation of $g_1,\dots,g_m$ given.&lt;&#x2F;li&gt;
+&lt;li&gt;Now compare $h(g_1,\dots,g_m)$ vs the hamming weight of $x^{i-&amp;gt;0}$ and $x^{i-&amp;gt;1}$.&lt;&#x2F;li&gt;
+&lt;li&gt;One of them will fit with the computed hamming weight of $h$ and, hence, be the correct one.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, we completely recovered $X_i$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;General Case:
+&lt;ul&gt;
+&lt;li&gt;Let $J_i$ be the set of inner functions that depend on variable $i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now $H[X_i \mid g_1(X),\dots,g_m(X)]\leq H[X_i \mid { g_j(X) \mid j\in \bar J_i}, \lvert X\rvert]$, i.e., the all the functions that don&#x27;t depend on $i$.
+&lt;ul&gt;
+&lt;li&gt;This is ok because $g_1,\dots,g_m$ determine $\lvert X\rvert$ completely.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, this is potentially only more information but not less we are given.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This is now by definition $E_{Y\sim D}[-\log \Pr[X_i=Y_i\mid (\forall j\in \bar J_i, g_j(X)=g_j(Y)) \land \lvert X\rvert = \lvert Y\rvert)]]$.&lt;&#x2F;li&gt;
+&lt;li&gt;This is equal to $E_{Y\sim D}[H_2(\Pr[X_i=Y_i\mid (\forall j\in \bar J_i, g_j(X)=g_j(Y)) \land \lvert X\rvert = \lvert Y\rvert)])]$ where this is the binary entropy function, i.e., $-p\log p - (1-p)\log (1-p)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we need to bound this by $1+\Pr[X^{\oplus i}\not \in D] -2^{-O(q)}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we prove this inequality.
+&lt;ul&gt;
+&lt;li&gt;Fix output values by $v\in {0,1}^{\bar J_i}$ of the inner functions that do not query variable $i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Suppose these output values are achievable by some input $x\in D$.&lt;&#x2F;li&gt;
+&lt;li&gt;Define $S_v = { x \mid \forall j\in \bar J_i, g_j(x)=v_j }$ the set of inputs that produce the values for the inner functions.&lt;&#x2F;li&gt;
+&lt;li&gt;This $S_v$ partitions the distribution $D$.&lt;&#x2F;li&gt;
+&lt;li&gt;We call a $v$ good if $\Pr[X^{\plus i}\not\in D \mid X\in S_v]\leq 2\Pr[X^{\oplus i}\not\in D]$.&lt;&#x2F;li&gt;
+&lt;li&gt;By Markov, the sets $S_v$ with good $v$ account for at most probablity mass, i.e., $\sum_{v \text{is good}} \Pr[X\in S_v] \geq 1&#x2F;2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we show that our required equation holds for every good $v$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $W_v$ be the set of possible hamming weights with $x\in D\cap S_v$.&lt;&#x2F;li&gt;
+&lt;li&gt;It can only depend on the remaining $q$ input values $g_j(x)$ for $j\in J_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now we want to have that there exists a Hamming Weight that occurs with significant probability within $S_v$ such that conditioned on this we can guess $X_i=1$ with better than random chance.&lt;&#x2F;li&gt;
+&lt;li&gt;To prove (1): $\Pr[\lvert X\rvert =w^* \mid x\in S_v]\geq 2^{-O(q)}$&lt;&#x2F;li&gt;
+&lt;li&gt;To Prove (2): $\Pr[X_i=1 \mid X\in S_v\cap \lvert X\rvert=w^*]\leq 1&#x2F;2 - 2^{O(q)}$.&lt;&#x2F;li&gt;
+&lt;li&gt;This implies our equation by simple calculations which we skip.&lt;&#x2F;li&gt;
+&lt;li&gt;To find this $w^*$ we know:
+&lt;ul&gt;
+&lt;li&gt;If $x\in S_v$ then $x^{\oplus i}\in S_v$. This gives us a naive pairing of values in $S_v$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now define $p_w = \Pr[X^{\oplus i}\in D, \lvert X^{i-&amp;gt; 0}\rvert = w \mid X\in S_v]$.&lt;&#x2F;li&gt;
+&lt;li&gt;This has at most $2\lvert W_v\rvert$ non-zero elements.&lt;&#x2F;li&gt;
+&lt;li&gt;The total sum is at least $1-2^{-10q+1}$&lt;&#x2F;li&gt;
+&lt;li&gt;The maximum is at least $2^{-q-2}$.&lt;&#x2F;li&gt;
+&lt;li&gt;So there exists a weight $w*$ such that $p_{w^&lt;em&gt;} \geq p_{w^&lt;&#x2F;em&gt;-1} + 2^{-2q-3}$.&lt;&#x2F;li&gt;
+&lt;li&gt;This $w^*$ turns out to satisfy the equations.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that the Lemma does not automatically say anything about if this is possible or not.
+&lt;ul&gt;
+&lt;li&gt;This only gives a contradiction if this lemma gives us more information via $I[X_i \mid g_1,\dots,g_m]$ then $I[g_1(X),\dots,g_m(X)]$.&lt;&#x2F;li&gt;
+&lt;li&gt;For majority, the Lemma gives $\Omega(n)$ information but $n&amp;gt;&amp;gt;m$ which is the information of the $g_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Looking at Parity, the&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;observations&quot;&gt;Observations&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notice that the lemma does not work for Parity and similar things.
+&lt;ul&gt;
+&lt;li&gt;The reason can be seen in the $q=1$ case.&lt;&#x2F;li&gt;
+&lt;li&gt;Here given $g_1,\dots,g_m$ we can still get $x_i \oplus 0$ and $x_i \oplus 1$.&lt;&#x2F;li&gt;
+&lt;li&gt;In the Hamming Weight case I can check if the Hamming weight goes up or down with the bit flip.&lt;&#x2F;li&gt;
+&lt;li&gt;With Parity it will always flip.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;questions&quot;&gt;Questions&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Can we improve this to not just be on hamming weight function, i.e., functions that are a bit different then what they say?&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;UNCHECKED&lt;&#x2F;strong&gt; Can we improve this to other functions?&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;UNCHECKED&lt;&#x2F;strong&gt; Does this work for monotone symmetric functions?
+&lt;ul&gt;
+&lt;li&gt;One thing I am not sure is if I can always reconstruct it.&lt;&#x2F;li&gt;
+&lt;li&gt;Can it happen that we do not get any response&#x2F;difference?&lt;&#x2F;li&gt;
+&lt;li&gt;In the simple case not but the other case is more difficult.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>An Optimal Algorithm for Certifying Monotone Functions</title>
+        <published>2022-05-03T01:00:00+00:30</published>
+        <updated>2022-05-03T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/certifying-local/"/>
+        <id>https://narfinger.github.io/posts/2022/certifying-local/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/certifying-local/">&lt;h1 id=&quot;2022-04-04-gupta-manoj-an-optimal-algorithm-for-certifying-monotone-functions&quot;&gt;2022-04-04 Gupta, Manoj - An Optimal Algorithm for Certifying Monotone Functions&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2022&#x2F;044&#x2F;&quot;&gt;paper&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;result&quot;&gt;Result&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Query Access to Monotone function of some certifying complexity ($C(f)$)and input $x^*$&lt;&#x2F;li&gt;
+&lt;li&gt;Output a $C(f)$ sized subset of $x^* $ certifying the value of $f(x^*)$.
+&lt;ul&gt;
+&lt;li&gt;Makes $O(C(f)\log n)$ queries which matches the information theoretic lower bound.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Extended to real valued function.&lt;&#x2F;li&gt;
+&lt;li&gt;Show lower bound of $\Omega(\binom{n}{C(f)})$ queries in the worst case for finding the shortest certificate.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A certificate is the value of bits that &quot;fix&quot; $f(x)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $x$ (otherwise denoted by $x^* $) be an input $S\subseteq [n]$ is a certificate if for all $y$ such that $x|_S=y|_S$ implies $f(x)=f(y)$.&lt;&#x2F;li&gt;
+&lt;li&gt;The certificate size is the $\max_{x\in {0,1}^n} \min_j$ exists a certificate for $f$ of size $j$.&lt;&#x2F;li&gt;
+&lt;li&gt;There exists a randomized algorithm that for monotone boolean functions, with at most $O(C(f)^8 \log n)$ queries that outputs at such a certificate for a given input.&lt;&#x2F;li&gt;
+&lt;li&gt;$O(C(f)\log n)$ queries are necessary.&lt;&#x2F;li&gt;
+&lt;li&gt;For non-monotone functions $\Omega(2^{C(f)} + C(f)\log n)$ queries are necessary.&lt;&#x2F;li&gt;
+&lt;li&gt;And $O(2^{C(f)} \cdot C(f)\log n)$ queries are sufficient for a randomized algorithm.&lt;&#x2F;li&gt;
+&lt;li&gt;Definition:
+&lt;ul&gt;
+&lt;li&gt;$x_S$ is the indicator vector and $x|_S$ the coordinates.&lt;&#x2F;li&gt;
+&lt;li&gt;$S_x$ is the set coming from the vector $x\in {0,1}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Minimal Certificate:
+&lt;ul&gt;
+&lt;li&gt;A certificate is minimal if for all $S\setminus a$ is not a certificate for $a\in S$.&lt;&#x2F;li&gt;
+&lt;li&gt;For monotone this is equivalent to: for all $A\subset S$ $f(x|_A)\neq f(x|_S)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;algorithm&quot;&gt;Algorithm&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Algorith:
+&lt;ul&gt;
+&lt;li&gt;Input: Query Access to $f$, $x$ with $f(x)=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Set $A=\emptyset$, $S=S_x$, i.e., all indices where $x_i=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Run until $f(x_A)=1$
+&lt;ul&gt;
+&lt;li&gt;Set $s\leftarrow \text{search}(f,A,S)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Add $s$ to $A$.&lt;&#x2F;li&gt;
+&lt;li&gt;Set $S = S\cap [s-1]$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Output $A$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Search:
+&lt;ul&gt;
+&lt;li&gt;On Input $f,A,S$ output the smallest $s\in S$ such that $f(x_{A\cup ([s]\cap S)})=1$ with binary search.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Proof of Correctness:
+&lt;ul&gt;
+&lt;li&gt;$f(A)=1$ by the loop condition.&lt;&#x2F;li&gt;
+&lt;li&gt;Assume any $A\setminus s$ with $s\in A$.
+&lt;ul&gt;
+&lt;li&gt;Then $f(A\setminus s)=0$.&lt;&#x2F;li&gt;
+&lt;li&gt;It must be the case that $f(x_{S\cap [s-1]\cup A})=0$ but $f(x_{S\cap [s]\cup A})=1$. Otherwise $s$ would not have been picked by the binary search algorithm&lt;&#x2F;li&gt;
+&lt;li&gt;All future elements that are added to the certificate must be in $S\cap [s-1]$ if $A$ is not allready minimal.&lt;&#x2F;li&gt;
+&lt;li&gt;But $f(x_{S\cap [s-1]\cup A})=0$, a contradiction.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Proof of Runtime:
+&lt;ul&gt;
+&lt;li&gt;$A$ has at most $C(f)$ coordinates.&lt;&#x2F;li&gt;
+&lt;li&gt;Every step we add another element to $A$.&lt;&#x2F;li&gt;
+&lt;li&gt;The binary search uses $\log n$ steps.&lt;&#x2F;li&gt;
+&lt;li&gt;Checking if $f(x_A)=1$ uses one query.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, $C(f)(\log n +1)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;blanc-koch-lange-tan-the-query-complexity-of-certification&quot;&gt;Blanc, Koch, Lange, Tan - The Query Complexity of Certification&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Claim 1.1: Any query algorithm that starts with $x$ and goes through hamming neighbours iteratively needs $\Omega(\epsilon n)$ time.
+&lt;ul&gt;
+&lt;li&gt;Notice that the above algorithm is not doing this.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Claim 1.2: Lower bound of $\Omega(k\log n)$ where $k$ is the certificate size for monotone functions.&lt;&#x2F;li&gt;
+&lt;li&gt;Claim 8.3: $\Omega(2^k + k\log n)$ for arbitrary functions.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proofs&quot;&gt;Proofs&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Yao&#x27;s Lemma:
+&lt;ul&gt;
+&lt;li&gt;Let $R_q$, $D_q$ be the set of all $q$-query randomized and deterministic algorithms respectively.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $I$ be the set of all possible pairs $f:{0,1}^n \rightarrow {0,1}$ and $x$ an instance.&lt;&#x2F;li&gt;
+&lt;li&gt;For any distribution $\mu$ on $I$ $\min_{R\in R_q} \max_{(f,x)\in I} [\text{error}&lt;em&gt;R(f,x)] \geq \min&lt;&#x2F;em&gt;{D\in D_q} E_{f,x\sim \mu}[\text{error}_D(f,x)]$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Claim 7.6:
+&lt;ul&gt;
+&lt;li&gt;There is some monotone function with $C(f)\leq k$ and input $x$ on which a $q$-query algorithm $A$ successfully returns and a size $l$ certificate for $x$ with probability $2^q \binom{l}{k}&#x2F;\binom{n}{k} \leq 2^q (ne&#x2F;n)^k$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;own-thoughts&quot;&gt;Own Thoughts&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notice that communication complexity is difficult to apply as our outut is a set of numbers.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Small Circuits Imply Efficient Arthur-Merlin Protocols</title>
+        <published>2021-11-25T01:00:00+00:30</published>
+        <updated>2021-11-25T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/"/>
+        <id>https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2021/small-circuit-arthur-merlin/">&lt;h1 id=&quot;2021-08-30-dm-small-circuits-imply-efficient-arthur-merlin-protocols&quot;&gt;2021-08-30-DM-Small Circuits Imply Efficient Arthur-Merlin Protocols&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2021&#x2F;127&#x2F;&quot;&gt;paper&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;result&quot;&gt;Result&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;small-boolean-circuits&quot;&gt;Small Boolean Circuits&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;$&amp;lt;x,y&amp;gt; = \sum_i x_i y_i \mod 2$ is the inner product function.&lt;&#x2F;li&gt;
+&lt;li&gt;It can be easily computed by constant depth circuits with $\oplus$ gates (AC$^0_\oplus$).&lt;&#x2F;li&gt;
+&lt;li&gt;What if we only allow $\oplus$ gates only at the bottom?&lt;&#x2F;li&gt;
+&lt;li&gt;If we do not allow $\oplus$ gates than showing a lower bound is easy.&lt;&#x2F;li&gt;
+&lt;li&gt;DNF of parities has also an exponential lower bound.&lt;&#x2F;li&gt;
+&lt;li&gt;Depth 3 circuits only have a weak quadratic lower bound.&lt;&#x2F;li&gt;
+&lt;li&gt;For arbitrary depth (AC$^0_\oplus$) and the number of parity gates is linear, a lower bound is known.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;communication-complexity&quot;&gt;Communication Complexity&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Arthur-Merlin protocol where there is an all powerful prover and a verifier.&lt;&#x2F;li&gt;
+&lt;li&gt;AM Data Streaming Model (AM[$k$])
+&lt;ul&gt;
+&lt;li&gt;Merlin sees the complete input.&lt;&#x2F;li&gt;
+&lt;li&gt;Verifier sees a stream and is space bounded.&lt;&#x2F;li&gt;
+&lt;li&gt;Phases:
+&lt;ul&gt;
+&lt;li&gt;First phase: Verifier engages in a $k$-message public coin protocol with the prover, resulting in a transcript $\tau$.&lt;&#x2F;li&gt;
+&lt;li&gt;Second phase: Verifier works deterministically on the input as a stream and is allowed to look at $\tau$.&lt;&#x2F;li&gt;
+&lt;li&gt;Third phase: Verifier accepts or rejects.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;There exists a strategy for Merlin that convinces the verifier to accept true statements.&lt;&#x2F;li&gt;
+&lt;li&gt;No strategy makes the Verifier accept false statements.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This also can work as a communication complexity protocol with the same bounds.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;result-1&quot;&gt;Result&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;If there exists a DNF of parities of size $s$ that computes the inner product function on $5&#x2F;6+\epsilon$ fraction of the inputs for some constant $\epsilon$. Then there exists a AM[$k$] with $\tilde O(d)\log s$ proof length, space complexity and randomness complexity for every polynomial over $GF(2)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof&quot;&gt;Proof&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;holographic-ip&quot;&gt;Holographic IP&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Verifier instead of having the input is given an encoding of the input, similar to PCP.&lt;&#x2F;li&gt;
+&lt;li&gt;Construct a protocol that works for most inputs.
+&lt;ul&gt;
+&lt;li&gt;Prover picks sends an index to a satisfied clause. Verifier, verifies that this is correct.
+&lt;ul&gt;
+&lt;li&gt;The size bound is $\log s$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;However, large width DNF would be a problem.&lt;&#x2F;li&gt;
+&lt;li&gt;We can see DNF clauses as a system of linear equations. We now remove wide clauses but make sure that the rank of this system does not decrease.&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that if the DNF is not fulfilled then there does not exist a single clause that is true. Hence the prover cannot prove this.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;To make this protocol work for all most inputs we want to use the equation $&amp;lt;x,y&amp;gt; = &amp;lt;x \oplus u,y\oplus v&amp;gt; \oplus &amp;lt;x\oplus u,v&amp;gt; \oplus &amp;lt;u,y\oplus v&amp;gt; \oplus &amp;lt;u,v&amp;gt;$.
+&lt;ul&gt;
+&lt;li&gt;However, for this would need to verify zero cases too.&lt;&#x2F;li&gt;
+&lt;li&gt;A cheating prover cannot lie in the one cases but has to lie in the zero cases.&lt;&#x2F;li&gt;
+&lt;li&gt;We expect roughly equal amount of ones and zero cases of our equation.&lt;&#x2F;li&gt;
+&lt;li&gt;The Verifier will now ask for a couple of randomly chosen strings $u,v$, check the one claims and accepts the zero claims.&lt;&#x2F;li&gt;
+&lt;li&gt;Then it checks that the average value is close enough to the expected value.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Smaller ACC0 Circuits for Symmetric Functions</title>
+        <published>2021-11-17T01:00:00+00:30</published>
+        <updated>2021-11-17T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2021/symmetric-mod-bound/"/>
+        <id>https://narfinger.github.io/posts/2021/symmetric-mod-bound/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2021/symmetric-mod-bound/">&lt;h1 id=&quot;2021-07-09-cw-smaller-acc0-circuits-for-symmetric-functions&quot;&gt;2021-07-09-CW-Smaller ACC0 Circuits for Symmetric Functions&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2107.04706v1&quot;&gt;paper&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Theorem 1.1: For every $\epsilon$ and $m&amp;lt;(1&#x2F;3)^{2&#x2F;\epsilon}$ such that every symmetric function can be computed by a depth 3 circuit of form $\mod_{p_1}\circ \mod_{p_2,\dots,p_r}\circ \mod_{p_r}$ where these are distinct primes of size $\exp(O(n^{\epsilon}))$.&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem 1.2: Every symmetric function can be computed by a depth $d$ $\mod_m$ circuit of size $\exp(\tilde O(n^{1&#x2F;(r+d-3)}))$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hypothesis (Sym And): There is a function $f$ computable by a TC$_0$ circuit with at most $\tilde O(n)$ gates with fan-in $\tilde O(n)$ such that $f$ does not have $\exp(O(n^{1&#x2F;k}))$ size $\text{SYM}\circ \text{AND}$ circuits.&lt;&#x2F;li&gt;
+&lt;li&gt;ACC$_0[m]$ is the class of constant depth poly size circuits with unbounded fan-in that are allowed $\mod_m$ gates.&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem 1.5: Assuming Sym And Hypothesis there is a fixed $\alpha$ such that for every $m,d$, every ACC$_0[m]$ computing the majority function has size at least $\exp(n^{\alpha&#x2F;rd})$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof-of-theorem-1-1&quot;&gt;Proof of Theorem 1.1&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lucas Theorem: $\binom{n}{p^i}\mod p$ is the $i$th digit in the $p$-ary representation of $n$.
+&lt;ul&gt;
+&lt;li&gt;This implies that taking the elementary symmetric polynomial $e_{p^i}(a_1,\dots,a_n)\mod p$ of degree $p^i$ equals the $i$th digit in the $p$-ary representation of $\sum_i a_i$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Proposition 2.2(BIS90,CP19): Let $a,b$ be fixed integers with $\gcd(a,b)=1$. Every $\land\circ \mod_b$ gate can be represented by a $\mod_a\circ\mod_b$ circuit of $O(b^k)$ gates.&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem 3.1 (Non Generalized form of 1.1): Every symmetric boolean function has a depth 3 circuit of the form $\mod_5 \circ \mod_6\circ \mod 5$ of size $\exp(O(n^{1&#x2F;3} \log n))$.&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem 3.2: For every $T\in {0,1,\dots,n}$ there exists a polynomial on $n$ variables of degree at most $3\sqrt{n}$ such that for all $a\in {0,1}^n$, $P_T(a)=0\mod 6$ if and only if $\sum_{i} a_i = T$.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;Use the elementary symmetric polynomial $e_J$ of degree $J$.&lt;&#x2F;li&gt;
+&lt;li&gt;By Lucas Theorem $e_{p^i}(a_1,\dots,a_n)\mod p$ equals the $i$th digit in the $p$-ary representation of $\sum_i a_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;We can easily check the $p$-ary representation with a $\mod_p$ polynomial.&lt;&#x2F;li&gt;
+&lt;li&gt;This is just $p_q(a_1,\dots,a_n) =1 - \prod_{j=0}^{t-1} (1-(c_j -e_{q^i})^{q-1})$.&lt;&#x2F;li&gt;
+&lt;li&gt;Doing this for $s,t$ and primes $2,3$ such that $2^s\cdot 3^t&amp;gt;n$ we get the required polynomial.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proof-of-theorem-3-1&quot;&gt;Proof of Theorem 3.1:&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Let $f$ be our function.&lt;&#x2F;li&gt;
+&lt;li&gt;We define $g:[n]\rightarrow {0,1}$ as $f(x)=g(|x|_1)$.&lt;&#x2F;li&gt;
+&lt;li&gt;The output gate sums over (a) all possible choices of $T\in [n]$ such that $g(T)=1$ and (b) sums over all ways to partition $T$ into a &lt;em&gt;sum&lt;&#x2F;em&gt; of $\lceil n^{1&#x2F;3}\rceil$ many parts $T_1,\dots,T_{t} \in [T]$.&lt;&#x2F;li&gt;
+&lt;li&gt;There are $2^{O(n^{1&#x2F;3}\log n)}$ many choices.&lt;&#x2F;li&gt;
+&lt;li&gt;Associate each $T_i$ with a disjoint set $S_i$ of at most $\lceil n^{2&#x2F;3}\rceil$ many input variables.&lt;&#x2F;li&gt;
+&lt;li&gt;We want to verify that each $T_i$ the sum over the variables in $S_i$ equals $T_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that there is &lt;em&gt;at most&lt;&#x2F;em&gt; one choice from (a) and (b) that could be consistent with the given input.
+&lt;ul&gt;
+&lt;li&gt;This is clear, as the sets and size describe it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, we can sum over these choices by using a $\mod_5$ gate, as the value is either $0$ or $1$.&lt;&#x2F;li&gt;
+&lt;li&gt;That means we now have a given size $T_i$ and $S_i$. We already checked that $T_i$ corresponds to $|S_i|$ on the second layer.&lt;&#x2F;li&gt;
+&lt;li&gt;We now check that the set is correct by an $\mod_6\circ$ $\land$ gate.
+&lt;ul&gt;
+&lt;li&gt;For this we use Theorem 3.2.&lt;&#x2F;li&gt;
+&lt;li&gt;As the polynomial has degree $\sqrt{n}$, we can simulate it by a $\mod_6$ gate over the monomials represented by and $\land$ gate.&lt;&#x2F;li&gt;
+&lt;li&gt;As this uses something like Chinese Remainder, we need another $\land$ gate.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us a circuit $\mod_6\circ \mod_5\circ \land \circ \mod_6 \circ \land$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now Proposition 2.2 eliminates the $\land$ gate.
+&lt;ul&gt;
+&lt;li&gt;Note: While this is the original as written in the paper, I do not quite understand the application of it.&lt;&#x2F;li&gt;
+&lt;li&gt;However, there is a SYM$\circ\land$ which they reference and gives subexponential size.&lt;&#x2F;li&gt;
+&lt;li&gt;The new size of the proposition is then $2^{(\log n)^d}$.&lt;&#x2F;li&gt;
+&lt;li&gt;This stays inside the overall size bound.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Proof Sketch of Theorem 1.1:
+&lt;ul&gt;
+&lt;li&gt;The proof works similar, except that we partition the sum into $n^{1&#x2F;k}$ parts and use Chinese Remainder.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof-of-theorem-1-5&quot;&gt;Proof of Theorem 1.5&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Contraposition: Assume there is some $m=p_1\cdot p_r$ along with depth $d$ such that majority can be computed by depth-$d$ ACC$_0[m]$ circuit of size $\exp(O(n^{\alpha&#x2F;rd}))$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $C$ be a TC$_0$ circuit.&lt;&#x2F;li&gt;
+&lt;li&gt;Replace every majority gate with a copy of the assumed circuit.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us a ACC$_0[m]$ circuit of depth at most $cd$ and size $\exp(O(n^{\alpha&#x2F;rd}))$.&lt;&#x2F;li&gt;
+&lt;li&gt;By (CP19) every depth $cd$ circuit of size $s$ over $\land,\lor,\mod_m$ gates is equivalent to a SYM$\circ\land$ circuit of size $D&#x27;$ with $2^{(m\log s)^{10rcd}}$.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us the contradiction.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

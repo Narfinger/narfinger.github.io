@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>The Space Complexity of Sampling | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2021/space-complexity-of-sampling/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2021/space-complexity-of-sampling/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2021/space-complexity-of-sampling/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="The Space Complexity of Sampling | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="The Space Complexity of Sampling | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2021-08-28" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2021/space-complexity-of-sampling/">The Space Complexity of Sampling</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> August 28, 2021 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>]</span>
+
+    
+
+
+<h1 id="2021-07-22-cgz-the-space-complexity-of-sampling">2021-07-22-CGZ-The Space Complexity of Sampling</h1>
+<p><a rel="noopener" target="_blank" href="https://eccc.weizmann.ac.il/report/2021/106/">paper</a>
+<a rel="noopener" target="_blank" href="https://doi.org/10.1145/3404858">GW-A Lower Bound for Sampling Disjoint Sets</a></p>
+<h2 id="results">Results</h2>
+<ul>
+<li>Explicit boolean function that cannot be computed by a width $2^{\Omega(n)}$ read-once branching program but can be easily sampled by ROBPs.</li>
+<li>An explicit boolean function such that any distribution by a width $2^{\Omega(n)}$ width ROBP has statistical distance $1/2-2^{-\Omega(n)}$ from the uniform distribution.
+<ul>
+<li>Notice that sampling can be easier than computing.</li>
+<li>(x,XOR(x)) is hard to compute by AC0 circuits but (U,XOR(U)) where $U$ is the uniform distribution is easy to sample by AC0 circuits.</li>
+</ul>
+</li>
+<li>Same but with distance to a good code.</li>
+<li>Asking questions similar to Viola20 answered but in the limited space model.</li>
+</ul>
+<h2 id="proof-overview">Proof Overview</h2>
+<ul>
+<li>Two models:</li>
+<li>Complex Samplers:
+<ul>
+<li>ROBPs without input where every vertex can have an arbitrary number of outputs.</li>
+<li>Every vertex has a distribution.</li>
+<li>Every edge is also denoted by a label $0,1$.</li>
+<li>The sampled output is taking a random walk (according to the distributions) and the concatenated labels.</li>
+</ul>
+</li>
+<li>Complex Samplers and ROBP are equivalent up to small loss in parameters with same width restriction (for sampling).
+<ul>
+<li>This is proven in Theorem 6</li>
+</ul>
+</li>
+<li>Simple Samplers:
+<ul>
+<li>Simple Samplers are Complex Samplers where the outgoing degree of every vertex is at most 2.</li>
+</ul>
+</li>
+<li>Simple Samplers are the same as <em>computing</em> with ROBP (on uniform input distribution).</li>
+</ul>
+<h2 id="example-for-theorem-1">Example for Theorem 1</h2>
+<ul>
+<li>Address function: Take input $x||a$ with $a=\log |x|$ and size $n=k+\log k$ and output $x_{\text{bin}^{-2}(a)}$.
+<ul>
+<li>This function separates read-once and read-twice branching programs.</li>
+<li>Also separates simple and complex samplers.</li>
+</ul>
+</li>
+<li>Simple samplers cannot the distribution $(U_n, address(U_n))$.
+<ul>
+<li>Assume the width is $2^k-1$</li>
+<li>There is a single unique path for every output.</li>
+<li>At layer $V_k$ there must be two different sequences of bits $x,y\in {0,1}^k$ that lead to the same vertex $v\in V_k$.
+<ul>
+<li>Because of the width restriction.</li>
+</ul>
+</li>
+<li>But $x,y$ differ at some coordinate which could be exactly the width it produces.</li>
+</ul>
+</li>
+<li>Complex Samplers can sample this distribution in width $O(n)$.
+<ul>
+<li>It is a convex combination of $2k$ distributions.</li>
+<li>Fix such that $x_a\in {0,1}$.</li>
+<li>Now every distribution is easy, fix $a$ and the bit $x_a$ and draw everything else at random.</li>
+<li>Notice that the target distribution is uniformly drawn by first picking a distribution as above and then draw the distribution.</li>
+<li>Any collection of $2k$ distributions that can be sampled in width 1 can be sampled by width $2k$ in a complex sampler.
+<ul>
+<li>Just have a deciding vertex at the start that samples uniformly these.</li>
+<li>As every vertex needs an output bit, contract the first two edges together.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="gv-pseudorandom-bits-for-oblivious-branching-programs">GV - Pseudorandom Bits for Oblivious Branching Programs</h1>
+<ul>
+<li><strong>Questions:</strong>
+<ul>
+<li>What if the address function is $a||x$ instead?
+<ul>
+<li>Then the width is obviously maximal $n$.</li>
+</ul>
+</li>
+<li>Notice that the following does not work.
+<ul>
+<li>Sample the first bit $a_1$. If this is zero, sample $x_1,\dots,x_{k-1}$ bits independently</li>
+<li>Otherwise, sample $a_2$ and recurse.</li>
+<li>At every point we can sample $x_1,\dots,x_{k-1}$ independently and hence save.</li>
+<li>This gives us a skew binary tree which has still width $\Omega(2^d)$.</li>
+</ul>
+</li>
+<li>It is unclear if a lower bound for any function exist that works for every order (not necessarily for address).
+<ul>
+<li>The lower bound works by using the Computation equal to Simple Samplers argument.</li>
+<li>The Computation is actually a lower bound for oblivious read-k branching program.</li>
+<li>Oblivious, as in the ABP sense, i.e., the program has in every layer only one variable it reads and this does not depend on values it read so far.</li>
+</ul>
+</li>
+<li>Nissan-Widgerson Generator seems to be, however, independent of the order.
+<ul>
+<li>The Nissan-Widgerson Generator is about a Turing Machine that visits every cell at most $d$ times.</li>
+<li>An argument about the sequences shows the lower bound.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/">&#8249; Montone Complexity of Spanning Tree Polynomial Re-visited</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/superpolynomial-lower-bounds-against-low-depth-algebraic-circuits/"> Superpolynomial Lower Bounds Against Low-Depth Algebraic Circuits &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

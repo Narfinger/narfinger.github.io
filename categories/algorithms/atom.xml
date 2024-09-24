@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Algorithms</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/algorithms/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-06-02T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/algorithms/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Sorting Balls and Water: Equivalence and Computational Complexity</title>
+        <published>2022-06-02T01:00:00+00:30</published>
+        <updated>2022-06-02T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2022/sorting-balls/"/>
+        <id>https://narfinger.github.io/posts/2022/sorting-balls/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2022/sorting-balls/">&lt;h1 id=&quot;paper&quot;&gt;Paper&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2202.09495&quot;&gt;Takehiro Ito, Jun Kawahara, Shin-ichi Minato, Yota Otachi, Toshiki Saitoh, Akira Suzuki, Ryuhei Uehara, Takeaki Uno, Katsuhisa Yamanaka, Ryo Yoshinaka - Sorting Balls and Water&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Bins colored with some units (balls or water) and the goal is to sort them.&lt;&#x2F;li&gt;
+&lt;li&gt;Each bin works as a stack.&lt;&#x2F;li&gt;
+&lt;li&gt;$hn$ balls, $n$ bins of capacity $h$ and $k$ empty bins.&lt;&#x2F;li&gt;
+&lt;li&gt;Balls need to be sorted in a move onto empty bins or balls of the same color.&lt;&#x2F;li&gt;
+&lt;li&gt;Water is very similar.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Water and Ball are actually equivalent.&lt;&#x2F;li&gt;
+&lt;li&gt;They are NP-complete.&lt;&#x2F;li&gt;
+&lt;li&gt;Are solvable in $h^n$ time.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;some-proof-notes&quot;&gt;Some Proof notes&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduction from 3 Partition.&lt;&#x2F;li&gt;
+&lt;li&gt;3 Partition:
+&lt;ul&gt;
+&lt;li&gt;Given $a_1,\dots, a_{3m}$ with $\sum_{i} a_i = mB$.&lt;&#x2F;li&gt;
+&lt;li&gt;$B&#x2F;4 &amp;lt; a_i B&#x2F;2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Is there a partition into subsets $A_1,\dots, A_m$ such that $\sum_{i\in A_j} a_i = B$?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;First direction: 3part -&amp;gt; water
+&lt;ul&gt;
+&lt;li&gt;We construct the following coloring from a 3 partition set:&lt;&#x2F;li&gt;
+&lt;li&gt;Top contains only red and rest is blue.&lt;&#x2F;li&gt;
+&lt;li&gt;From here we have an empty container and can fill it with the first set. Then compact and continue with the next set.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Other direction by membership.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

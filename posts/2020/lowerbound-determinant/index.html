@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>A Lower Bound on Determinantal Complexity | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2020/lowerbound-determinant/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2020/lowerbound-determinant/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2020/lowerbound-determinant/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="A Lower Bound on Determinantal Complexity | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="A Lower Bound on Determinantal Complexity | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2020-10-23" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2020/lowerbound-determinant/">A Lower Bound on Determinantal Complexity</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> October 23, 2020 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/arithmetic-circuits/">Arithmetic Circuits</a>]</span>
+
+    
+
+
+<h1 id="paper">Paper</h1>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://arxiv.org/abs/2009.02452">Kumar, Volk - A Lower Bound on Determinantal Complexity</a></li>
+</ul>
+<h1 id="results">Results</h1>
+<ul>
+<li>Determinantal Complexity of $f$: Smallest dimension of a matrix $M$ filled with affine linear forms such that $\det(M)$ computes $f$.</li>
+<li>Determinantal Complexity of $\sum_{i=1}^n x_i^n$ is $1.5n -3$.</li>
+<li>Permanent has determinantal complexity $(n-1)^2 +1$ (over reals). This is the same as the number of variables in Perm.</li>
+</ul>
+<h1 id="proof-overview">Proof Overview</h1>
+<ul>
+<li>Let $M$ be a $m\times m$ matrix that computes $f=\sum_{i=1}^n x_i^n$.</li>
+<li>Converting the matrix into normal form.
+<ul>
+<li>The constnat part of the matrix (i.e., $M_0 = M(0)$) can be assumed to be diagonal matrix of rank $m-1$.</li>
+</ul>
+</li>
+<li>Determinantal Complexity of high degree polynomials.
+<ul>
+<li>If $M$ has entries being polynomials of degree $n-1$ and $M$ is in normal form and $det(M)=f$, then $m\geq n/2$.</li>
+<li>The same holds for any polynomial $(\sum_{i=1}^n x_i^n)(1+Q)$ with $Q(0)=0$.</li>
+</ul>
+</li>
+<li>Trading Dimension of the Matrix as Degree
+<ul>
+<li>If there is an $m\times m$ matrix with affine functions and $det(M)=f$, then there is a matrix $N$ of dimension $(m-n+2)\times (m-n+2)$ whose entries are polynomials of degree at most $n-1$.</li>
+<li>Normal form keeps intact.</li>
+</ul>
+</li>
+<li>Now the lowerbound from $1$ implies that $m\geq n/2$, hence that $m'-n -2 \geq n/2$ with degree $n-1$. Hence $m'\geq 3n/2 -3$.</li>
+</ul>
+<h2 id="needed-lemmas">Needed Lemmas</h2>
+<ul>
+<li>Lemma 3.1: Let $P_1,\dots, P_t, Q_1,\dots, Q_t$ be polynomials that have a common root and $R$ be polynomials such that $\deg(R) &lt;d$ and $\sum_{i=1}^n x_i^d = R+ \sum_{j=1}^t P_j Q_j$. Then $t&gt;n/2$.</li>
+<li>Lemma 3.8: Let $\begin{pmatrix} A&amp; B\ C&amp; D\end{pmatrix}$. Then $\det(M)=\det(A-BD^{-1}C)\det(D)$.
+<ul>
+<li>Proof:</li>
+<li>$\begin{pmatrix} A&amp; B\ C&amp; D\end{pmatrix} = \begin{pmatrix} A-BD^{-1}C&amp; BD^{-1}\ 0&amp; I_{m-t}\end{pmatrix} = \begin{pmatrix} I_t &amp; 0\ C&amp; D\end{pmatrix}$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="second-part">Second Part</h2>
+<ul>
+<li>Lemma 3.9: If $\deg(M)\leq d-1$, additionally $M$ at $(1,1)$ is zero and one on the diagonal and the constant part is diagonal and $\det(M)= f \cdot (\beta + Q)$ where $\beta\neq 0$ and $Q$ constant free.</li>
+<li>Then $m\geq n-1$.</li>
+<li>Proof:</li>
+<li>Using the Laplace expansion gives us  $\det(M)= \sum_{j=1}^m (-1)^{j+1} M_{1.j} \det(N_{1,j})$ where $N_{i,j}$ is the submatrix of deleting the $i$th row and $j$th column.</li>
+<li>Claim: $\det(N_{1,j})$ is a constant free polynomial for $j&gt;1$.
+<ul>
+<li>$N_{1,j}$ has at most $m-2$ non-zero entries
+<ul>
+<li>$M_0$ has at most $m-1$ non-zero entries by assumption.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>$N_{1,1}(0)$ is the identity matrix.</li>
+<li>Hence, $\det(N_{1,1})=1 + P(X)$ with $P(X)$ being constant free.</li>
+<li>We can write $f (beta + Q) = \det(M) = \sum_{j=1}^m (-1)^{j+1} M_{1,j} \det(N_{1,j}) = M_{1,1}\cdot (1+P) + \sum_{j=2}^m (-1)^{j+1} M_{1,j} \det(N_{1,j})$.</li>
+<li>Hence, $f (beta + Q) = M_{1,1} + M_{1,1} \cdot P  + \sum_{j=2}^m (-1)^{j+1} M_{1,j} \det(N_{1,j})$.</li>
+<li>Now $\sum_{i=1}^n x_i^n = 1/\beta (- Q(\sum_{i=1}^n x_i^n)+ M_{1,1} + M_{1,1}P + \sum_{j=2}^m (-1)^{j+1} M_{1,j}\det(N_{1,j}))$.</li>
+<li>Since $\deg(M_{1,1})&lt;d$ (per entry) and all other polynomials are constant free (have the common root 0), we can apply Lemma 3.1.
+<ul>
+<li>Notice that our requirement says that the constant part of $M$ at $(1,1)$ needs to be zero (which is a requirement) and as the constant part of $M$ is a diagonal matrix, all $M_{1,j}$ are zero.</li>
+<li>The requirement coming from the proof is much less than required, as we only need to find a laplace decomposition where $M_{i,j}$ and $N_{i,j}$ are zero.</li>
+</ul>
+</li>
+</ul>
+<h2 id="third-part">Third Part</h2>
+<ul>
+<li>Let $M$ be a $m\times m$ matrix.</li>
+<li>Let $D_t$ be the principal minor of $M$ which is obtained by deleting the first $m-t$ rows and columns.</li>
+<li>$D_t$ is invertible for all $t\leq m-1.
+<ul>
+<li>$\det(D_t)$ is non-zero as $D_t(0)$ is the identity matrix (by constant requirement). This is then implied by $\det(D_t(0))\neq 0$.</li>
+<li>As every entry in $M$ has degree one and $\det(M)$ has degree $n$, $m\geq n$.</li>
+</ul>
+</li>
+<li>Hence, $D_{n-2}$ is invertible.</li>
+<li>Let $M=\begin{pmatrix} A&amp; B\ C&amp; D\end{pmatrix}$.</li>
+<li>By Lemma 3.8 $\det(M) = \det(A-BD^{-1}C) \det(D)$.</li>
+<li>Since $D^{-1} = adj(D)/\det(D)$ where $adj(D)$ is the adjugate of $D$.
+<ul>
+<li>The adjugate is given by: the entry of $\adj(A)_{i,j}$ is the $j,i$th minor of $A$ times $(-1)^{i+j}$.</li>
+</ul>
+</li>
+<li>Now the entries of $D^{-1}$ can be written a a ratio of two polynomials where the denominator has degree at most $n-2$ and the numerator has degree at most $n-3$.
+<ul>
+<li>As the minor removes at least one row/column and hence one linear form.</li>
+</ul>
+</li>
+<li>Now the entries of $A-BD^{-1}C$ are given by polynomials with the following maximum degree (in order) $1,1, n-3/n-2, 1$.</li>
+<li>This gives us that the entries have degree $1+n-3+1$ in the numerator and $n-2$ in the denominator.</li>
+<li>This also implies that $A-BD^{-1}C$ is a $(m-n+2) \times (m-n+2)$ matrix.
+<ul>
+<li>The reason is that $\det(M)$ is a degree $m$ polynomial and $\det(D)$ is a degree $n-1$ polynomial.</li>
+<li>Hence, $\det(A-BD^{-1}C$ has to produce a degree $m-n+2$ polynomial.</li>
+<li>As $A,B,C$ have only linear forms, this means the matrix size has to be at least $(m-n+2) \times (m-n+2)$.</li>
+</ul>
+</li>
+<li>The denominator now gets cleared by the additional multiplication of $\det(D)$.</li>
+<li>Hence, we can have a matrix $N$ that is givey by $(A-BD^{-1}C) \det(D)$ that has entries of degree at most $n-1$.</li>
+<li>Let $\det(D)=1+Q$.</li>
+<li>Then we can write $\det(M) (1+Q)^{m-n+2} = \det(N) (1+Q)$ where $N$ is the matrix $A-BD^{-1}C$ multiplied every entry with $1+Q$.
+<ul>
+<li>This follows from the dimension of $A-BD^{-1}C$.</li>
+</ul>
+</li>
+<li>Simplifying further gives us $(\sum_{i=1}^n x_i^n)(1+Q)^{m-n+1} = \det(N)$.
+<ul>
+<li>Using the fact that $\det(M)=f$.</li>
+</ul>
+</li>
+<li>This gives us the bound, provided we show that the constant part of $N$ at position $0,0$ is zero and one on the diagonal.</li>
+<li>I am skipping this part.</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/">&#8249; Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2020/lowerbounds-25power/"> Lower bounds on the sum of 25th-powers of univariates lead to complete derandomization of PIT &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>

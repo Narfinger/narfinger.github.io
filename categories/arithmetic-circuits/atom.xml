@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Christian Engels&#x27; Homepage - Arithmetic Circuits</title>
+    <subtitle>Homepage of Christian Engels</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://narfinger.github.io/categories/arithmetic-circuits/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://narfinger.github.io/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-11-10T01:00:00+00:30</updated>
+    <id>https://narfinger.github.io/categories/arithmetic-circuits/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Montone Complexity of Spanning Tree Polynomial Re-visited</title>
+        <published>2021-11-10T01:00:00+00:30</published>
+        <updated>2021-11-10T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/"/>
+        <id>https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2021/montone-spanning-tree-polynomial/">&lt;h1 id=&quot;2021-09-14-cdgm-monotone-complexity-of-spanning-tree-polynomial-re-visited&quot;&gt;2021-09-14-CDGM-Monotone Complexity of Spanning Tree Polynomial Re-visited&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2109.06941v1&quot;&gt;paper&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Spanning Tree polynomial is in VP&lt;&#x2F;li&gt;
+&lt;li&gt;Has monotone circuit complexity $2^{\Omega(n)}$.&lt;&#x2F;li&gt;
+&lt;li&gt;There are some other results in this paper.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;details&quot;&gt;Details&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Spanning Tree polynomial is sum over edges of spanning tree.&lt;&#x2F;li&gt;
+&lt;li&gt;$ST(G&#x27;) = \sum_{t\in T} \prod_{(u,v)\in t, u,v\neq r} x_{u,v}$.&lt;&#x2F;li&gt;
+&lt;li&gt;$G&#x27;$ is directed version of an undirected graph (i.e., both edges included).&lt;&#x2F;li&gt;
+&lt;li&gt;Here $r$ is the root, i.e., the root is not in the polynomial and assumed to be 1.&lt;&#x2F;li&gt;
+&lt;li&gt;The polynomial is given as ordered over $u$ in the paper.&lt;&#x2F;li&gt;
+&lt;li&gt;$ST(G)$ can be computed by an ABP via determinant.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $G$ be a $d$-regular expander, then every monotone circuit for $ST(G)$ has size at least $2^{\Omega(n)}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof&quot;&gt;Proof&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Expander Mixing Lemma: Let $G$ be an undirected $d$ regular graph such that $\gamma_2$, the second largest eigenvalue of the adjacency matrix. Then for every set $S,T$ $| |E(S,T)| -\frac{d}{n} |S| |T| | \leq \gamma_2 \sqrt{|S| |T|}$.
+&lt;ul&gt;
+&lt;li&gt;$E(S,T)$ is the edges in the cut of $S,T$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Matrix Tree Theorem: Let $G$ be an undirected graph and $0,\mu_1,\dots,\mu_{n-1}$ be the eigenvalues of the Laplacian of $G$. Then the number of spanning trees is $1&#x2F;n \mu_1 \cdots \mu_{n-1}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem 2.1 (Yeh19): Let $p$ be a monotone polynomial. Then we can write $p=\sum_{t=1}^s a_t b_t$ with $n&#x2F;3\leq \supp(a_t) \leq 2n&#x2F;3$ and $\supp(b_t) = [n]\setminus \supp(a_t)$.
+&lt;ul&gt;
+&lt;li&gt;Here, supp is the variables occurring in the polynomial.&lt;&#x2F;li&gt;
+&lt;li&gt;Moreover, the coefficients of any monomial in $a_t b_t$ is bounded by the coefficient of the same monomial in $p$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;proof-1&quot;&gt;Proof&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We can look at the sum $\sum_{i=1}^s a_i b_i$ into buckets.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $X_t={x_{t,i} \mid x_{t,i}\in \supp(a_i)\cup \supp(b_i)}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Our buckets now make the computation look like this $\sum_{i=1}^{s&#x2F;(n-1)} \sum_{t=2}^n a&#x27;_i b&#x27;_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let us study one of the buckets, by fixing $s$ arbitrarily.&lt;&#x2F;li&gt;
+&lt;li&gt;We want to have an upper bound of $\sum_{t=2}^n |X_t|$.
+&lt;ul&gt;
+&lt;li&gt;This will give us a lower bound on the size, as we will count the monomials for this fixed $s$.&lt;&#x2F;li&gt;
+&lt;li&gt;If $x_{i,i&#x27;}\in \supp(a_s)$ and $x_{j,j&#x27;}\in \supp(b_s)$ then not $x_{i,j}$ and $x_{j,i}$ can be in $\cup_{t=2}^n X_t$.
+&lt;ul&gt;
+&lt;li&gt;Otherwise, $x_{i,j}\in \supp(a_s)$ and $x_{j,i}\in \supp(b_s)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Otherwise $x_{i,j}x_{j,i}$ would be contained in a monomial of $a_s b_s$.&lt;&#x2F;li&gt;
+&lt;li&gt;This is a cycle and hence not allowed in a spanning tree.&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that $x_{i,j}$ and $x_{j,i}$ are in $X_i,X_j$ respectively.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This means that at least one of the two directed edges must be absent in $\cup_{t=2}^n X_t$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, $\sum_{t=2}^n |X_t| \geq dn - E(a_s,b_s)$ where $E(a_s,b_s)$ is the set of undirected edges.
+&lt;ul&gt;
+&lt;li&gt;The number of monomials is given by $dn$ for the whole graph.&lt;&#x2F;li&gt;
+&lt;li&gt;Except we have $E(a_s,b_s)$ removed from this because one edge is missing from this for every undirected edge this has.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Setting $|a_s|,|b_s| \geq n&#x2F;3$ and $|a_s|+|b_s| =n$ and the expander Lemma we get&lt;&#x2F;li&gt;
+&lt;li&gt;$|E(a_s,b_s)| \geq d&#x2F;n n^2&#x2F;9 - \lambda_2 n&#x2F;2 = n(d&#x2F;9 - \lambda_2&#x2F;2)$.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us the number of monomials for one fixed $s$, namely $\leq 1.01d(1-\alpha)^{n-1}$ for a constant $\alpha$.&lt;&#x2F;li&gt;
+&lt;li&gt;As the number of monomials in a spanning tree is (in our case) $1&#x2F;n(d-\lambda_2)^{n-1}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Our bound is now $(1&#x2F;n (d-\lambda_2)^{n-1})&#x2F; 1.01(1-\alpha)^{n-1}$ which is exponential.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;interesting-open-problems&quot;&gt;Interesting Open Problems&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Is there an explicit polynomial computable by a formula that has exponential monotone circuits?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Superpolynomial Lower Bounds Against Low-Depth Algebraic Circuits</title>
+        <published>2021-06-16T01:00:00+00:30</published>
+        <updated>2021-06-16T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2021/superpolynomial-lower-bounds-against-low-depth-algebraic-circuits/"/>
+        <id>https://narfinger.github.io/posts/2021/superpolynomial-lower-bounds-against-low-depth-algebraic-circuits/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2021/superpolynomial-lower-bounds-against-low-depth-algebraic-circuits/">&lt;h1 id=&quot;2021-06-14-lst-superpolynomial-lower-bounds-against-low-depth-algebraic-circuits&quot;&gt;2021-06-14-LST-Superpolynomial Lower Bounds Against Low-Depth Algebraic Circuits&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2021&#x2F;081&#x2F;&quot;&gt;paper&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;First superpolynomial lower bound against constant depth circuit for arbitrary depth.&lt;&#x2F;li&gt;
+&lt;li&gt;General Circuits&lt;&#x2F;li&gt;
+&lt;li&gt;Better bound against IMM for set multilinear circuits, namely $n^{d^{\exp(-\Delta)}}$ vs $f(d)\poly(n^2)$. (Theorem 2)
+&lt;ul&gt;
+&lt;li&gt;For large $d$ and small $\Delta$ this is stricly better.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Convert any constant depth circuit to a constant depth set-multilinear circuit. (Lemma 10)&lt;&#x2F;li&gt;
+&lt;li&gt;Formal: Let $d=o(\log N)$ and $\mathbb{F}$ be characteristic zero or greater than $d.&lt;&#x2F;li&gt;
+&lt;li&gt;=&amp;gt; There exists an explicit formal polynomial $P_{N,d}(x_1,\dots,x_N)$ that has no algebraic circuits of product depth $\Delta$
+&lt;ul&gt;
+&lt;li&gt;and size at most $N^{d^{\exp(-\Delta)}}$.&lt;&#x2F;li&gt;
+&lt;li&gt;The polynomial is the IMM on $dn^2$ variables.&lt;&#x2F;li&gt;
+&lt;li&gt;Notice that this bound scales with $\Delta$ and the polynomial is independent of $\Delta$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$w=(w_1,\dots,w_d)$ are weight vectors in $\mathbb{Z}\setminus {0}$.&lt;&#x2F;li&gt;
+&lt;li&gt;$w_S=\sum_{i\in S} w_i$, $P_w$ is all indices that have positive weight and $N_w$ all indices that have negative weight.&lt;&#x2F;li&gt;
+&lt;li&gt;$w$ is $b$-unbiased if $|w_I| \leq b$ for all interval $I\subseteq [d]$.
+&lt;ul&gt;
+&lt;li&gt;This implies $w_i\leq b$ (I think also $w_i\leq b&#x2F;d$).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Complexity measure:
+&lt;ul&gt;
+&lt;li&gt;For a given $w$ we take a matrix such that the rows are indexed by all possible monomials on the positive variables and the columns by all possible monomials on the negative variables.&lt;&#x2F;li&gt;
+&lt;li&gt;The entry $(m_1,m_2)$ is the coefficient of $m_1m_2$ in $f$.&lt;&#x2F;li&gt;
+&lt;li&gt;We define this as $M_w(f)$.&lt;&#x2F;li&gt;
+&lt;li&gt;The measure is now the rank of $M_w(f)$ divided by the maximal possible rank,i.e, $rank(M_w(f))&#x2F;\sqrt{ |M^P_w| |M^N_w| }$&lt;&#x2F;li&gt;
+&lt;li&gt;This is equal to $rank(M_w(f))&#x2F;2^{1&#x2F;2 \sum_i |w_i| }$.&lt;&#x2F;li&gt;
+&lt;li&gt;The usual properties hold.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;What is the main idea behind this measure?
+&lt;ul&gt;
+&lt;li&gt;I think this is just splitting the variables depending on the weight given, i.e., if it is positive or not.&lt;&#x2F;li&gt;
+&lt;li&gt;This is in essence just partial derivatives to with respect to the negative set.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Variables in set $X_i$ are labelled by ${0,1}^{ |w_i| }$.
+&lt;ul&gt;
+&lt;li&gt;Notice that the number of variables is also depending on the weight vector $w=(w_1,\dots,w_d)\in (\mathbb{Z}\setminus {0})^d$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The polynomial is now $P_w = \sum_{\sigma(m_+) \text{prefix} of \sigma(m_-) \text{or other way}} m$.
+&lt;ul&gt;
+&lt;li&gt;Here $\sigma(m_+)$ is the variable bit string of the positive monomial and $\sigma(m_-)$ of the negative monomial.&lt;&#x2F;li&gt;
+&lt;li&gt;The variable bit string is just the bit string of the variables chosen as above.&lt;&#x2F;li&gt;
+&lt;li&gt;This is still parameterized by $m$.&lt;&#x2F;li&gt;
+&lt;li&gt;$w$ being $b$-unbiased will be the focus.&lt;&#x2F;li&gt;
+&lt;li&gt;This is probably full rank because it looks like a triangle matrix.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;transforming-the-circuit&quot;&gt;Transforming the Circuit&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Let $s\geq Nd$ and $C$ be a homogeneous circuit of size at most $s$ and product depth $\Delta$.&lt;&#x2F;li&gt;
+&lt;li&gt;=&amp;gt; Then there is a set multilinear circuit of size at most $(d!)s$ and product depth at most $\Delta$ computing the same polynomial with $|X_i|\leq N$.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof Idea:
+&lt;ul&gt;
+&lt;li&gt;For every subset of variables create a new variable.&lt;&#x2F;li&gt;
+&lt;li&gt;Split the gates into every possible subsets of size up to degree of the gate.&lt;&#x2F;li&gt;
+&lt;li&gt;Addition gates and leaves are easy.&lt;&#x2F;li&gt;
+&lt;li&gt;Product gates now have all possible decompositions.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;lower-bound&quot;&gt;Lower Bound&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Claim 14: Any product depth 2 circuit with $w\in {-k, \lfloor k-k&#x2F;\sqrt{d}}$ has relrank$\leq s 2^{-k\sqrt{d}&#x2F;s}$.
+&lt;ul&gt;
+&lt;li&gt;Notice that $w_i$ only has two possibilities.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:
+&lt;ul&gt;
+&lt;li&gt;We can define $C=C_1 + \dots + C_t$ with $C_i$ of the form $\prod\sum\prod\sum$.&lt;&#x2F;li&gt;
+&lt;li&gt;Define Type 1 if $C_i$ has degree $\geq \sqrt{d}&#x2F;2$ and Type 2 otherwise.&lt;&#x2F;li&gt;
+&lt;li&gt;Type 1 is easy.&lt;&#x2F;li&gt;
+&lt;li&gt;For Type 2 it turns out that $|w^{ij}&lt;em&gt;{S_j}| \geq k\deg(C&lt;&#x2F;em&gt;{i,j})&#x2F;2\sqrt{d}$ (the sum of its entries).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Claim 16: Any set multilinear formula of product depth $\Delta$ for $w$ between $\alpha k$ and $-k$ has relrank at most $s2^{-kd^{1&#x2F;(2^\Delta -1)}&#x2F;20}$.
+&lt;ul&gt;
+&lt;li&gt;Proof similar to Claim 13 and via induction.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity</title>
+        <published>2020-11-11T01:00:00+00:30</published>
+        <updated>2020-11-11T01:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/"/>
+        <id>https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/">&lt;h1 id=&quot;paper&quot;&gt;Paper&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;eccc.weizmann.ac.il&#x2F;report&#x2F;2020&#x2F;166&#x2F;&quot;&gt;Chattopadhyay, Datta, Mukhopadhyay - Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;While the paper uses probabilities that are scaled by their support to always be correct, we will ignore this scaling for clarity. For details please check the original source.&lt;&#x2F;li&gt;
+&lt;li&gt;This text also switches between $m$ being a monomial and a number sometimes.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;There is a polynomial that has depth 3 arithmetic circuits of size $O(nm^4)$ and every polynomial of this type needs $2^{\Omega(\sqrt{n})}$ size monotone circuits.
+&lt;ul&gt;
+&lt;li&gt;This is the first constant depth vs monotone circuit bound.&lt;&#x2F;li&gt;
+&lt;li&gt;All other known bound have to go via depth reduction and hence will have size $2^{\sqrt{d}\log n}$ which is $\Theta(n)$ for&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Both $F_{n,m} -\varepsilon  P$ and $F_{n,m} + \varepsilon P$ have monotone circuit complexity $2^{\Omega(m)}$. Here $F_{n,m} = \prod_{i=1}^n (x_{i,1} + \dots + x_{i,m})$ and $P=P_{n,m}^{\mod 3} = \sum_{\sigma:[n]\rightarrow [m], \mod 3(\oplus(\sigma) = 0)} \prod_{i=1}^n x_{i,\sigma(i)}$.
+&lt;ul&gt;
+&lt;li&gt;Hrubes recently showed how to show hardness against general arithmetic circuits.&lt;&#x2F;li&gt;
+&lt;li&gt;He showed that if $f$ is computed efficiently by general arithmetic circuits than $(1+\sum_i x_i)^d + \varepsilon f$ has efficient monotone circuits.&lt;&#x2F;li&gt;
+&lt;li&gt;This is theorem is a first step at proving similar bounds to what we need for Hrubes argument but is not quite the same.&lt;&#x2F;li&gt;
+&lt;li&gt;We transfer lower bounds on communication complexity (on a certain rectangle we cannot control) to polynomials that are given by multiplication of two polynomials with coefficients being at most one.&lt;&#x2F;li&gt;
+&lt;li&gt;This is similar to rank bounds, compare $\sum_{i} g_i h_i$, if the matrix has high rank than the non-commutative complexity is high.&lt;&#x2F;li&gt;
+&lt;li&gt;Here, however, we deal with a more complex measure (corruption) and monotone computation.&lt;&#x2F;li&gt;
+&lt;li&gt;From this, we use Lemma 4.1 to give us a connection between the measure $W$ and a function that fulfills $W(\alpha \beta \cap \mathcal{K}(f^{-1}(z))) \leq \gamma W(\alpha\beta)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;definitions&quot;&gt;Definitions&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;For a given set multilinear polynomial with variables $X = \cup_i X_i = \cup_i \lbrace x_{i,1},\dots, x_{i,m}\rbrace$ we define $\sigma:[n]\rightarrow [m]$ with $\sigma(i)=j_i$, i.e., the $j$th variable in the set $i$ for a given monomial $m$. (The function should probably be called $\sigma_m$.)
+&lt;ul&gt;
+&lt;li&gt;This forms a bijection between the space of all functions $[n]\rightarrow [m]$ ($\mathcal{F}_{n,m}$) and the set of all set multilinear monomials.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Parity set vectors: Define the parity set vector for $m$, $\oplus(m)\in \lbrace 0,1\rbrace ^m$ where the $j$th entry is $|\sigma^{-1}(j)| \mod 2$, i.e., how many variables $x_{i,j}$ for a fixed $j$ exist $\mod 2$.&lt;&#x2F;li&gt;
+&lt;li&gt;We define for a subset $S\subseteq \lbrace 0,1\rbrace^m$ $K(S)=\lbrace m \mid \oplus(m)\in S\rbrace$. This just takes all monomials that are compatible with a set $S$.&lt;&#x2F;li&gt;
+&lt;li&gt;Rectangular corruption: We assume familiarity with rectangles and communication complexity. $Corr_{\lambda,\varepsilon}^z(F) = \min_{\lbrace R, \Pr_\lambda [R\cap F^{-1}(z)]\leq \varepsilon\Pr_\lambda [R]\rbrace} \log(1&#x2F;\Pr_\lambda [R])$.
+&lt;ul&gt;
+&lt;li&gt;Here $\Pr_\lambda [R]$ is the probability that an element under the distribution $\lambda$ is in $R$.&lt;&#x2F;li&gt;
+&lt;li&gt;The intutition behind this measure is that $F$ is hard (has large communication complexity) if finding rectangles that are approximately monochromatic is hard.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Small bias spaces: A multiset $\mathcal{B}\subseteq \lbrace -1,+1\rbrace ^m$ is called an $\varepsilon$-biased space if for every $S$ $1&#x2F;N \sum_{b\in \mathcal{B}}\prod_{i\in S} b_i \leq \varepsilon$.
+&lt;ul&gt;
+&lt;li&gt;I.e., no matter which $S$ we take, $B$ has still small bias under the projection to $S$.&lt;&#x2F;li&gt;
+&lt;li&gt;There are deterministically constructable spaces.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;SINK is the following boolean function: Given a boolean vector $\binom{m}{2}$, define a complete directed graph with this for a vector $x_{i,j}=1$ then $v_i\rightarrow v_j$, otherwise $v_i \leftarrow v_j$.
+&lt;ul&gt;
+&lt;li&gt;SINK$(x)=1$ if there is a sink in the graph.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;A monomial $m$ is called a sink monomial if $SINK(\vec{\oplus}(m))=1$.&lt;&#x2F;li&gt;
+&lt;li&gt;We call a polynomial a non-sink polynomial if it is completely supported on non-sink monomials.&lt;&#x2F;li&gt;
+&lt;li&gt;We call a polynomial a $\delta$-non-sink polynomial if every monomial&#x27;s $m$ coefficient $\alpha$ lies in the interval $[0,\delta]$ otherwise it lies in the interval $[1-\delta, 1]$.
+&lt;ul&gt;
+&lt;li&gt;I think: With our transfer theorem, we can show that for any function $f$ that has large rectangular corruption, then the polynomial that is supported on exactly the $f(\vec{\oplus})=0$ has large monotone complexity.&lt;&#x2F;li&gt;
+&lt;li&gt;Except this is not quite true, it needs to be hard for $f\circ XOR$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;the-measure&quot;&gt;The measure&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Basics:
+&lt;ul&gt;
+&lt;li&gt;We define $\lambda = \mu(x\oplus y)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Define the measure $W$ of a monomial $\kappa$ as $\mu(\vec{\oplus}(\kappa)) \cdot 2^m&#x2F;m^n$. Remember that $\vec{\oplus}$ here is the parity vector
+&lt;ul&gt;
+&lt;li&gt;Notice that the scaling is needed in bounding the summation which stems from the constraints in the optimization problem in the proof.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;We define the measure $W$ of a polynomial via extending it linearily.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Question&lt;&#x2F;strong&gt; This measure is kind of weird because of parity vectors, perhaps there is something easier we can do?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Lemma 4.1: If a balanced product polynomial $H=\alpha \cdot \beta$ with coefficients at most one. If this satisfies $W(H\cap \mathcal{K}(f^{-1}(z))) \leq \eta &#x2F;3 W(H)$. Then $W(H)\leq \Omega(2^{-\min Corr_{\lambda,\eta}^z}(f\circ XOR))$.
+&lt;ul&gt;
+&lt;li&gt;Proof:&lt;&#x2F;li&gt;
+&lt;li&gt;Let $u=\lbrace 0,1\rbrace ^m$, $\tilde \alpha[u] = \sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa]$. We sum over all coefficients of monomials that have the parity vector equal to $m$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, we can write $\alpha \beta$ as $\left(\sum_{u\in \lbrace 0,1\rbrace ^m} \sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa] \kappa \right) \cdot \left(\sum_{v\in \lbrace 0,1\rbrace ^m} \sum_{\kappa&#x27; \in \oplus(\kappa&#x27;)=u} \beta[\kappa&#x27;] \kappa \right)$.&lt;&#x2F;li&gt;
+&lt;li&gt;This is equal to $\sum_{x\in \lbrace 0,1\rbrace ^m} \left( \sum_{u\in \lbrace 0,1\rbrace ^m} \left( \sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa] \kappa \right) \cdot  \left( \sum_{\kappa&#x27; \in \oplus(\kappa&#x27;)=u\oplus x} \beta[\kappa&#x27;] \kappa&#x27; \right) \right)$ as we can obviously replace $w$ with a xor with $u$.&lt;&#x2F;li&gt;
+&lt;li&gt;For the next notice that our measure on this is equal to $\sum_{x\in \lbrace 0,1\rbrace ^m} \sum_{\kappa \in \oplus(\kappa)=u} \sum_{\kappa \in \oplus(\kappa&#x27;)=u\oplus x} W(\kappa)\cdot \kappa&#x27;$ if we ignore coefficients.
+&lt;ul&gt;
+&lt;li&gt;But this is now equal to (by abusing notation a lot) $W(u\oplus (u\oplus x))$. Notice that $W(m\cdot m&#x27;)$ with vectors $\oplus(m)=u,\oplus(m&#x27;)=u&#x27;$ is exactly $u\oplus u&#x27;$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, we can write this as $W(\alpha \beta) = \sum_{x\in \lbrace 0,1\rbrace ^m} W(\kappa&#x27;&#x27;) \left(\sum_{u\in \lbrace 0,1\rbrace ^m} \left(\sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa]\right) \left(\sum_{\kappa&#x27; \in \oplus(\kappa)=u&#x27;} \beta[\kappa&#x27;]\right)\right)$ where $W(\kappa&#x27;&#x27;)=x$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now with our new notation this is equal to $\sum_{x\in \lbrace 0,1\rbrace ^m} W(\kappa&#x27;&#x27;) \sum_{u\in \lbrace 0,1\rbrace } \tilde\alpha[u] \tilde\beta[u\oplus x]$.&lt;&#x2F;li&gt;
+&lt;li&gt;We denote this sum as $W(\tilde\alpha,\tilde\beta)$ and $W_z(\tilde w\alpha, \tilde\beta)$ if we enforce that $f(x)=z$.&lt;&#x2F;li&gt;
+&lt;li&gt;There is a optimization problem $B$ which maximizes $\tilde W(\alpha,\beta)$ with constraints $0\leq \alpha[u] \leq 4m^{\lvert I(\alpha)\rvert}$ and similar for $\beta[v]$.
+&lt;ul&gt;
+&lt;li&gt;This follows from a corollary I skip.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;For an optimal solution to $B$, we can see that all except one $\alpha^{*},\beta^{*}$ have to be either $0$ or $4m^{\lvert I(\alpha)\rvert}$ ($\beta$, respectively).&lt;&#x2F;li&gt;
+&lt;li&gt;Now we can define a rectangle that is all $u,v$ such that $\alpha[u]\neq 0$ and $\beta[v]\neq 0$ and removing the optimal solution.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, we can bound the overall weight by the following sums: The sum of all $u,v$ in the rectangle, the sum of $v$ outside the rectangle and $u$ arbitrary and the sum of $u$ outside the rectangle and $u$ arbitrary.
+&lt;ul&gt;
+&lt;li&gt;We upper bound the last two by using the optimal solution, i.e., $u^{*}$ and $v^{*}$.&lt;&#x2F;li&gt;
+&lt;li&gt;The optimal solution might be a good upper bound already but does not have anything to do with the rectangle.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This is just $\sum_{u\in A,v\in B} \alpha^{*}[u]\beta^{*}[v] W(u\oplus v)$. The rest follows from the upper bounds given by our optimization program and and inserting the definition of the measure.&lt;&#x2F;li&gt;
+&lt;li&gt;The other two summation can be upper bounded in a similar fashion where the sum over $W(u^{*} \oplus v)$ is upper bounded by $1$ as $\mu$ is a probability measure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Corollary 4.1&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;construction-of-depth-3-formulas-monotone-lowerbound&quot;&gt;Construction of depth 3 formulas monotone lowerbound&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;We look at the function $SINK \circ XOR$.&lt;&#x2F;li&gt;
+&lt;li&gt;We define the distribution $\mu$ as follows:
+&lt;ul&gt;
+&lt;li&gt;With probability $1&#x2F;2$ sample a vertex $i\in [k]$ at random and sample randomly an $x$ under the condition that $i$ is a sink. Otherwise, with probability $1&#x2F;2$ sample $x$ at random.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Define $\lambda =\mu(x\oplus y)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Theorem 5.2 (Lemma from [CMS20]): Corr$_{\lambda,\mu}^1(SINK\circ XOR) = \Omega(\sqrt{m})$.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof of the lower bound:
+&lt;ul&gt;
+&lt;li&gt;Let $Q$ be a $\delta$-non sink polynomial.&lt;&#x2F;li&gt;
+&lt;li&gt;By common structure theorem (Theorem 2.1) we can write $Q=\sum_{i=1}^s m_i m&#x27;_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;We take the measure $W$ described in Lemma 4.1.&lt;&#x2F;li&gt;
+&lt;li&gt;$W(Q\cap \mathcal{K}(SINK^{-1}(1))) = \sum_{i=i}^s W(\alpha_i \beta_i \cap \mathcal{K}(SINK^{-1}(1)))$ (by linearity)&lt;&#x2F;li&gt;
+&lt;li&gt;$\geq \sum_{i=1}^t \nu&#x2F;3 W(\alpha_i \beta_i) -48 s 2^{-Cor_{\lambda, nu}(SINK \circ XOR)}$ by Corollary 4.1
+&lt;ul&gt;
+&lt;li&gt;Notice that Theorem 2.1 gives us the bound on the coefficients.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, solving $48 s 2^{-Cor_{\lambda, \nu}(SINK \circ XOR)} \geq \nu&#x2F;3 W(Q) - W(Q\cap SINK^{-1}(1))$ gives us a lowerbound.
+&lt;ul&gt;
+&lt;li&gt;$W(Q\cap SINK^{-1}(1))\leq 4\delta$.&lt;&#x2F;li&gt;
+&lt;li&gt;$W(Q)\geq (1-\delta)&#x2F;3$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence $s\geq ~ 2^{Cor_{\lambda, \nu}(SINK \circ XOR)}$ which is $2^{\sqrt{m}}$ by Theorem 5.2.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Lower Bound on Determinantal Complexity</title>
+        <published>2020-10-23T05:00:00+00:30</published>
+        <updated>2020-10-23T05:00:00+00:30</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://narfinger.github.io/posts/2020/lowerbound-determinant/"/>
+        <id>https://narfinger.github.io/posts/2020/lowerbound-determinant/</id>
+        
+        <content type="html" xml:base="https://narfinger.github.io/posts/2020/lowerbound-determinant/">&lt;h1 id=&quot;paper&quot;&gt;Paper&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2009.02452&quot;&gt;Kumar, Volk - A Lower Bound on Determinantal Complexity&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Determinantal Complexity of $f$: Smallest dimension of a matrix $M$ filled with affine linear forms such that $\det(M)$ computes $f$.&lt;&#x2F;li&gt;
+&lt;li&gt;Determinantal Complexity of $\sum_{i=1}^n x_i^n$ is $1.5n -3$.&lt;&#x2F;li&gt;
+&lt;li&gt;Permanent has determinantal complexity $(n-1)^2 +1$ (over reals). This is the same as the number of variables in Perm.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;proof-overview&quot;&gt;Proof Overview&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Let $M$ be a $m\times m$ matrix that computes $f=\sum_{i=1}^n x_i^n$.&lt;&#x2F;li&gt;
+&lt;li&gt;Converting the matrix into normal form.
+&lt;ul&gt;
+&lt;li&gt;The constnat part of the matrix (i.e., $M_0 = M(0)$) can be assumed to be diagonal matrix of rank $m-1$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Determinantal Complexity of high degree polynomials.
+&lt;ul&gt;
+&lt;li&gt;If $M$ has entries being polynomials of degree $n-1$ and $M$ is in normal form and $det(M)=f$, then $m\geq n&#x2F;2$.&lt;&#x2F;li&gt;
+&lt;li&gt;The same holds for any polynomial $(\sum_{i=1}^n x_i^n)(1+Q)$ with $Q(0)=0$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Trading Dimension of the Matrix as Degree
+&lt;ul&gt;
+&lt;li&gt;If there is an $m\times m$ matrix with affine functions and $det(M)=f$, then there is a matrix $N$ of dimension $(m-n+2)\times (m-n+2)$ whose entries are polynomials of degree at most $n-1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Normal form keeps intact.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Now the lowerbound from $1$ implies that $m\geq n&#x2F;2$, hence that $m&#x27;-n -2 \geq n&#x2F;2$ with degree $n-1$. Hence $m&#x27;\geq 3n&#x2F;2 -3$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;needed-lemmas&quot;&gt;Needed Lemmas&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lemma 3.1: Let $P_1,\dots, P_t, Q_1,\dots, Q_t$ be polynomials that have a common root and $R$ be polynomials such that $\deg(R) &amp;lt;d$ and $\sum_{i=1}^n x_i^d = R+ \sum_{j=1}^t P_j Q_j$. Then $t&amp;gt;n&#x2F;2$.&lt;&#x2F;li&gt;
+&lt;li&gt;Lemma 3.8: Let $\begin{pmatrix} A&amp;amp; B\ C&amp;amp; D\end{pmatrix}$. Then $\det(M)=\det(A-BD^{-1}C)\det(D)$.
+&lt;ul&gt;
+&lt;li&gt;Proof:&lt;&#x2F;li&gt;
+&lt;li&gt;$\begin{pmatrix} A&amp;amp; B\ C&amp;amp; D\end{pmatrix} = \begin{pmatrix} A-BD^{-1}C&amp;amp; BD^{-1}\ 0&amp;amp; I_{m-t}\end{pmatrix} = \begin{pmatrix} I_t &amp;amp; 0\ C&amp;amp; D\end{pmatrix}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;second-part&quot;&gt;Second Part&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lemma 3.9: If $\deg(M)\leq d-1$, additionally $M$ at $(1,1)$ is zero and one on the diagonal and the constant part is diagonal and $\det(M)= f \cdot (\beta + Q)$ where $\beta\neq 0$ and $Q$ constant free.&lt;&#x2F;li&gt;
+&lt;li&gt;Then $m\geq n-1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Proof:&lt;&#x2F;li&gt;
+&lt;li&gt;Using the Laplace expansion gives us  $\det(M)= \sum_{j=1}^m (-1)^{j+1} M_{1.j} \det(N_{1,j})$ where $N_{i,j}$ is the submatrix of deleting the $i$th row and $j$th column.&lt;&#x2F;li&gt;
+&lt;li&gt;Claim: $\det(N_{1,j})$ is a constant free polynomial for $j&amp;gt;1$.
+&lt;ul&gt;
+&lt;li&gt;$N_{1,j}$ has at most $m-2$ non-zero entries
+&lt;ul&gt;
+&lt;li&gt;$M_0$ has at most $m-1$ non-zero entries by assumption.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$N_{1,1}(0)$ is the identity matrix.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, $\det(N_{1,1})=1 + P(X)$ with $P(X)$ being constant free.&lt;&#x2F;li&gt;
+&lt;li&gt;We can write $f (beta + Q) = \det(M) = \sum_{j=1}^m (-1)^{j+1} M_{1,j} \det(N_{1,j}) = M_{1,1}\cdot (1+P) + \sum_{j=2}^m (-1)^{j+1} M_{1,j} \det(N_{1,j})$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, $f (beta + Q) = M_{1,1} + M_{1,1} \cdot P  + \sum_{j=2}^m (-1)^{j+1} M_{1,j} \det(N_{1,j})$.&lt;&#x2F;li&gt;
+&lt;li&gt;Now $\sum_{i=1}^n x_i^n = 1&#x2F;\beta (- Q(\sum_{i=1}^n x_i^n)+ M_{1,1} + M_{1,1}P + \sum_{j=2}^m (-1)^{j+1} M_{1,j}\det(N_{1,j}))$.&lt;&#x2F;li&gt;
+&lt;li&gt;Since $\deg(M_{1,1})&amp;lt;d$ (per entry) and all other polynomials are constant free (have the common root 0), we can apply Lemma 3.1.
+&lt;ul&gt;
+&lt;li&gt;Notice that our requirement says that the constant part of $M$ at $(1,1)$ needs to be zero (which is a requirement) and as the constant part of $M$ is a diagonal matrix, all $M_{1,j}$ are zero.&lt;&#x2F;li&gt;
+&lt;li&gt;The requirement coming from the proof is much less than required, as we only need to find a laplace decomposition where $M_{i,j}$ and $N_{i,j}$ are zero.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;third-part&quot;&gt;Third Part&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Let $M$ be a $m\times m$ matrix.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $D_t$ be the principal minor of $M$ which is obtained by deleting the first $m-t$ rows and columns.&lt;&#x2F;li&gt;
+&lt;li&gt;$D_t$ is invertible for all $t\leq m-1.
+&lt;ul&gt;
+&lt;li&gt;$\det(D_t)$ is non-zero as $D_t(0)$ is the identity matrix (by constant requirement). This is then implied by $\det(D_t(0))\neq 0$.&lt;&#x2F;li&gt;
+&lt;li&gt;As every entry in $M$ has degree one and $\det(M)$ has degree $n$, $m\geq n$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, $D_{n-2}$ is invertible.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $M=\begin{pmatrix} A&amp;amp; B\ C&amp;amp; D\end{pmatrix}$.&lt;&#x2F;li&gt;
+&lt;li&gt;By Lemma 3.8 $\det(M) = \det(A-BD^{-1}C) \det(D)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Since $D^{-1} = adj(D)&#x2F;\det(D)$ where $adj(D)$ is the adjugate of $D$.
+&lt;ul&gt;
+&lt;li&gt;The adjugate is given by: the entry of $\adj(A)_{i,j}$ is the $j,i$th minor of $A$ times $(-1)^{i+j}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Now the entries of $D^{-1}$ can be written a a ratio of two polynomials where the denominator has degree at most $n-2$ and the numerator has degree at most $n-3$.
+&lt;ul&gt;
+&lt;li&gt;As the minor removes at least one row&#x2F;column and hence one linear form.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Now the entries of $A-BD^{-1}C$ are given by polynomials with the following maximum degree (in order) $1,1, n-3&#x2F;n-2, 1$.&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us that the entries have degree $1+n-3+1$ in the numerator and $n-2$ in the denominator.&lt;&#x2F;li&gt;
+&lt;li&gt;This also implies that $A-BD^{-1}C$ is a $(m-n+2) \times (m-n+2)$ matrix.
+&lt;ul&gt;
+&lt;li&gt;The reason is that $\det(M)$ is a degree $m$ polynomial and $\det(D)$ is a degree $n-1$ polynomial.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, $\det(A-BD^{-1}C$ has to produce a degree $m-n+2$ polynomial.&lt;&#x2F;li&gt;
+&lt;li&gt;As $A,B,C$ have only linear forms, this means the matrix size has to be at least $(m-n+2) \times (m-n+2)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The denominator now gets cleared by the additional multiplication of $\det(D)$.&lt;&#x2F;li&gt;
+&lt;li&gt;Hence, we can have a matrix $N$ that is givey by $(A-BD^{-1}C) \det(D)$ that has entries of degree at most $n-1$.&lt;&#x2F;li&gt;
+&lt;li&gt;Let $\det(D)=1+Q$.&lt;&#x2F;li&gt;
+&lt;li&gt;Then we can write $\det(M) (1+Q)^{m-n+2} = \det(N) (1+Q)$ where $N$ is the matrix $A-BD^{-1}C$ multiplied every entry with $1+Q$.
+&lt;ul&gt;
+&lt;li&gt;This follows from the dimension of $A-BD^{-1}C$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Simplifying further gives us $(\sum_{i=1}^n x_i^n)(1+Q)^{m-n+1} = \det(N)$.
+&lt;ul&gt;
+&lt;li&gt;Using the fact that $\det(M)=f$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;This gives us the bound, provided we show that the constant part of $N$ at position $0,0$ is zero and one on the diagonal.&lt;&#x2F;li&gt;
+&lt;li&gt;I am skipping this part.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

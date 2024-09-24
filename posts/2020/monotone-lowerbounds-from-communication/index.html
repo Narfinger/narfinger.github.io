@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://narfinger.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://narfinger.github.io/abridge.css?h=26394b55e5e62780ec93" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://narfinger.github.io/" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://narfinger.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://narfinger.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://narfinger.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://narfinger.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://narfinger.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://narfinger.github.io/favicon-16x16.png" />
+  <link rel="preload" as="style" class="preStyle" href="https://narfinger.github.io/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" />
+  <link rel="alternate" type="application/atom+xml" title="Christian Engels&#x27; Homepage Atom Feed" href="https://narfinger.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity | Christian Engels' Homepage</title>
+  <meta name="author" content="Christian Engels" />
+  <meta name="copyright" content="Christian Engels&#x27; Homepage" />
+  <meta name="description" content="Homepage of Christian Engels" />
+  <link rel="canonical" href="https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/" />
+  <meta name="twitter:url" content="https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/" />
+  <meta property="og:description" content="Homepage of Christian Engels" />
+  <meta name="twitter:description" content="Homepage of Christian Engels" />
+  <meta property="og:title" content="Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:title" content="Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity | Christian Engels&#x27; Homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:image" content="https://narfinger.github.io/banner.png" />
+  <meta property="og:site_name" content="Christian Engels&#x27; Homepage" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2020-11-11" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://narfinger.github.io/js/abridge_nopwa.min.js?h=b393c28b8ec83b53e689" integrity="sha384-fdFbHQ9SIbz0rq38li+F2XgFafgj7yR20l4W4e4vvCVxHlffYRGkXvEtRd3x7W+G"></script>
+  <script defer src="https://narfinger.github.io/js/katexbundle.min.js?h=56b2761149aaa1d81994" integrity="sha384-UR0Li9YQWtf8BWhMEkmcKrcYY/Km3tAPQ8+768VhubM14b1z/WljMs8woKF34r2E"></script>
+  <noscript><link rel="stylesheet" href="https://narfinger.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://narfinger.github.io" title="Christian Engels&#x27; Homepage">Christian Engels</a></h1></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://narfinger.github.io/projects/"> Projects </a></li><li><a class="s110" href="https://narfinger.github.io/archive/"> Posts </a></li><li><a class="s110" href="https://narfinger.github.io/categories/"> Categories </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://narfinger.github.io/posts/2020/monotone-lowerbounds-from-communication/">Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity</a></h1>
+
+      <span class="s95"> Christian Engels <span class="rpad"></span> November 11, 2020 <span class="rpad"></span> [<a href="https://narfinger.github.io/categories/tcs/">TCS</a>, <a href="https://narfinger.github.io/categories/arithmetic-circuits/">Arithmetic Circuits</a>]</span>
+
+    
+
+
+<h1 id="paper">Paper</h1>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://eccc.weizmann.ac.il/report/2020/166/">Chattopadhyay, Datta, Mukhopadhyay - Lower Bounds for Monotone Arithmetic Circuits via Communication Complexity</a></li>
+<li>While the paper uses probabilities that are scaled by their support to always be correct, we will ignore this scaling for clarity. For details please check the original source.</li>
+<li>This text also switches between $m$ being a monomial and a number sometimes.</li>
+</ul>
+<h1 id="results">Results</h1>
+<ul>
+<li>There is a polynomial that has depth 3 arithmetic circuits of size $O(nm^4)$ and every polynomial of this type needs $2^{\Omega(\sqrt{n})}$ size monotone circuits.
+<ul>
+<li>This is the first constant depth vs monotone circuit bound.</li>
+<li>All other known bound have to go via depth reduction and hence will have size $2^{\sqrt{d}\log n}$ which is $\Theta(n)$ for</li>
+</ul>
+</li>
+<li>Both $F_{n,m} -\varepsilon  P$ and $F_{n,m} + \varepsilon P$ have monotone circuit complexity $2^{\Omega(m)}$. Here $F_{n,m} = \prod_{i=1}^n (x_{i,1} + \dots + x_{i,m})$ and $P=P_{n,m}^{\mod 3} = \sum_{\sigma:[n]\rightarrow [m], \mod 3(\oplus(\sigma) = 0)} \prod_{i=1}^n x_{i,\sigma(i)}$.
+<ul>
+<li>Hrubes recently showed how to show hardness against general arithmetic circuits.</li>
+<li>He showed that if $f$ is computed efficiently by general arithmetic circuits than $(1+\sum_i x_i)^d + \varepsilon f$ has efficient monotone circuits.</li>
+<li>This is theorem is a first step at proving similar bounds to what we need for Hrubes argument but is not quite the same.</li>
+<li>We transfer lower bounds on communication complexity (on a certain rectangle we cannot control) to polynomials that are given by multiplication of two polynomials with coefficients being at most one.</li>
+<li>This is similar to rank bounds, compare $\sum_{i} g_i h_i$, if the matrix has high rank than the non-commutative complexity is high.</li>
+<li>Here, however, we deal with a more complex measure (corruption) and monotone computation.</li>
+<li>From this, we use Lemma 4.1 to give us a connection between the measure $W$ and a function that fulfills $W(\alpha \beta \cap \mathcal{K}(f^{-1}(z))) \leq \gamma W(\alpha\beta)$.</li>
+</ul>
+</li>
+</ul>
+<h1 id="definitions">Definitions</h1>
+<ul>
+<li>For a given set multilinear polynomial with variables $X = \cup_i X_i = \cup_i \lbrace x_{i,1},\dots, x_{i,m}\rbrace$ we define $\sigma:[n]\rightarrow [m]$ with $\sigma(i)=j_i$, i.e., the $j$th variable in the set $i$ for a given monomial $m$. (The function should probably be called $\sigma_m$.)
+<ul>
+<li>This forms a bijection between the space of all functions $[n]\rightarrow [m]$ ($\mathcal{F}_{n,m}$) and the set of all set multilinear monomials.</li>
+</ul>
+</li>
+<li>Parity set vectors: Define the parity set vector for $m$, $\oplus(m)\in \lbrace 0,1\rbrace ^m$ where the $j$th entry is $|\sigma^{-1}(j)| \mod 2$, i.e., how many variables $x_{i,j}$ for a fixed $j$ exist $\mod 2$.</li>
+<li>We define for a subset $S\subseteq \lbrace 0,1\rbrace^m$ $K(S)=\lbrace m \mid \oplus(m)\in S\rbrace$. This just takes all monomials that are compatible with a set $S$.</li>
+<li>Rectangular corruption: We assume familiarity with rectangles and communication complexity. $Corr_{\lambda,\varepsilon}^z(F) = \min_{\lbrace R, \Pr_\lambda [R\cap F^{-1}(z)]\leq \varepsilon\Pr_\lambda [R]\rbrace} \log(1/\Pr_\lambda [R])$.
+<ul>
+<li>Here $\Pr_\lambda [R]$ is the probability that an element under the distribution $\lambda$ is in $R$.</li>
+<li>The intutition behind this measure is that $F$ is hard (has large communication complexity) if finding rectangles that are approximately monochromatic is hard.</li>
+</ul>
+</li>
+<li>Small bias spaces: A multiset $\mathcal{B}\subseteq \lbrace -1,+1\rbrace ^m$ is called an $\varepsilon$-biased space if for every $S$ $1/N \sum_{b\in \mathcal{B}}\prod_{i\in S} b_i \leq \varepsilon$.
+<ul>
+<li>I.e., no matter which $S$ we take, $B$ has still small bias under the projection to $S$.</li>
+<li>There are deterministically constructable spaces.</li>
+</ul>
+</li>
+<li>SINK is the following boolean function: Given a boolean vector $\binom{m}{2}$, define a complete directed graph with this for a vector $x_{i,j}=1$ then $v_i\rightarrow v_j$, otherwise $v_i \leftarrow v_j$.
+<ul>
+<li>SINK$(x)=1$ if there is a sink in the graph.</li>
+</ul>
+</li>
+<li>A monomial $m$ is called a sink monomial if $SINK(\vec{\oplus}(m))=1$.</li>
+<li>We call a polynomial a non-sink polynomial if it is completely supported on non-sink monomials.</li>
+<li>We call a polynomial a $\delta$-non-sink polynomial if every monomial's $m$ coefficient $\alpha$ lies in the interval $[0,\delta]$ otherwise it lies in the interval $[1-\delta, 1]$.
+<ul>
+<li>I think: With our transfer theorem, we can show that for any function $f$ that has large rectangular corruption, then the polynomial that is supported on exactly the $f(\vec{\oplus})=0$ has large monotone complexity.</li>
+<li>Except this is not quite true, it needs to be hard for $f\circ XOR$.</li>
+</ul>
+</li>
+</ul>
+<h1 id="the-measure">The measure</h1>
+<ul>
+<li>Basics:
+<ul>
+<li>We define $\lambda = \mu(x\oplus y)$.</li>
+<li>Define the measure $W$ of a monomial $\kappa$ as $\mu(\vec{\oplus}(\kappa)) \cdot 2^m/m^n$. Remember that $\vec{\oplus}$ here is the parity vector
+<ul>
+<li>Notice that the scaling is needed in bounding the summation which stems from the constraints in the optimization problem in the proof.</li>
+</ul>
+</li>
+<li>We define the measure $W$ of a polynomial via extending it linearily.</li>
+<li><strong>Question</strong> This measure is kind of weird because of parity vectors, perhaps there is something easier we can do?</li>
+</ul>
+</li>
+<li>Lemma 4.1: If a balanced product polynomial $H=\alpha \cdot \beta$ with coefficients at most one. If this satisfies $W(H\cap \mathcal{K}(f^{-1}(z))) \leq \eta /3 W(H)$. Then $W(H)\leq \Omega(2^{-\min Corr_{\lambda,\eta}^z}(f\circ XOR))$.
+<ul>
+<li>Proof:</li>
+<li>Let $u=\lbrace 0,1\rbrace ^m$, $\tilde \alpha[u] = \sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa]$. We sum over all coefficients of monomials that have the parity vector equal to $m$.</li>
+<li>Hence, we can write $\alpha \beta$ as $\left(\sum_{u\in \lbrace 0,1\rbrace ^m} \sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa] \kappa \right) \cdot \left(\sum_{v\in \lbrace 0,1\rbrace ^m} \sum_{\kappa' \in \oplus(\kappa')=u} \beta[\kappa'] \kappa \right)$.</li>
+<li>This is equal to $\sum_{x\in \lbrace 0,1\rbrace ^m} \left( \sum_{u\in \lbrace 0,1\rbrace ^m} \left( \sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa] \kappa \right) \cdot  \left( \sum_{\kappa' \in \oplus(\kappa')=u\oplus x} \beta[\kappa'] \kappa' \right) \right)$ as we can obviously replace $w$ with a xor with $u$.</li>
+<li>For the next notice that our measure on this is equal to $\sum_{x\in \lbrace 0,1\rbrace ^m} \sum_{\kappa \in \oplus(\kappa)=u} \sum_{\kappa \in \oplus(\kappa')=u\oplus x} W(\kappa)\cdot \kappa'$ if we ignore coefficients.
+<ul>
+<li>But this is now equal to (by abusing notation a lot) $W(u\oplus (u\oplus x))$. Notice that $W(m\cdot m')$ with vectors $\oplus(m)=u,\oplus(m')=u'$ is exactly $u\oplus u'$.</li>
+</ul>
+</li>
+<li>Hence, we can write this as $W(\alpha \beta) = \sum_{x\in \lbrace 0,1\rbrace ^m} W(\kappa'') \left(\sum_{u\in \lbrace 0,1\rbrace ^m} \left(\sum_{\kappa \in \oplus(\kappa)=u} \alpha[\kappa]\right) \left(\sum_{\kappa' \in \oplus(\kappa)=u'} \beta[\kappa']\right)\right)$ where $W(\kappa'')=x$.</li>
+<li>Now with our new notation this is equal to $\sum_{x\in \lbrace 0,1\rbrace ^m} W(\kappa'') \sum_{u\in \lbrace 0,1\rbrace } \tilde\alpha[u] \tilde\beta[u\oplus x]$.</li>
+<li>We denote this sum as $W(\tilde\alpha,\tilde\beta)$ and $W_z(\tilde w\alpha, \tilde\beta)$ if we enforce that $f(x)=z$.</li>
+<li>There is a optimization problem $B$ which maximizes $\tilde W(\alpha,\beta)$ with constraints $0\leq \alpha[u] \leq 4m^{\lvert I(\alpha)\rvert}$ and similar for $\beta[v]$.
+<ul>
+<li>This follows from a corollary I skip.</li>
+</ul>
+</li>
+<li>For an optimal solution to $B$, we can see that all except one $\alpha^{*},\beta^{*}$ have to be either $0$ or $4m^{\lvert I(\alpha)\rvert}$ ($\beta$, respectively).</li>
+<li>Now we can define a rectangle that is all $u,v$ such that $\alpha[u]\neq 0$ and $\beta[v]\neq 0$ and removing the optimal solution.</li>
+<li>Hence, we can bound the overall weight by the following sums: The sum of all $u,v$ in the rectangle, the sum of $v$ outside the rectangle and $u$ arbitrary and the sum of $u$ outside the rectangle and $u$ arbitrary.
+<ul>
+<li>We upper bound the last two by using the optimal solution, i.e., $u^{*}$ and $v^{*}$.</li>
+<li>The optimal solution might be a good upper bound already but does not have anything to do with the rectangle.</li>
+</ul>
+</li>
+<li>This is just $\sum_{u\in A,v\in B} \alpha^{*}[u]\beta^{*}[v] W(u\oplus v)$. The rest follows from the upper bounds given by our optimization program and and inserting the definition of the measure.</li>
+<li>The other two summation can be upper bounded in a similar fashion where the sum over $W(u^{*} \oplus v)$ is upper bounded by $1$ as $\mu$ is a probability measure.</li>
+</ul>
+</li>
+<li>Corollary 4.1</li>
+</ul>
+<h1 id="construction-of-depth-3-formulas-monotone-lowerbound">Construction of depth 3 formulas monotone lowerbound</h1>
+<ul>
+<li>We look at the function $SINK \circ XOR$.</li>
+<li>We define the distribution $\mu$ as follows:
+<ul>
+<li>With probability $1/2$ sample a vertex $i\in [k]$ at random and sample randomly an $x$ under the condition that $i$ is a sink. Otherwise, with probability $1/2$ sample $x$ at random.</li>
+</ul>
+</li>
+<li>Define $\lambda =\mu(x\oplus y)$.</li>
+<li>Theorem 5.2 (Lemma from [CMS20]): Corr$_{\lambda,\mu}^1(SINK\circ XOR) = \Omega(\sqrt{m})$.</li>
+<li>Proof of the lower bound:
+<ul>
+<li>Let $Q$ be a $\delta$-non sink polynomial.</li>
+<li>By common structure theorem (Theorem 2.1) we can write $Q=\sum_{i=1}^s m_i m'_i$.</li>
+<li>We take the measure $W$ described in Lemma 4.1.</li>
+<li>$W(Q\cap \mathcal{K}(SINK^{-1}(1))) = \sum_{i=i}^s W(\alpha_i \beta_i \cap \mathcal{K}(SINK^{-1}(1)))$ (by linearity)</li>
+<li>$\geq \sum_{i=1}^t \nu/3 W(\alpha_i \beta_i) -48 s 2^{-Cor_{\lambda, nu}(SINK \circ XOR)}$ by Corollary 4.1
+<ul>
+<li>Notice that Theorem 2.1 gives us the bound on the coefficients.</li>
+</ul>
+</li>
+<li>Hence, solving $48 s 2^{-Cor_{\lambda, \nu}(SINK \circ XOR)} \geq \nu/3 W(Q) - W(Q\cap SINK^{-1}(1))$ gives us a lowerbound.
+<ul>
+<li>$W(Q\cap SINK^{-1}(1))\leq 4\delta$.</li>
+<li>$W(Q)\geq (1-\delta)/3$.</li>
+<li>Hence $s\geq ~ 2^{Cor_{\lambda, \nu}(SINK \circ XOR)}$ which is $2^{\sqrt{m}}$ by Theorem 5.2.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      <nav>
+        <div>
+          <a href="https://narfinger.github.io/posts/2021/superpolynomial-lower-bounds-against-low-depth-algebraic-circuits/">&#8249; Superpolynomial Lower Bounds Against Low-Depth Algebraic Circuits</a>
+        </div>
+        <div>
+          <a href="https://narfinger.github.io/posts/2020/lowerbound-determinant/"> A Lower Bound on Determinantal Complexity &#8250;</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://narfinger.github.io/atom.xml" target="_blank" title="Christian Engels&#x27; Homepage Atom Feed"><i type="Button" class="svg rss" title="Christian Engels&#x27; Homepage Atom Feed"></i></a><a href="https://corteximplant.com/@Narfinger" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://www.linkedin.com/in/christian-engels-377144193/" target="_blank" title="LinkedIn"><i type="Button" class="svg linkedin" title="LinkedIn"></i></a><a href="https://github.com/narfinger/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://narfinger.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2024</span> Christian Engels' Homepage</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer><span class="topout">
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top"><i class="svgs svgh angu"></i></a>
+</span>
+</body>
+</html>
